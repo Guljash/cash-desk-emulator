@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<head>
+<title>Калькулятор</title>
+<link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+<link rel="icon" type="image/vnd.microsoft.icon" href="css/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery.easing.1.3.min.js"></script>
+<script type="text/javascript">
+window.onload = function()
+{
+window.scrollTo( 0,0 );
+}
+</script>
+</head>
+<body>
+
+<section id="top">
+
+<div id="grand_parent">
+
+	<!-- СПЕЦИАЛЬНЫЙ БЛОК START-->
+	<div id="open_button"><img src="css/arrow.png" alt=""></div>
+	<ul id="spec_block">
+		<li id="dPos"><div class="under_char"><center><span>Скидка <br>по позиции</span></center></div></li>
+		<li id="dAll"><div class="under_char"><center><span>Скидка <br>на чек</span></center></div></li>	
+		<li id="cng"><div class="under_char"><center><span>Количество <br> <span style="color:#C4C4C4">+</span></span></center></div></li>	
+		<li id="VC"><div class="under_char"><center><span>Артикул <br> <span style="color:#C4C4C4">Enter</span></span></center></div></li>	
+	</ul>
+	<!-- СПЕЦИАЛЬНЫЙ БЛОК END-->
+
+	<!--БЛОК ВЫВОДА START-->
+	<div id="output_parent">
+	<div id="under_output" style="display: block;">
+		<div id="output" style="padding-top:26px;float:left; display: inline-block; border: 0px solid black; width: 252px; height: 495px; overflow: hidden;" ></div>
+		<div id="output2" style="padding-top:26px;float:left; display: inline-block; border: 0px solid black; width: 56px; height: 495px; overflow: hidden; font-weight:bold;" ></div>
+		<div id="output3" style="padding-top:26px;float:right; display: inline-block; border: 0px solid black; width: 84px; height: 495px; overflow: hidden;" ></div>
+		<div id="output4" style="padding-top:26px;float:right; display: inline-block; border: 0px solid black; width: 84px; height: 495px; overflow: hidden;" ></div>
+	</div>
+		<center><div style="font-size:26px;border-top:1px solid #C4C4C4;display: inline-block; width:469px; height: 42px;"><span id="total" style="padding-top:7px;float: right;"></span></div></center>
+	<div class="output_body">
+		<div style="width: 100%;"><input type="text" class="cheque_form" id="cheque_form" autofocus></div>
+	</div>
+	</div>
+	<!--БЛОК ВЫВОДА END-->
+	
+
+</div>
+
+<!-- БОКОВОЕ МЕНЮ START-->
+<div id="menu_parent">
+	<div id="menu_disc">Печать меню</div>
+	<div id="container_menu">
+		<div id="A4"><p>A4</p></div>
+		<div id="A3"><p>A3</p></div>
+		<table class="disc" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
+			<tr>
+				<td style="width:33%;border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Цветная печать</span></td>
+				<td style="width:33%;border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Чёрно-белая печать 1+0</span></td>
+				<td style="width:33%;border-bottom:1px solid #C4C4C4"><span>Чёрно-белая печать 1+1</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>161+52%</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>106 арт.</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>115 арт.</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>161+52%+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>123 арт.+40%</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>127 арт.+40%</span></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="border-right:1px solid #C4C4C4;"><span>Пост-печатная обработка</span></td><td><span>20%</span></td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="bw">Скидки на большие форматы</div>
+	<div id="container_bw">
+		<table class="disc" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>914/841</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>594</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>Скидка</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>1200+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>1680+</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>10%</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>3000+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>4200+</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>20%</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>6000+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>8400+</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>30%</span></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="border-right:1px solid #C4C4C4;"><span>При заключении договора</span></td><td><span>35%</span></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="grayscale_scan">Черное-белое сканирование А4 и А3</div>
+	<div id="container_scan_grayscale">
+		<table class="disc" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Количество</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>А4</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>A3</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>Скидка</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>1+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>15р</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>20р</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"> </td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>50+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>12р</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>16р</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>20%</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>100+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>9р</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>12р</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>40%</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>500+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>6р</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>8р</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>60%</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;"><span>1000+</span></td>
+				<td style="border-right:1px solid #C4C4C4;"><span>3р</span></td>
+				<td style="border-right:1px solid #C4C4C4;"><span>4р</span></td>
+				<td><span>80%</span></td></tr>
+		</table>
+	</div>
+
+	<div id="color_scan">Цветное сканирование А4 и А3</div>
+	<div id="container_scan_color">
+	<table class="disc" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Количество</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>А4</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>A3</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>Скидка</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>1+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>20р</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>40р</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"> </td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>50+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>16р</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>32р</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>20%</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>100+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>12р</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>24р</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>40%</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>500+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>8р</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>16р</span></td>
+				<td style="border-bottom:1px solid #C4C4C4"><span>60%</span></td>
+			</tr>
+			<tr>
+				<td style="border-right:1px solid #C4C4C4;"><span>1000+</span></td>
+				<td style="border-right:1px solid #C4C4C4;"><span>4р</span></td>
+				<td style="border-right:1px solid #C4C4C4;"><span>8р</span></td>
+				<td><span>80%</span></td></tr>
+		</table>
+	</div>
+</div>
+<!-- БОКОВОЕ МЕНЮ END-->
+
+<div id="left_menu_parent">
+	<div id="closure"><span>Не закрывать</span></div>
+</div>
+
+
+
+<div id="seven_one_one" class="message"><span>Не забудь проверить вылеты!</span></div>
+<div id="big_money" class="message"><span>Возможно, нужен залог.</span></div>
+
+</section>
+
+<div id="arrow"></div>
+
+<div id="frogg"><span>Работай давай!</span></div>	
+	
+<section id="bot">
+
+<div id="content">
+<span id="cont">cont</span>
+<span id="ent" >ent</span>
+</div>
+
+<div id="table_parent">
+	<div class="table_block">
+	<table class="disc" cellspacing="0px" width="100%" height="100%">
+		<tr>
+			<td colspan="4" style="border-bottom: 1px solid #C4C4C4">Металлические пружинки</td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>PLU</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>INCH</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>КОЛ-ВО</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>ЦЕНА</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>401</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>3/16</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>5</span></td>
+			<td style="border-bottom:1px solid #C4C4C4">35 ₽</td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>402</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>1/4</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>10</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>40 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>403</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>5/16</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>20</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>45 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>404</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>3/8</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>50</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>50 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>405</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>7/16</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>70</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>55 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>406</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>1/2</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>85</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>60 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>407</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>9/16</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>100</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>65 ₽</span></td>
+		</tr>
+	</table>
+</div>
+	
+	<div class="table_block">
+	<table class="disc" cellspacing="0px" width="100%" height="100%">
+		<tr>
+			<td colspan="4" style="border-bottom: 1px solid #C4C4C4">Пластиковые пружинки</td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>PLU</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>ММ</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>КОЛ-ВО</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>ЦЕНА</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>410</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>6</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>5</span></td>
+			<td style="border-bottom:1px solid #C4C4C4">30 ₽</td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>411</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>8</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>20</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>32 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>412</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>10</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>40</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>35 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>413</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>12</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>80</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>38 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>414</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>16</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>120</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>40 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>416</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>20</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>180</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>45 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>418</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>25</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>220</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>50 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>420</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>32</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>250</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>52 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>421</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>38</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>330</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>58 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>422</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>45</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>400</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>60 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>424</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>52</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>470</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>70 ₽</span></td>
+		</tr>
+	</table>
+</div>	
+	
+	<div class="table_block">
+	<table class="disc" cellspacing="0px" width="100%" height="100%">
+		<tr>
+			<td colspan="4" style="border-bottom: 1px solid #C4C4C4">Металлические каналы</td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>PLU</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>ММ</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>КОЛ-ВО</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>ЦЕНА</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>491</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>5</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>45</span></td>
+			<td style="border-bottom:1px solid #C4C4C4">140 ₽</td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>492</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>7</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>65</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>150 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>493</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>10</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>90</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>160 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>494</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>13</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>120</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>170 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>495</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>16</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>145</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>180 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>496</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>20</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>180</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>190 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>497</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>24</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>220</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>200 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>498</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>28</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>260</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>210 ₽</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>499</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>32</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>300</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>220 ₽</span></td>
+		</tr>
+	</table>
+</div>	
+
+	<div class="table_block">
+	<table class="disc" cellspacing="0px" width="100%" height="100%">
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Плотность бумаги</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Кол-во листов</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>Страниц</span></td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-bottom: 1px solid #C4C4C4">650</td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>80</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>16</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>64</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>90</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>14</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>56</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>120</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>12</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>48</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>160</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>8</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>32</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>200</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>6</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>24</span></td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>250</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>4</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>16</span></td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border-bottom: 1px solid #C4C4C4">8285</td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>80</span></td>
+			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>20</span></td>
+			<td style="border-bottom:1px solid #C4C4C4"><span>80</span></td>
+		</tr>
+	</table>
+</div>	
+</div>
+
+</section>
+
+<script src="js/portable_cash(i).js"></script>	
+	
+</body>

@@ -1,8 +1,9 @@
 ﻿var VC = 0;
-var d = 1;
-var d2 = 1;
-var d3 = 1;
+var d_arrow = false;
 var t = 1;
+var d_closure = false;
+var d_open = true;
+var d_open_menu = false;
 var for_discount = 0;
 var discount_percent = 0;
 var cost = 0;
@@ -19,20 +20,450 @@ var output3 = document.getElementById('output3');
 var output4 = document.getElementById('output4');
 var multiplicator = 1;
 var text_fit = 0;
+var count_frogg = 0;
 
+function seven_one_one(){
+	$(document).ready(function(){
+		$('#seven_one_one').animate({right: "50px"}, 900, "easeOutElastic").css({"display":"flex"});
+		setTimeout(function(){
+			$('#seven_one_one').css({"opacity":"0"});
+		}, 5000);
+		setTimeout(function(){
+			$('#seven_one_one').css({"display":"none"});
+		}, 6000);
+	});
+}
+
+function big_money(){
+	$(document).ready(function(){
+		$('#big_money').animate({right: "50px"}, 900, "easeOutElastic").css({"display":"flex"});
+		setTimeout(function(){
+			$('#big_money').css({"opacity":"0"});
+		}, 5000);
+		setTimeout(function(){
+			$('#big_money').css({"display":"none"});
+		}, 6000);
+	});
+}
+
+function change(){
+	'use strict';
+	get_active()
+	multiplicator = document.getElementById('cheque_form').value;
+	currentDiv = document.getElementById(vc_active); 
+	t = currentDiv.innerHTML.slice(10,currentDiv.length);
+	output_str = currentDiv.innerHTML;
+	document.getElementById('cheque_form').value = "";
+	cost = dict[output_str.substring(6,9)];
+	var currentVC = currentDiv.innerHTML.slice(6,9);
+	var newCostDiv4 = document.getElementById('newDiv4' + vc_active.slice(6, vc_active.length));
+	var old_cost = newCostDiv4.innerHTML.slice(0, newCostDiv4.innerHTML.length-7);
+		
+	if (currentVC === '001' || currentVC === '101' || currentVC === '201' || currentVC === '301'){
+		if (multiplicator <= 49){
+			cost = 10;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 49 && multiplicator <= 99){
+			cost = 7;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 99 && multiplicator <= 499){
+			cost = 5;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 499 && multiplicator <= 999){
+			cost = 3.5;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 999 && multiplicator <= 4999){
+			cost = 3;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 4999){
+			cost = 2.5;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '011' || currentVC === '111' || currentVC === '211' || currentVC === '311'){
+		if (multiplicator <= 49){
+			cost = 14;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 49 && multiplicator <= 99){
+			cost = 10;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 99 && multiplicator <= 499){
+			cost = 7;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 499 && multiplicator <= 999){
+			cost = 6;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 999 && multiplicator <= 4999){
+			cost = 5;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 4999){
+			cost = 4;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '058' || currentVC === '158' || currentVC === '258' || currentVC === '358'){
+		if (multiplicator <= 19){
+			cost = 36;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 19 && multiplicator <= 49){
+			cost = 28;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}			
+		if (multiplicator > 49 && multiplicator <= 99){
+			cost = 25;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 99 && multiplicator <= 199){
+			cost = 20;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 199 && multiplicator <= 499){
+			cost = 15;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 499 && multiplicator <= 999){
+			cost = 12;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 999){
+			cost = 10;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '062' || currentVC === '162' || currentVC === '262' || currentVC === '362'){
+		if (multiplicator <= 19){
+			cost = 72;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 19 && multiplicator <= 49){
+			cost = 56;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 49 && multiplicator <= 99){
+			cost = 50;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 99 && multiplicator <= 199){
+			cost = 40;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 199 && multiplicator <= 499){
+			cost = 30;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 499 && multiplicator <= 999){
+			cost = 24;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 999){
+			cost = 20;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '020' || currentVC === '120' || currentVC === '220' || currentVC === '320'){
+		if (multiplicator <= 49){
+			cost = 17;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 49 && multiplicator <= 99){
+			cost = 14;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 99 && multiplicator <= 499){
+			cost = 10;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 499 && multiplicator <= 999){
+			cost = 7;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 999 && multiplicator <= 4999){
+			cost = 6;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 4999){
+			cost = 5;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '024' || currentVC === '124' || currentVC === '224' || currentVC === '324'){
+		if (multiplicator <= 49){
+			cost = 24;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 49 && multiplicator <= 99){
+			cost = 19;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 99 && multiplicator <= 499){
+			cost = 15;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 499 && multiplicator <= 999){
+			cost = 12;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 999 && multiplicator <= 4999){
+			cost = 9.9;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator > 4999){
+			cost = 7.95;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '720'){
+		if (multiplicator < 10){
+			cost = 50;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 10 && multiplicator < 20){
+			cost = 45;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 20 && multiplicator < 30){
+			cost = 40;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 30 && multiplicator < 40){
+			cost = 35;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 40){
+			cost = 30;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '721'){
+		if (multiplicator < 10){
+			cost = 85;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 10 && multiplicator < 20){
+			cost = 76.50;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 20 && multiplicator < 30){
+			cost = 68;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 30 && multiplicator < 40){
+			cost = 59.50;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 40){
+			cost = 51;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '130'){
+		if (multiplicator < 50){
+			cost = 15;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 50 && multiplicator < 100){
+			cost = 12;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 100 && multiplicator < 500){
+			cost = 9;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 500 && multiplicator < 1000){
+			cost = 6;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 1000){
+			cost = 3;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '131'){
+		if (multiplicator < 50){
+			cost = 20;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 50 && multiplicator < 100){
+			cost = 16;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 100 && multiplicator < 500){
+			cost = 12;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 500 && multiplicator < 1000){
+			cost = 8;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 1000){
+			cost = 4;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '167'){
+		if (multiplicator < 50){
+			cost = 20;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 50 && multiplicator < 100){
+			cost = 16;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 100 && multiplicator < 500){
+			cost = 12;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 500 && multiplicator < 1000){
+			cost = 8;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 1000){
+			cost = 4;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	if (currentVC === '168'){
+		if (multiplicator < 50){
+			cost = 40;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 50 && multiplicator < 100){
+			cost = 32;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 100 && multiplicator < 500){
+			cost = 24;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 500 && multiplicator < 1000){
+			cost = 16;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+		if (multiplicator >= 1000){
+			cost = 8;
+			newCostDiv4.innerHTML = cost + " ₽";
+		}
+	}
+		
+	currentDiv.innerHTML = " " + output_str.substring(6,10) + multiplicator;
+	count += (cost*multiplicator) - Math.ceil((old_cost*t)*2)/2;
+	count = Math.ceil(count*2)/2;
+	document.getElementById('total').innerHTML = count + " ₽";
+	for_discount = multiplicator*cost;
+	if (multiplicator > +dict_for_error[output_str.substring(6,9)]){
+		document.getElementById('output2').lastChild.innerHTML = "!";
+	}
+	else{
+		document.getElementById('output2').lastChild.innerHTML = " ";
+	}
+	
+	if (((document.getElementById('total').innerHTML).slice(0,-7)) >= 10000){
+		big_money()
+	}
+}
+
+function enter(){
+	multiplicator = 1;
+	VC = document.getElementById('cheque_form').value;
+	cost = dict[document.getElementById('cheque_form').value];
+	if ((cost/1) === cost){
+		text_fit++;
+		if (text_fit <= 10){
+			document.getElementById('under_output').style = "font-size: 24px;";
+		}
+		if (text_fit > 10){
+			document.getElementById('under_output').style = "font-size: 22px;";
+		}
+		if (text_fit > 15){
+			document.getElementById('under_output').style = "font-size: 19px;";
+		}
+			
+		document.getElementById('cheque_form').value = "";
+		var newDiv = document.createElement('div');
+		newDiv.id = "newDiv" + for_newDiv_id;
+		for_newDiv_id++;
+		newDiv.addEventListener("click", give_me_ID);
+		var newDiv2 = document.createElement('div');
+		newDiv2.id = "newDiv2" + for_newDiv2_id;
+		for_newDiv2_id++;
+		var newDiv3 = document.createElement('div');
+		newDiv3.id = "newDiv3" + for_newDiv3_id;
+		for_newDiv3_id++;
+		var newDiv4 = document.createElement('div');
+		newDiv4.id = "newDiv4" + for_newDiv4_id;
+		for_newDiv4_id++;
+		newDiv.innerHTML = " " + VC + ":1";
+		output.appendChild(newDiv);
+		newDiv2.innerHTML = " ";
+		output2.appendChild(newDiv2);
+		newDiv3.innerHTML = " ";
+		output3.appendChild(newDiv3);
+		newDiv4.innerHTML = cost + " ₽";
+		output4.appendChild(newDiv4);
+			
+		for(var i = 0; i<(vc_collection.length); i++){
+			vc_collection[i].className = "vc_change";
+		}
+		newDiv.className = "vc_change_active";
+			
+		count += Math.ceil((cost*multiplicator)*2)/2;
+		document.getElementById('total').innerHTML = count + " ₽";
+		
+		if (VC === '771' || VC === '720' || VC === '721'){
+			seven_one_one()
+		}
+			
+		if (((document.getElementById('total').innerHTML).slice(0,-7)) >= 10000){
+			big_money()
+		}
+		
+		return false;
+	}
+	else{
+		alert('Артикул не найден');
+	}
+}
+
+function get_active(){
+	
+	for (var i = 0; i < vc_collection.length; i++){
+		vc_active = vc_collection[i].id;
+	}
+}
 
 function give_me_ID(){
-	'use strict';
+
 	var temp = this.id.slice(6, this.id.length);
 
 	for(var i = 0; i<vc_collection.length; i++){
 		vc_collection[i].className = "vc_change";
 	}
 	document.getElementById("newDiv" + temp).className = "vc_change_active";
-	
 }
 
-dict = {};
+var dict = {};
 	dict['101'] = 10;
 	dict[103] = 7;
 	dict[104] = 5;
@@ -233,23 +664,23 @@ dict[480] = 6;
 dict[170] = 0.90;
 dict[171] = 0.80;
 dict[174] = 3.5;
-	dict[190] = 11;
-	dict[191] = 13;
+	dict[190] = 7.5;
+	dict[191] = 11;
 	dict[192] = 5.5;
-	dict[193] = 15;
-	dict[194] = 35;
-	dict[195] = 4;
-	dict[196] = 13;
-	dict[140] = 16.50;
-	dict[141] = 19.50;
+	dict[193] = 13;
+	dict[194] = 25;
+	dict[195] = 2;
+	dict[196] = 11;
+	dict[140] = 11;
+	dict[141] = 16.50;
 	dict[142] = 8.50;
-	dict[143] = 22.50;
-	dict[144] = 13;
-	dict[145] = 5.50;
-	dict[146] = 5.50;
-	dict[147] = 2;
-	dict[148] = 2;
-	dict[149] = 4;
+	dict[143] = 19.50;
+	dict[144] = 4;
+	dict[145] = 2;
+	dict[146] = 2;
+	dict[147] = 1;
+	dict[148] = 1;
+	dict[149] = 2;
 dict[181] = 80;
 dict[182] = 50;
 dict[183] = 35;
@@ -307,212 +738,41 @@ dict[784] = 50;
 dict[785] = 250;
 
 var dict_for_error = {};
-	dict_for_error['101'] = 49;
-	dict_for_error[103] = 99;
-	dict_for_error[104] = 499;
-	dict_for_error[105] = 999;
-	dict_for_error[106] = 4999;
-	dict_for_error[111] = 49;
-	dict_for_error[113] = 99;
-	dict_for_error[114] = 499;
-	dict_for_error[115] = 999;
-	dict_for_error[116] = 4999;
-	dict_for_error[120] = 49;
-	dict_for_error[122] = 99;
-	dict_for_error[124] = 49;
-	dict_for_error[126] = 99;
-dict_for_error['001'] = 49;
-dict_for_error['003'] = 99;
-dict_for_error['004'] = 499;
-dict_for_error['005'] = 999;
-dict_for_error['006'] = 4999;
-dict_for_error['011'] = 49;
-dict_for_error['013'] = 99;
-dict_for_error['014'] = 499;
-dict_for_error['015'] = 999;
-dict_for_error['016'] = 4999;
-dict_for_error['020'] = 49;
-dict_for_error['022'] = 99;
-dict_for_error['024'] = 49;
-dict_for_error['026'] = 99;
-	dict_for_error[201] = 49;
-	dict_for_error[203] = 99;
-	dict_for_error[204] = 499;
-	dict_for_error[205] = 999;
-	dict_for_error[206] = 4999;
-	dict_for_error[211] = 49;
-	dict_for_error[213] = 99;
-	dict_for_error[214] = 499;
-	dict_for_error[215] = 999;
-	dict_for_error[216] = 4999;
-	dict_for_error[220] = 49;
-	dict_for_error[222] = 99;
-	dict_for_error[224] = 49;
-	dict_for_error[226] = 99;
-dict_for_error[301] = 49;
-dict_for_error[303] = 99;
-dict_for_error[304] = 499;
-dict_for_error[305] = 999;
-dict_for_error[306] = 4999;
-dict_for_error[311] = 49;
-dict_for_error[313] = 99;
-dict_for_error[314] = 499;
-dict_for_error[315] = 999;
-dict_for_error[316] = 4999;
-dict_for_error[320] = 49;
-dict_for_error[322] = 99;
-dict_for_error[324] = 49;
-dict_for_error[326] = 99;
-	dict_for_error['058'] = 19;
-	dict_for_error['060'] = 49;
-	dict_for_error['061'] = 99;
-	dict_for_error['062'] = 19;
-	dict_for_error['064'] = 49;
-	dict_for_error['065'] = 99;
-dict_for_error[158] = 19;
-dict_for_error[160] = 49;
-dict_for_error[161] = 99
-dict_for_error[162] = 19;
-dict_for_error[164] = 49;
-dict_for_error[165] = 99;
-	dict_for_error[258] = 19;
-	dict_for_error[260] = 49;
-	dict_for_error[261] = 99
-	dict_for_error[262] = 19;
-	dict_for_error[264] = 49;
-	dict_for_error[265] = 99;
-dict_for_error[358] = 19;
-dict_for_error[360] = 49;
-dict_for_error[361] = 99
-dict_for_error[362] = 19;
-dict_for_error[364] = 49;
-dict_for_error[365] = 99;
-	dict_for_error[190] = 1199;
-	dict_for_error[191] = 1199;
-	dict_for_error[192] = 1199;
-	dict_for_error[193] = 1199;
-	dict_for_error[194] = 1199;
-	dict_for_error[195] = 1199;
-	dict_for_error[196] = 1199;
-dict_for_error[170] = 5999;
-dict_for_error[171] = 8399;
-	dict_for_error['070'] = 5999;
-	dict_for_error['071'] = 8399;
-dict_for_error[130] = 49;
-dict_for_error[131] = 49;
-	dict_for_error[167] = 49;
-	dict_for_error[168] = 49;
-dict_for_error[720] = 10;
-dict_for_error[721] = 10;
-
-
+dict_for_error[170] = 1200;
+dict_for_error[171] = 1680;
+	dict_for_error['070'] = 1200;
+	dict_for_error['071'] = 1680;
 
 
 var currentDiv = 0; 
 var output_str = 0;
 
 
-
-
 //СПЕЦИАЛЬНЫЙ БЛОК START
 
 
 document.getElementById('VC').onclick = function(){
-'use strict';
-	multiplicator = 1;
-	VC = document.getElementById('cheque_form').value;
-	cost = dict[document.getElementById('cheque_form').value];
-	if ((cost/1) === cost){
-		text_fit++;
-		if (text_fit <= 10){
-			document.getElementById('under_output').style = "font-size: 2.7vh;";
-		}
-		if (text_fit > 10){
-			document.getElementById('under_output').style = "font-size: 2.3vh;";
-		}
-		if (text_fit > 15){
-			document.getElementById('under_output').style = "font-size: 2vh;";
-		}
-			
-		document.getElementById('cheque_form').value = "";
-		var newDiv = document.createElement('div');
-		newDiv.id = "newDiv" + for_newDiv_id;
-		for_newDiv_id++;
-		newDiv.addEventListener("click", give_me_ID);
-		var newDiv2 = document.createElement('div');
-		newDiv2.id = "newDiv2" + for_newDiv2_id;
-		for_newDiv2_id++;
-		var newDiv3 = document.createElement('div');
-		newDiv3.id = "newDiv3" + for_newDiv3_id;
-		for_newDiv3_id++;
-		var newDiv4 = document.createElement('div');
-		newDiv4.id = "newDiv4" + for_newDiv4_id;
-		for_newDiv4_id++;
-		newDiv.innerHTML = "&nbsp;" + VC + ":1";
-		output.appendChild(newDiv);
-		newDiv2.innerHTML = "&nbsp;";
-		output2.appendChild(newDiv2);
-		newDiv3.innerHTML = "&nbsp;";
-		output3.appendChild(newDiv3);
-		newDiv4.innerHTML = cost + "р.";
-		output4.appendChild(newDiv4);
-			
-		for(var i = 0; i<(vc_collection.length); i++){
-			vc_collection[i].className = "vc_change";
-		}
-		newDiv.className = "vc_change_active";
-			
-		count += Math.ceil((cost*multiplicator)*2)/2;
-		document.getElementById('total').innerHTML = count + "р.";
-		return false;
-	}
-	else{
-		alert('Артикул не найден');
-	}
+	enter()
 };
 
 document.getElementById('cng').onclick = function(){
-	for (var i1 = 0; i1 < vc_collection.length; i1++){
-			vc_active = vc_collection[i1].id;
-		}
-		multiplicator = document.getElementById('cheque_form').value;
-		currentDiv = document.getElementById(vc_active); 
-		t = currentDiv.innerHTML.slice(10,currentDiv.length);
-		output_str = currentDiv.innerHTML;
-		document.getElementById('cheque_form').value = "";
-		cost = dict[output_str.substring(6,9)];
-		currentDiv.innerHTML = "&nbsp;" + output_str.substring(6,10) + multiplicator;
-		count += (cost*multiplicator) - Math.ceil((cost*t)*2)/2;
-		count = Math.ceil(count*2)/2;
-		document.getElementById('total').innerHTML = count + "р.";
-		for_discount = multiplicator*cost;
-		if (multiplicator > +dict_for_error[output_str.substring(6,9)]){
-			document.getElementById('output2').lastChild.innerHTML = "!";
-		}
-		else{
-			document.getElementById('output2').lastChild.innerHTML = "&nbsp;";
-		}
-	return false;
+	change()
 };
 
 document.getElementById('dPos').onclick = function(){
 	'use strict';
 	discount_percent = prompt("Введите процент", 50);
-	for (var i1 = 0; i1 < vc_collection.length; i1++){
-			vc_active = vc_collection[i1].id;
-	}
+	get_active();
 	var currentDiv3 = document.getElementById('newDiv3' + vc_active.slice(6, vc_active.length));
-	var currentDiv3_percent = currentDiv3.innerHTML.substring(1,currentDiv3.innerHTML.length-1);
 	var currentDiv4 = document.getElementById('newDiv4' + vc_active.slice(6, vc_active.length));
-	for_discount = currentDiv4.innerHTML.slice(0,-2);
+	for_discount = currentDiv4.innerHTML.slice(0,-7);
 	var temp = document.getElementById('newDiv' + vc_active.slice(6, vc_active.length));
-	cost = dict[temp.innerHTML.substring(6,9)];
-	multiplicator = temp.innerHTML.substring(10,temp.length)
-	currentDiv4.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + "р.";
-	currentDiv3.innerHTML = "|" + Math.round((1 - (for_discount*(1-(discount_percent/100))/cost))*100) + "%";
+	multiplicator = temp.innerHTML.substring(10,temp.length);
+	currentDiv4.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + " ₽";
+	currentDiv3.innerHTML = "|" + Math.round((1 - (for_discount*(1-(discount_percent/100))/for_discount))*100) + "%";
 	count = (count - for_discount*multiplicator) + (for_discount*multiplicator*(1-(discount_percent/100))) ;  //OOOH MY GOOOOOOOOD!!! (c)Asking Alexandria
 	count = Math.ceil(count*2)/2;
-	document.getElementById('total').innerHTML = count + "р.";
+	document.getElementById('total').innerHTML = count + " ₽";
 };
 
 document.getElementById('dAll').onclick = function(){
@@ -525,7 +785,7 @@ document.getElementById('dAll').onclick = function(){
 		var dpos_percent = childs2[k].innerHTML;
 		dpos_percent = dpos_percent.substring(1,dpos_percent.length-1);
 		var c2 = childs[k].innerHTML;
-		c2 = c2.substring(0,c2.length-2);
+		c2 = c2.substring(0,c2.length-7);
 		var dall_percent = discount_percent;
 		if (dpos_percent !== "nbsp"){
 			dpos_percent = (dpos_percent/100);
@@ -538,110 +798,49 @@ document.getElementById('dAll').onclick = function(){
 	
 	for(var i=0; i<childs.length; i++){
 		var c = childs[i].innerHTML;
-		c = c.substring(0,c.length-2);
-		childs[i].innerHTML = Math.round((c - (c*(discount_percent/100)))*100)/100 + "р.";
+		c = c.substring(0,c.length-7);
+		childs[i].innerHTML = Math.round((c - (c*(discount_percent/100)))*100)/100 + "&nbsp;&#8381;";
 	}
 	
 	count = count - (count*((discount_percent/100)));
 	count = Math.ceil(count*2)/2;
-	document.getElementById('total').innerHTML = count + "р.";
+	document.getElementById('total').innerHTML = count + "&nbsp;&#8381;";
 };
+
 //СПЕЦИАЛЬНЫЙ БЛОК END
 
 //ГОРЯЧИЕ КЛАВИШИ START
 
-document.onkeydown = function(e){ //ENTER
+document.onkeydown = function(e){ 
 	'use strict';
-	if (e.keyCode === 13){
-		multiplicator = 1;
-		VC = document.getElementById('cheque_form').value;
-		cost = dict[document.getElementById('cheque_form').value];
-		if ((cost/1) === cost){
-			text_fit++;
-			if (text_fit <= 10){
-				document.getElementById('under_output').style = "font-size: 2.7vh;";
-			}
-			if (text_fit > 10){
-				document.getElementById('under_output').style = "font-size: 2.3vh;";
-			}
-			if (text_fit > 15){
-				document.getElementById('under_output').style = "font-size: 2vh;";
-			}
-			
-			document.getElementById('cheque_form').value = "";
-			var newDiv = document.createElement('div');
-			newDiv.id = "newDiv" + for_newDiv_id;
-			for_newDiv_id++;
-			newDiv.addEventListener("click", give_me_ID);
-			var newDiv2 = document.createElement('div');
-			newDiv2.id = "newDiv2" + for_newDiv2_id;
-			for_newDiv2_id++;
-			var newDiv3 = document.createElement('div');
-			newDiv3.id = "newDiv3" + for_newDiv3_id;
-			for_newDiv3_id++;
-			var newDiv4 = document.createElement('div');
-			newDiv4.id = "newDiv4" + for_newDiv4_id;
-			for_newDiv4_id++;
-			newDiv.innerHTML = "&nbsp;" + VC + ":1";
-			output.appendChild(newDiv);
-			newDiv2.innerHTML = "&nbsp;";
-			output2.appendChild(newDiv2);
-			newDiv3.innerHTML = "&nbsp;";
-			output3.appendChild(newDiv3);
-			newDiv4.innerHTML = cost + "р.";
-			output4.appendChild(newDiv4);
-			
-			for(var i = 0; i<(vc_collection.length); i++){
-				vc_collection[i].className = "vc_change";
-			}
-			newDiv.className = "vc_change_active";
-			
-			count += Math.ceil((cost*multiplicator)*2)/2;
-			document.getElementById('total').innerHTML = count + "р.";
-			return false;
-		}
-		else{
-			alert('Артикул не найден');
-		}
-	}
-	if (e.keyCode === 107){ //+
-		for (var i1 = 0; i1 < vc_collection.length; i1++){
-			vc_active = vc_collection[i1].id;
-		}
-		multiplicator = document.getElementById('cheque_form').value;
-		currentDiv = document.getElementById(vc_active); 
-		t = currentDiv.innerHTML.slice(10,currentDiv.length);
-		output_str = currentDiv.innerHTML;
-		document.getElementById('cheque_form').value = "";
-		cost = dict[output_str.substring(6,9)];
-		currentDiv.innerHTML = "&nbsp;" + output_str.substring(6,10) + multiplicator;
-		count += (cost*multiplicator) - Math.ceil((cost*t)*2)/2;
-		count = Math.ceil(count*2)/2;
-		document.getElementById('total').innerHTML = count + "р.";
-		for_discount = multiplicator*cost;
-		if (multiplicator > +dict_for_error[output_str.substring(6,9)]){
-			document.getElementById('output2').lastChild.innerHTML = "!";
-		}
-		else{
-			document.getElementById('output2').lastChild.innerHTML = "&nbsp;";
-		}
+	if (e.keyCode === 13){ //ENTER
+		enter();
 		return false;
 	}
 	
+	if (e.keyCode === 107){ //+
+		change();
+		return false;
+	}
+		
 	if (e.keyCode === 110){ //.del
 		text_fit -= 1;
-		if (text_fit <= 10){
-				document.getElementById('output_parent').style = "font-size: 3vh;";
-		}
-		if (text_fit > 10){
-				document.getElementById('output_parent').style = "font-size: 2.5vh;";
-		}
-		if (text_fit > 15){
-				document.getElementById('output_parent').style = "font-size: 2vh;";
-		}
-		for (var i1 = 0; i1 < vc_collection.length; i1++){
-			vc_active = vc_collection[i1].id;
-		}
+
+			if (text_fit <= 10){
+					document.getElementById('output_parent').style = "font-size: 3vh;";
+			}
+			if (text_fit > 10){
+					document.getElementById('output_parent').style = "font-size: 2.5vh;";
+			}
+			if (text_fit > 15){
+					document.getElementById('output_parent').style = "font-size: 2vh;";
+			}
+		
+		get_active()
+		
+		var cost_for_del = document.getElementById('newDiv4' + vc_active.slice(6, vc_active.length)).innerHTML;
+		cost_for_del = cost_for_del.slice(0, cost_for_del.length-7 );
+		
 		var removeDiv1 = document.getElementById(vc_active);
 		var removeDiv2 = document.getElementById('newDiv2' + vc_active.slice(6, vc_active.length));
 		var removeDiv3 = document.getElementById('newDiv3' + vc_active.slice(6, vc_active.length));
@@ -651,39 +850,35 @@ document.onkeydown = function(e){ //ENTER
 		output3.removeChild(removeDiv3);
 		output4.removeChild(removeDiv4);
 		
-		var cost_for_del = dict[removeDiv1.innerHTML.slice(6,9)];
 		var multiplicator_for_del = removeDiv1.innerHTML.slice(10,removeDiv1.innerHTML.length);
 		
 		if (removeDiv3.innerHTML.substring(1,3) === "nb" ){
 			count = count - (Math.ceil((cost_for_del*multiplicator_for_del)*2))/2;
-			document.getElementById('total').innerHTML = count + "р.";
+			document.getElementById('total').innerHTML = count + " ₽";
 			return false;
 		}
 		else {
 			count = count - (Math.ceil(((cost_for_del*multiplicator_for_del)*(1-(removeDiv3 .innerHTML.substring(1,3))/100))*2)/2);
-			document.getElementById('total').innerHTML = count + "р.";
+			document.getElementById('total').innerHTML = count + " ₽";
 			return false;
 		}
+			
 	}
 	
 	if (e.keyCode === 38){ // ArrowUp
-		for (var i1 = 0; i1 < vc_collection.length; i1++){
-			vc_active = vc_collection[i1].id;
-		}
-		var temp = document.getElementById('newDiv' + (vc_active.slice(6, vc_active.length) - 1)).className = 'vc_change_active';
+		get_active()
+		document.getElementById('newDiv' + (vc_active.slice(6, vc_active.length) - 1)).className = 'vc_change_active';
 		currentDiv = document.getElementById(vc_active).className = 'vc_change';
 	}
 	if (e.keyCode === 40){ // ArrowDown
-	for (var i1 = 0; i1 < vc_collection.length; i1++){
-			vc_active = vc_collection[i1].id;
-		}
+		get_active()
 	var output_elems_collection = document.getElementById('output').childNodes.length;
 	if ((+((vc_active.slice(6, vc_active.length)))+1) === output_elems_collection){
 		document.getElementById('newDiv0').className = 'vc_change_active';
 		currentDiv = document.getElementById(vc_active).className = 'vc_change';
 	}
 	else{
-		var temp = document.getElementById('newDiv' + (+(vc_active.slice(6, vc_active.length)) + 1)).className = 'vc_change_active';
+		document.getElementById('newDiv' + (+(vc_active.slice(6, vc_active.length)) + 1)).className = 'vc_change_active';
 		currentDiv = document.getElementById(vc_active).className = 'vc_change';
 	}
 	}
@@ -692,57 +887,134 @@ document.onkeydown = function(e){ //ENTER
 //ГОРЯЧИЕ КЛАВИШИ END
 
 //БОКОВОЕ МЕНЮ START
-
-document.getElementById('back_menu_pro').onclick = function(){
+$(function(){
 	'use strict';
-	if (d === 1){
-		document.getElementById('sub_char_parent').style = 'margin-left:55vw;';
-		document.getElementById('output_parent').style = 'margin-left:65%;';
-		document.getElementById('arrow').src = "css/back.png";
-		document.getElementById('back_menu_parent').style = 'margin-left:5vw;';
-		d = 0;
-	}
-	else {
-		document.getElementById('sub_char_parent').style = 'margin-left:30vw;';
-		document.getElementById('output_parent').style = 'margin-left:40%;';
-		document.getElementById('arrow').src = "css/back2.png";
-		document.getElementById('back_menu_parent').style = 'margin-left:-50vw;';
-		d = 1;
-	}
-};
+    $('#bw').click(function(){
+        $('#container_bw').slideToggle(300);
+		$('#container_scan_grayscale').slideUp(300);
+		$('#container_scan_color').slideUp(300);
+		$('#container_menu').slideUp(300);
+    });
+});
 
-//БОКОВОЕ МЕНЮ END
-
-document.getElementById('menu_button').onclick = function(){
+$(function(){
 	'use strict';
-	if (d2 === 1){
-		document.getElementById('output_parent').style = "margin-top:110vh;"
-		document.getElementById('sub_char_parent').style = "margin-top:110vh;"
-		d2 = 0;
-	}
-	else {
-		document.getElementById('output_parent').style = "margin-top:20vh;"
-		document.getElementById('sub_char_parent').style = "margin-top:20vh;"
-		d2 = 1;
-	}
-};
+    $('#grayscale_scan').click(function(){
+        $('#container_bw').slideUp(300);
+		$('#container_scan_grayscale').slideToggle(300);
+		$('#container_scan_color').slideUp(300);
+		$('#container_menu').slideUp(300);
+    });
+});
 
-document.getElementById('login').onclick = function(){
-	var pass = prompt('Тебя туда звали? Нужен пароль!');
-	if (pass === "7437"){
-		window.open("beta.html");
+$(function(){
+	'use strict';
+    $('#color_scan').click(function(){
+        $('#container_bw').slideUp(300);
+		$('#container_scan_grayscale').slideUp(300);
+		$('#container_scan_color').slideToggle(300);
+		$('#container_menu').slideUp(300);
+    });
+});
+
+$(function(){
+	'use strict';
+    $('#menu_disc').click(function(){
+		if (d_open_menu === false){
+			$('#container_bw').slideUp(300);
+			$('#container_scan_grayscale').slideUp(300);
+			$('#container_scan_color').slideUp(300);
+			$('#container_menu').slideDown(300);
+			setTimeout(function(){
+				$('#A3').animate({left: "-35px"}, 300);
+				$('#A4').animate({left: "-35px"}, 300);
+			},300);
+			d_open_menu = true;
+		}
+		else{				
+			$('#A3').animate({left: "2px"}, 300);
+			$('#A4').animate({left: "2px"}, 300);
+			setTimeout(function(){
+				$('#container_menu').slideUp(300);
+			},300);
+			d_open_menu = false;
+		}
+    });
+});
+
+
+
+$(document).ready(function(){
+	'use strict';
+	$('#arrow').click(function(){
+		if (d_arrow === false){
+			$('#bot').css({"display":"flex"});
+			$("html,body").animate({ scrollTop:$(document).height()-$(window).height()}, 1000, "easeOutBounce");
+			setTimeout(function(){
+				$("#arrow").animate({top: "297vh"}, 200).css({"transform":"rotate(90deg)"});
+				$('#ent').animate({left: "10vw"}, 500);
+			}, 900);
+			$('#cont').animate({left: "10vw"}, 700).css({"display":"inline-block"});
+			$('#ent').css({"display":"inline-block"});
+			d_arrow = true;
+		}
+		else{
+			$("html,body").animate({ scrollTop:0}, 1000, "easeOutBounce");
+			$("#arrow").animate({top: "95vh"}, 700).css({"transform":"rotate(270deg)"});
+			setTimeout(function(){
+				$('#ent').animate({left: "110vw"}, 500).css({"display":"none"});
+				$('#cont').animate({left: "-100vw"}, 700).css({"display":"none"});
+				$('#bot').css({"display":"none"});
+			}, 900);
+			d_arrow = false;	
+		}
+	});
+});
+
+document.getElementById('closure').onclick = function(){
+	if (d_closure === false){
+		document.getElementById('closure').style = 'background-color:#D92231;';
+		document.getElementById('closure').querySelector('span').style = 'color:#fff;';
+		d_closure = true;
 	}
 	else{
-		alert ('Так вот и не надо туда лезть!');
-	}
-};
-
-document.getElementById('onoffswitch').onchange = function(){
-	if (document.getElementById('myonoffswitch').checked == true){
-		document.getElementById('xmas').style = "opacity:0;"
-	}
-	else {
-		document.getElementById('xmas').style = "opacity:1;"
+		document.getElementById('closure').style = 'background-color:#E5E5E5;';
+		document.getElementById('closure').querySelector('span').style = 'color:rgba(1,1,1,0.6);';
+		d_closure = false;
 	}
 }
 
+window.onbeforeunload = function() {
+	if (d_closure === true){
+		return true;
+	}
+}
+
+$(document).ready(function(){
+	$('#open_button').click(function(){
+		if (d_open === true){
+			setTimeout(function(){
+				$('#spec_block').css({"box-shadow":"0px 0px 10px rgba(0, 0, 0, 0.0)"});
+			}, 420);
+			$('#spec_block').animate({left: "220px"}, 500, "easeInBack");
+			$('#open_button img').css({"transform":"rotate(0deg)"});
+			d_open = false;
+			count_frogg += 1;
+			if (count_frogg >= 5){
+				$('#frogg').animate({right: "150vw"}, 19000).css({"display":"block"});
+			}
+		}
+		else{
+			setTimeout(function(){
+				$('#spec_block').css({"box-shadow":"0px 0px 10px rgba(0, 0, 0, 0.25)"});
+			}, 480);
+			$('#spec_block').animate({left: "35px"}, 500, "easeInBack");
+			$('#open_button img').css({"transform":"rotate(180deg)"});
+			d_open = true;
+			count_frogg += 1;
+			if (count_frogg >= 5){
+				$('#frogg').animate({right: "150vw"}, 19000).css({"display":"block"});
+			}
+		}
+	});
+});
