@@ -1,4 +1,5 @@
 ﻿var VC = 0;
+var cost_for_storno = 0;
 var d = 1;
 var t = 1;
 var nbsp = "";
@@ -9,9 +10,11 @@ var count = 0;
 var output = document.getElementById('output');
 var output2 = document.getElementById('output2');
 var output3 = document.getElementById('output3');
+var output4 = document.getElementById('output4');
 var multiplicator = 1;
+var text_fit = 0;
 var dict = {};
-	dict[101] = 10;
+	dict['101'] = 10;
 	dict[102] = 7;
 	dict[103] = 5;
 	dict[104] = 3.5;
@@ -131,7 +134,7 @@ dict[262] = 72;
 dict[263] = 64;
 dict[264] = 56;
 dict[265] = 48;
-	dict[358] = 32;
+	dict[358] = 36;
 	dict[359] = 32;
 	dict[360] = 28;
 	dict[361] = 24;
@@ -139,14 +142,14 @@ dict[265] = 48;
 	dict[363] = 64;
 	dict[364] = 56;
 	dict[365] = 48;
-dict[058] = 36;
-dict[059] = 32;
-dict[060] = 28;
-dict[061] = 24;
-dict[062] = 72;
-dict[063] = 64;
-dict[064] = 56;
-dict[065] = 48;
+dict['058'] = 36;
+dict['059'] = 32;
+dict['060'] = 28;
+dict['061'] = 24;
+dict['062'] = 72;
+dict['063'] = 64;
+dict['064'] = 56;
+dict['065'] = 48;
 	dict[501] = 1.2;
 	dict[502] = 2.5;
 	dict[503] = 4;
@@ -177,12 +180,12 @@ dict[150] = 1680;
 dict[151] = 840;
 dict[152] = 420;
 dict[153] = 210;
-	dict[040] = 5;
-	dict[041] = 9;
-	dict[044] = 20;
-	dict[045] = 40;
-	dict[046] = 10;
-	dict[047] = 20;
+	dict['040'] = 5;
+	dict['041'] = 9;
+	dict['044'] = 20;
+	dict['045'] = 40;
+	dict['046'] = 10;
+	dict['047'] = 20;
 dict[580] = 25;
 dict[581] = 20;
 dict[582] = 40;
@@ -225,11 +228,11 @@ dict[467] = 30;
 dict[469] = 25;
 dict[470] = 25;
 dict[480] = 3;
-	dict[070] = 0.85;
-	dict[071] = 0.75;
-	dict[074] = 1.50;
-	dict[080] = 15;
-	dict[081] = 15;
+	dict['070'] = 0.85;
+	dict['071'] = 0.75;
+	dict['074'] = 1.50;
+	dict['080'] = 15;
+	dict['081'] = 15;
 dict[170] = 0.85;
 dict[171] = 0.75;
 dict[174] = 1.50;
@@ -293,6 +296,127 @@ dict[782] = 20;
 dict[783] = 120;
 dict[784] = 10;
 dict[785] = 200;
+
+var dict_for_error = {};
+	dict_for_error['101'] = 9;
+	dict_for_error[102] = 49;
+	dict_for_error[103] = 99;
+	dict_for_error[104] = 499;
+	dict_for_error[105] = 999;
+	dict_for_error[106] = 4999;
+	dict_for_error[111] = 9;
+	dict_for_error[112] = 49;
+	dict_for_error[113] = 99;
+	dict_for_error[114] = 499;
+	dict_for_error[115] = 999;
+	dict_for_error[116] = 4999;
+	dict_for_error[120] = 9;
+	dict_for_error[121] = 49;
+	dict_for_error[122] = 99;
+	dict_for_error[124] = 9;
+	dict_for_error[125] = 49;
+	dict_for_error[126] = 99;
+dict_for_error['001'] = 9;
+dict_for_error['002'] = 49;
+dict_for_error['003'] = 99;
+dict_for_error['004'] = 499;
+dict_for_error['005'] = 999;
+dict_for_error['006'] = 4999;
+dict_for_error['011'] = 9;
+dict_for_error['012'] = 49;
+dict_for_error['013'] = 99;
+dict_for_error['014'] = 499;
+dict_for_error['015'] = 999;
+dict_for_error['016'] = 4999;
+dict_for_error['020'] = 9;
+dict_for_error['021'] = 49;
+dict_for_error['022'] = 99;
+dict_for_error['024'] = 9;
+dict_for_error['025'] = 49;
+dict_for_error['026'] = 99;
+	dict_for_error[201] = 9;
+	dict_for_error[202] = 49;
+	dict_for_error[203] = 99;
+	dict_for_error[204] = 499;
+	dict_for_error[205] = 999;
+	dict_for_error[206] = 4999;
+	dict_for_error[211] = 9;
+	dict_for_error[212] = 49;
+	dict_for_error[213] = 99;
+	dict_for_error[214] = 499;
+	dict_for_error[215] = 999;
+	dict_for_error[216] = 4999;
+	dict_for_error[220] = 9;
+	dict_for_error[221] = 49;
+	dict_for_error[222] = 99;
+	dict_for_error[224] = 9;
+	dict_for_error[225] = 49;
+	dict_for_error[226] = 99;
+dict_for_error[301] = 9;
+dict_for_error[302] = 49;
+dict_for_error[303] = 99;
+dict_for_error[304] = 499;
+dict_for_error[305] = 999;
+dict_for_error[306] = 4999;
+dict_for_error[311] = 9;
+dict_for_error[312] = 49;
+dict_for_error[313] = 99;
+dict_for_error[314] = 499;
+dict_for_error[315] = 999;
+dict_for_error[316] = 4999;
+dict_for_error[320] = 9;
+dict_for_error[321] = 49;
+dict_for_error[322] = 99;
+dict_for_error[324] = 9;
+dict_for_error[325] = 49;
+dict_for_error[326] = 99;
+	dict_for_error['058'] = 5;
+	dict_for_error['059'] = 19;
+	dict_for_error['060'] = 49;
+	dict_for_error['062'] = 5;
+	dict_for_error['063'] = 19;
+	dict_for_error['064'] = 49;
+dict_for_error[158] = 5;
+dict_for_error[159] = 19;
+dict_for_error[160] = 49;
+dict_for_error[162] = 5;
+dict_for_error[163] = 19;
+dict_for_error[164] = 49;
+	dict_for_error[258] = 5;
+	dict_for_error[259] = 19;
+	dict_for_error[260] = 49;
+	dict_for_error[262] = 5;
+	dict_for_error[263] = 19;
+	dict_for_error[264] = 49;
+dict_for_error[358] = 5;
+dict_for_error[359] = 19;
+dict_for_error[360] = 49;
+dict_for_error[362] = 5;
+dict_for_error[363] = 19;
+dict_for_error[364] = 49;
+	dict_for_error[190] = 1199;
+	dict_for_error[191] = 1199;
+	dict_for_error[192] = 1199;
+	dict_for_error[193] = 1199;
+	dict_for_error[194] = 1199;
+	dict_for_error[195] = 1199;
+	dict_for_error[196] = 1199;
+dict_for_error[170] = 5999;
+dict_for_error[171] = 8399;
+	dict_for_error['070'] = 5999;
+	dict_for_error['071'] = 8399;
+dict_for_error[130] = 49;
+dict_for_error[131] = 49;
+	dict_for_error[167] = 49;
+	dict_for_error[168] = 49;
+dict_for_error[720] = 20;
+dict_for_error[721] = 20;
+
+
+
+
+var currentDiv = 0; 
+var output_str = 0;
 
 //ЦИФРОВОЙ БЛОК START
 
@@ -359,22 +483,37 @@ document.getElementById('rst').onclick = function(){
 
 document.getElementById('ctrn').onclick = function(){
 	'use strict';
+	text_fit -= 1;
+	if (text_fit <= 10){
+			document.getElementById('output_parent').style = "font-size: 3.3vh;"
+	};
+	if (text_fit > 10){
+			document.getElementById('output_parent').style = "font-size: 2.5vh;"
+	};
+	if (text_fit > 15){
+			document.getElementById('output_parent').style = "font-size: 2vh;"
+	};
 	var currentDiv1 = document.getElementById('output').lastChild;
-		output.removeChild(currentDiv1);
-		var currentDiv2 = document.getElementById('output2').lastChild;
-		document.getElementById('output2').removeChild(currentDiv2);
-		var currentDiv3 = document.getElementById('output3').lastChild;
-		alert(currentDiv3.innerHTML.substring(1,3));
-		if (currentDiv3.innerHTML.substring(1,3) === "nb" ){
-			document.getElementById('output3').removeChild(currentDiv3);
-			count = count - cost*multiplicator;
-			document.getElementById('total').innerHTML = count + "р.";
-		}
-		else {
-			count = count - (cost*multiplicator*(1-(currentDiv3.innerHTML.substring(1,3))/100));
-			document.getElementById('total').innerHTML = count + "р.";
-			document.getElementById('output3').removeChild(currentDiv3);
-		}
+	var output_str_for_s = currentDiv1.innerHTML;
+	var multiplicator_for_s = currentDiv1.innerHTML.substring(10,12);
+	output.removeChild(currentDiv1);
+	var currentDiv2 = document.getElementById('output2').lastChild;
+	document.getElementById('output2').removeChild(currentDiv2);
+	var currentDiv3 = document.getElementById('output3').lastChild;
+	if (currentDiv3.innerHTML.substring(1,3) === "nb" ){
+		document.getElementById('output3').removeChild(currentDiv3);
+		cost = dict[output_str_for_s.substring(6,9)];
+		count = count - (Math.ceil((cost*multiplicator_for_s)*2))/2;
+		document.getElementById('total').innerHTML = count + "р.";
+		return false;
+	}
+	else {
+		cost = dict[output_str_for_s.substring(6,9)];
+		count = count - (Math.ceil(((cost*multiplicator_for_s)*(1-(currentDiv3.innerHTML.substring(1,3))/100))*2)/2);
+		document.getElementById('total').innerHTML = count + "р.";
+		document.getElementById('output3').removeChild(currentDiv3);
+		return false;
+	}
 };
 
 document.getElementById('VC').onclick = function(){
@@ -382,29 +521,43 @@ document.getElementById('VC').onclick = function(){
 	multiplicator = 1;
 	VC = document.getElementById('cheque_form').value;
 	cost = dict[document.getElementById('cheque_form').value];
-	document.getElementById('cheque_form').value = "";
-	var newDiv = document.createElement('div');
-	var newDiv2 = document.createElement('div');
-	var newDiv3 = document.createElement('div');
-	newDiv2.innerHTML = cost + "р.";
-	output2.appendChild(newDiv2);
-	newDiv3.innerHTML = "&nbsp;";
-	output3.appendChild(newDiv3);
-	newDiv.innerHTML = "&nbsp;" + VC + ":1";
-	output.appendChild(newDiv);
-	count += (cost*multiplicator);
-	document.getElementById('total').innerHTML = count + "р.";
-	for_discount = multiplicator*cost;
-	return false;
+	if ((cost/1) === cost){
+		text_fit++;
+		if (text_fit <= 10){
+			document.getElementById('under_output').style = "font-size: 3.3vh;"
+		};
+		if (text_fit > 10){
+			document.getElementById('under_output').style = "font-size: 2.5vh;"
+		};
+		if (text_fit > 15){
+			document.getElementById('under_output').style = "font-size: 2vh;"
+		};
+		document.getElementById('cheque_form').value = "";
+		var newDiv = document.createElement('div');
+		var newDiv2 = document.createElement('div');
+		var newDiv3 = document.createElement('div');
+		newDiv2.innerHTML = cost + "р.";
+		output2.appendChild(newDiv2);
+		newDiv3.innerHTML = "&nbsp;";
+		output3.appendChild(newDiv3);
+		newDiv.innerHTML = "&nbsp;" + VC + ":1";
+		output.appendChild(newDiv);
+		count += Math.ceil((cost*multiplicator)*2)/2;
+		document.getElementById('total').innerHTML = count + "р.";
+		return false;
+	}
+	else{
+		alert('Артикул не найден');
+	}
 };
 
 document.getElementById('cng').onclick = function(){
 	'use strict';
 	t = multiplicator;
+	currentDiv = document.getElementById('output').lastChild; 
+	output_str = currentDiv.innerHTML;
 	multiplicator = document.getElementById('cheque_form').value;
 	document.getElementById('cheque_form').value = "";
-	var currentDiv = document.getElementById('output').lastChild; 
-	var output_str = currentDiv.innerHTML; //берем значение последнего дочернего дива
 	currentDiv.innerHTML = "&nbsp;" + output_str.substring(6,10) + multiplicator; //заменяем значение
 	count += (cost*multiplicator) - (cost*t);
 	count = Math.ceil(count*2)/2;
@@ -417,11 +570,25 @@ document.getElementById('dPos').onclick = function(){
 	discount_percent = prompt("Введите процент", 50);
 	var currentDiv = document.getElementById('output3').lastChild; 
 	var currentDiv2 = document.getElementById('output2').lastChild; 
-	currentDiv2.innerHTML = cost*(1-(discount_percent/100)) + "р.";
-	currentDiv.innerHTML = "|" + discount_percent + "%";
-	count = (count - for_discount) + (for_discount*(1-(discount_percent/100))) ;
-	count = Math.ceil(count*2)/2;
-	document.getElementById('total').innerHTML = count + "р.";
+	var currentDiv3 = document.getElementById('output3').lastChild.innerHTML.slice(1,-7);
+	if (currentDiv3/1 === 0){
+		for_discount = document.getElementById('output2').lastChild.innerHTML.slice(0,-2);
+		currentDiv2.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + "р.";
+		currentDiv.innerHTML = "|" + discount_percent + "%";
+		count = (count - for_discount*multiplicator) + (for_discount*multiplicator*(1-(discount_percent/100))) ;  //OOOH MY GOOOOOOOOD!!! (c)Asking Alexandria
+		count = Math.ceil(count*2)/2;
+		document.getElementById('total').innerHTML = count + "р.";
+	}
+	else{
+		for_discount = document.getElementById('output2').lastChild.innerHTML.slice(0,-2);
+		var temp = document.getElementById('output').lastChild.innerHTML;
+		cost = dict[temp.substring(6,9)];
+		currentDiv2.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + "р.";
+		currentDiv.innerHTML = "|" + (1 - (for_discount*(1-(discount_percent/100))/cost))*100 + "%";
+		count = (count - for_discount*multiplicator) + (for_discount*multiplicator*(1-(discount_percent/100))) ;  //OOOH MY GOOOOOOOOD!!! (c)Asking Alexandria
+		count = Math.ceil(count*2)/2;
+		document.getElementById('total').innerHTML = count + "р.";
+	};
 	
 };
 
@@ -443,13 +610,13 @@ document.getElementById('dAll').onclick = function(){
 			dall_percent = 100 - (100/(par/(c2 - (c2*(discount_percent/100)))));
 			
 		}
-		childs2[k].innerHTML =  "|" + dall_percent + "%" + "&nbsp;" ;
+		childs2[k].innerHTML =  "|" + dall_percent + "%";
 	}
 	
 	for(var i=0; i<childs.length; i++){
 		var c = childs[i].innerHTML;
 		c = c.substring(0,c.length-2);
-		childs[i].innerHTML = c - (c*(discount_percent/100)) + "р.";
+		childs[i].innerHTML = Math.round((c - (c*(discount_percent/100)))*100)/100 + "р.";
 	}
 	
 	count = count - (count*((discount_percent/100)));
@@ -466,55 +633,91 @@ document.onkeydown = function(e){ //ENTER
 		multiplicator = 1;
 		VC = document.getElementById('cheque_form').value;
 		cost = dict[document.getElementById('cheque_form').value];
-		document.getElementById('cheque_form').value = "";
-		var newDiv = document.createElement('div');
-		var newDiv2 = document.createElement('div');
-		var newDiv3 = document.createElement('div');
-		newDiv2.innerHTML = cost + "р.";
-		output2.appendChild(newDiv2);
-		newDiv3.innerHTML = "&nbsp;";
-	    output3.appendChild(newDiv3);
-		newDiv.innerHTML = "&nbsp;" + VC + ":1";
-		output.appendChild(newDiv);
-		count += (cost*multiplicator);
-		document.getElementById('total').innerHTML = count + "р.";
-		for_discount = multiplicator*cost;
-		return false;
+		if ((cost/1) === cost){
+			text_fit++;
+			if (text_fit <= 10){
+				document.getElementById('under_output').style = "font-size: 2.7vh;"
+			};
+			if (text_fit > 10){
+				document.getElementById('under_output').style = "font-size: 2.3vh;"
+			};
+			if (text_fit > 15){
+				document.getElementById('under_output').style = "font-size: 2vh;"
+			};
+			document.getElementById('cheque_form').value = "";
+			var newDiv = document.createElement('div');
+			var newDiv2 = document.createElement('div');
+			var newDiv3 = document.createElement('div');
+			var newDiv4 = document.createElement('div');
+			newDiv2.innerHTML = cost + "р.";
+			output2.appendChild(newDiv2);
+			newDiv3.innerHTML = "&nbsp;";
+			output3.appendChild(newDiv3);
+			newDiv.innerHTML = "&nbsp;" + VC + ":1";
+			output.appendChild(newDiv);
+			newDiv4.innerHTML = "&nbsp;";
+			output4.appendChild(newDiv4);
+			count += Math.ceil((cost*multiplicator)*2)/2;
+			document.getElementById('total').innerHTML = count + "р.";
+			return false;
+		}
+		else{
+			alert('Артикул не найден');
+		}
 	}
 	if (e.keyCode === 107){ //+
 		t = multiplicator;
 		multiplicator = document.getElementById('cheque_form').value;
+		currentDiv = document.getElementById('output').lastChild; 
+		output_str = currentDiv.innerHTML;
 		document.getElementById('cheque_form').value = "";
-		var currentDiv = document.getElementById('output').lastChild; 
-		var output_str = currentDiv.innerHTML;
+		cost = dict[output_str.substring(6,9)];
 		currentDiv.innerHTML = "&nbsp;" + output_str.substring(6,10) + multiplicator;
-		count += (cost*multiplicator) - (cost*t);
+		count += (cost*multiplicator) - Math.ceil((cost*t)*2)/2;
 		count = Math.ceil(count*2)/2;
 		document.getElementById('total').innerHTML = count + "р.";
 		for_discount = multiplicator*cost;
+		if (multiplicator > +dict_for_error[output_str.substring(6,9)]){
+			document.getElementById('output4').lastChild.innerHTML = "!";
+		}
+		else{
+			document.getElementById('output4').lastChild.innerHTML = "&nbsp;";
+		}
 		return false;
 	}
 	
 	if (e.keyCode === 110){
+		text_fit -= 1;
+		if (text_fit <= 10){
+				document.getElementById('output_parent').style = "font-size: 3vh;"
+		};
+		if (text_fit > 10){
+				document.getElementById('output_parent').style = "font-size: 2.5vh;"
+		};
+		if (text_fit > 15){
+				document.getElementById('output_parent').style = "font-size: 2vh;"
+		};
 		var currentDiv1 = document.getElementById('output').lastChild;
+		var output_str_for_s = currentDiv1.innerHTML;
+		var multiplicator_for_s = currentDiv1.innerHTML.substring(10,12);
 		output.removeChild(currentDiv1);
 		var currentDiv2 = document.getElementById('output2').lastChild;
 		document.getElementById('output2').removeChild(currentDiv2);
 		var currentDiv3 = document.getElementById('output3').lastChild;
 		if (currentDiv3.innerHTML.substring(1,3) === "nb" ){
 			document.getElementById('output3').removeChild(currentDiv3);
-			count = count - cost*multiplicator;
+			cost = dict[output_str_for_s.substring(6,9)];
+			count = count - (Math.ceil((cost*multiplicator_for_s)*2))/2;
 			document.getElementById('total').innerHTML = count + "р.";
+			return false;
 		}
 		else {
-			count = count - (cost*multiplicator*(1-(currentDiv3.innerHTML.substring(1,3))/100));
+			cost = dict[output_str_for_s.substring(6,9)];
+			count = count - (Math.ceil(((cost*multiplicator_for_s)*(1-(currentDiv3.innerHTML.substring(1,3))/100))*2)/2);
 			document.getElementById('total').innerHTML = count + "р.";
 			document.getElementById('output3').removeChild(currentDiv3);
+			return false;
 		}
-		var temp = document.getElementById('output').lastChild.innerHTML.substring(6,9);
-		alert(temp);
-		cost = dict[temp];
-		return false;
 	}	
 };
 
@@ -541,6 +744,3 @@ document.getElementById('back_menu_pro').onclick = function(){
 };
 
 //БОКОВОЕ МЕНЮ END
-
-
-

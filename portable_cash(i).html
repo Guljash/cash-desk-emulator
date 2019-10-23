@@ -1,13 +1,15 @@
 ﻿<!DOCTYPE html>
 <head>
+<title>Калькулятор</title>
 <link rel="stylesheet" href="css/styles(i).css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+<link rel="stylesheet" href="css/menu.css">
 <link rel="icon" type="image/vnd.microsoft.icon" href="css/favicon.ico">
 </head>
 <body>
 
 
-<div class="back_menu_pro" id="back_menu_pro"><img id="arrow" src="css/back2.png" style="filter: invert(100%);margin-left:0.4vw; height:5%;padding-top:45vh;position:absolute;"></div>
+<div class="back_menu_pro" id="back_menu_pro"><img id="arrow" src="css/back2.png" style="opacity:0.8;filter: invert(100%);margin-left:0.4vw;height:5%;top:45vh;position:absolute;"></div>
 
 <div class="char_parent" id="char_parent">
 
@@ -39,17 +41,45 @@
 </div>	
 
 <div id="output_parent" class="output_parent">
+<div class="under_output" id="under_output">
 <div style="display: block;">
-	<div id="output" style="float:left; display: inline-block; border: 0px solid black; width: 10vw; height: 41.2vh; overflow: auto;" ></div>
-	<div id="output3" style="float:right; display: inline-block; border: 0px solid black; width: 4.8vw; height: 41.2vh; overflow: auto;" ></div>
-	<div id="output2" style="float:right; display: inline-block; border: 0px solid black; width: 5.2vw; height: 41.2vh; overflow: auto;" ></div>
+	<div id="output" style="float:left; display: inline-block; border: 0px solid black; width: 9vw; height: 45.2vh; overflow: hidden;" ></div>
+	<div id="output4" style="float:left; display: inline-block; border: 0px solid black; width: 2.5vw; height: 45.2vh; overflow: hidden; font-weight:bold;" ></div>
+	<div id="output3" style="float:right; display: inline-block; border: 0px solid black; width: 3.8vw; height: 45.2vh; overflow: hidden;" ></div>
+	<div id="output2" style="float:right; display: inline-block; border: 0px solid black; width: 4vw; height: 45.2vh; overflow: hidden;" ></div>
 </div>
-	<div style="border:0px solid black;display: inline-block; width: 100%; height: 2.5vw;"><span id="total" style="float: right;"></span></div>
-	<div style="width: 100%; height: 2.5vw;"><input type="text" class="cheque_form" id="cheque_form" autofocus></div>
+	<div style="font-size:3.3vh;border:0px solid black;display: inline-block; width: 100%; height: 4vh;"><span id="total" style="float: right;"></span></div>
+	<div style="width: 100%;"><input type="text" class="cheque_form" id="cheque_form" autofocus></div>
 </div>	
-
+</div>
 <a href="pro.html"><div id="logo" class="logo"></div></a>
 
 
-<script src="js/pro.js"></script>
+  <div class="menu">
+  <div class="btn trigger">
+    <span class="line"></span>
+  </div>
+  <div class="icons">
+    <div class="rotater">
+      <a href="plu.html"  target="_blank"><div title="Справка" class="btn btn-icon">
+	  <div style="font-size:5vh;opacity:0.7;color:#fff;display:block;">i</div>
+      </div></a>
+    </div>
+    <div class="rotater">
+      <a href="disc.html"  target="_blank"><div  title="Таблица скидок" class="btn btn-icon">
+	  <div style="font-size:5vh;opacity:0.7;color:#fff;display:block;">%</div>
+      </div></a>
+    </div>
+    <div class="rotater">
+       <a href="plu.html"  target="_blank"><div title="PLU" class="btn btn-icon">
+		<div style="font-size:3.5vh;opacity:0.7;color:#fff;display:block;">PLU</div>
+      </div></a>
+    </div>
+    
+</div>
+  
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/menu.js"></script>
+	<script src="js/pro.js"></script>
+	
 </body>
