@@ -1,11 +1,13 @@
 ﻿<!DOCTYPE html>
 <head>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
 
 
-<div class="back_menu_pro" id="back_menu_pro"><img id="arrow" src="css/back2.png" style="margin-left:0.4vw; height:5%;padding-top:45vh;position:absolute;"></div>
+<div class="back_menu_pro" id="back_menu_pro"><img id="arrow" src="css/back2.png" style="opacity:0.8;margin-left:0.4vw;height:5%;top:45vh;position:absolute;"></div>
+
 
 <div class="char_parent" id="char_parent">
 
@@ -23,26 +25,66 @@
 	<div class="char" style="margin-left: 0.7vw; margin-top: 0.7vw;" id="2"><div class="under_char">2</div></div>
 	<div class="char" style="margin-left: 0.7vw; margin-top: 0.7vw;" id="3"><div class="under_char">3</div></div>	
 	
-	<div class="char" style="width:12.5vw; margin-top: 0.7vw;" id="0" ><div class="under_char">0</div></div>
-	<div class="char" id="rst" style="margin-left: 0.7vw; margin-top: 0.7vw;"><div class="under_char">Rst</div></div>
+	<div class="char" style="margin-top: 0.7vw;" id="0" ><div class="under_char">0</div></div>
+	<div class="char" id="ctrn" style="font-size:3.5vh; margin-left: 0.7vw; margin-top: 0.7vw;"><div class="under_char">_Ctrn</div></div>
+	<div class="char" id="rst" style="margin-left: 0.7vw; margin-top: 0.7vw;"><div class="under_char">_Rst</div></div>
 
 </div>
 
 <div id="sub_char_parent" class="sub_char_parent">
-	<div class="char" id="cng" style="background-color: rgba(110,110,110,0.7);"><div class="under_char">Chng</div></div>
-	<div class="char" id="VC" style="margin-top: 0.7vw; background-color: rgba(110,110,110,0.7);"><div class="under_char">VC</div></div>
-	<div class="char" id="dPos" style="margin-top: 0.7vw; background-color: rgba(110,110,110,0.7);"><div class="under_char">dPos</div></div>
-	<div class="char" id="dAll" style="margin-top: 0.7vw; background-color: rgba(110,110,110,0.7);"><div class="under_char">dAll</div></div>
+	<div class="char" id="cng" style="background-color: rgba(110,110,110,0.7);"><div class="under_char">_Chg</div></div>
+	<div class="char" id="VC" style="margin-top: 0.7vw; background-color: rgba(110,110,110,0.7);"><div class="under_char">_VC</div></div>
+	<div class="char" id="dPos" style="margin-top: 0.7vw; background-color: rgba(110,110,110,0.7);"><div class="under_char">_dPos</div></div>
+	<div class="char" id="dAll" style="margin-top: 0.7vw; background-color: rgba(110,110,110,0.7);"><div class="under_char">_dAll</div></div>
 </div>	
 
+
+
 <div id="output_parent" class="output_parent">
-	<div id="output" style="width: 100%; height: 80%; overflow: auto;" ></div>
-	<div style="width: 100%; height: 10%;"><span id="total" style="float: right;"></span></div>
-	<div style="width: 100%; height: 10%;"><input type="text" class="cheque_form" id="cheque_form" autofocus></div>
+    <div style="top:15vh;right:5vw;position:absolute; opacity:0.2; font-size:5vh ">output_parent</div>
+	 <div style="top:52vh;right:10vw;position:absolute; opacity:0.4; ">cheque_form</div>
+<div class="under_output" id="under_output">
+<div style="display: block;">
+	<div id="output" style="float:left; display: inline-block; border: 1px dotted rgba(110,110,110,0.4); width: 9vw; height: 45.2vh; overflow: hidden;" ></div>
+	<div id="output4" style="float:left; display: inline-block; border: 1px dotted rgba(110,110,110,0.4); width: 2.5vw; height: 45.2vh; overflow: hidden; font-weight:bold;" ></div>
+	<div id="output3" style="float:right; display: inline-block; border: 1px dotted rgba(110,110,110,0.4); width: 3.8vw; height: 45.2vh; overflow: hidden;" ></div>
+	<div id="output2" style="float:right; display: inline-block; border: 1px dotted rgba(110,110,110,0.4); width: 4vw; height: 45.2vh; overflow: hidden;" ></div>
+</div>
+	<div style="font-size:3.3vh;border:0px solid black;display: inline-block; width: 100%; height: 4vh;"><span id="total" style="float: right;"></span></div>
+	<div style="width: 100%;"><input type="text" class="cheque_form" id="cheque_form" autofocus></div>
 </div>	
+</div>
 
 
 <a href="portable_cash(i).html"><div id="logo" class="logo"></div></a>
 
-<script src="js/pro.js"></script>
+  <div class="menu">
+  <div class="btn trigger">
+    <span class="line"></span>
+  </div>
+  <div class="icons">
+    <div class="rotater">
+      <div id="info" title="Справка" class="btn btn-icon">
+	  <div style="font-size:5vh;opacity:0.7;color:#fff;display:block;">i</div>
+      </div>
+    </div>
+    <div class="rotater">
+      <a href="disc.html"  target="_blank"><div  title="Таблица скидок" class="btn btn-icon">
+	  <div style="font-size:5vh;opacity:0.7;color:#fff;display:block;">%</div>
+      </div></a>
+    </div>
+    <div class="rotater">
+       <a href="plu.html"  target="_blank"><div title="PLU" class="btn btn-icon">
+		<div style="font-size:3.5vh;opacity:0.7;color:#fff;display:block;">PLU</div>
+      </div></a>
+    </div>
+    
+</div>
+</div>
+
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/menu.js"></script>
+	<script src="js/pro.js"></script>
+	
 </body>

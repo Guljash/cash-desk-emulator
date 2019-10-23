@@ -1,12 +1,43 @@
 body{
-    background-image:url(fon6.jpg);
-    background-size: cover;
+	background: url(fon10.jpg) repeat-x 0 100% fixed;
 	height: 100%;
-	overflow:hidden;
+	background-size:cover;
+	overflow:auto;
 	transition: 1s;
+	animation: fon10 30s linear infinite;
 	font-family: 'Roboto', sans-serif;
 }
-   
+
+	@keyframes fon10 {
+    from { background-position: -1000px 100%, 0 0;}
+    to { background-position: 0 100%, 0 0; }
+   }
+	
+	@-webkit-keyframes fon10 {
+    from { background-position: -1000px 100%, 0 0;}
+    to { background-position: 0 100%, 0 0; }
+   }
+ 
+::-webkit-scrollbar{
+    width:0.4vw;
+}
+
+::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #777;
+    background-color: rgba(186,186,186,0.9);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: #555;
+    background-color: rgba(186,186,186,1);
+}
+
+::-webkit-scrollbar-track{
+    border-width:1;
+    background-color: rgba(186,186,186,0.1);
+}
 a{ 
     text-decoration: none;
 } 
@@ -21,15 +52,16 @@ TD, TH {
 
 .left_main_button{
 	width:40vw;
-	height:7vh;
+	height:12vh;
 	margin-left:7vw;
-	margin-top:20vh;
+	margin-top:15vh;
 	font-size:2.2vh;
 	float:left;
 	transition:1s;
 	background-color:#fff;
 	opacity:0.5;
-    border-radius: 1.5%; 
+    border-radius: 1%; 
+	box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
 }
 
 .left_main_button:hover{
@@ -39,18 +71,57 @@ TD, TH {
 
 .right_main_button{
 	width:40vw;
-	height:7vh;
+	height:12vh;
 	margin-right:7vw;
-	margin-top:20vh;
+	margin-top:15vh;
 	font-size:2.2vh;
 	float:right;
 	transition:1s;
 	background-color:#fff;
 	opacity:0.5;
-    border-radius: 1.5%; 
+    border-radius: 1%; 
+	box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
 }
 
 .right_main_button:hover{
+	opacity:0.8;
+	cursor:pointer;
+}
+
+.l_bot_main_button{
+	width:40vw;
+	height:12vh;
+	margin-left:7vw;
+	margin-top:30vh;
+	font-size:2.2vh;
+	float:left;
+	transition:1s;
+	background-color:#fff;
+	opacity:0.5;
+    border-radius: 1%;
+	box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+}
+
+.l_bot_main_button:hover{
+	opacity:0.8;
+	cursor:pointer;
+}
+
+.r_bot_main_button{
+	width:40vw;
+	height:12vh;
+	margin-right:7vw;
+	margin-top:30vh;
+	font-size:2.2vh;
+	float:right;
+	transition:1s;
+	background-color:#fff;
+	opacity:0.5;
+    border-radius: 1%;
+	box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+}
+
+.r_bot_main_button:hover{
 	opacity:0.8;
 	cursor:pointer;
 }
@@ -88,6 +159,31 @@ TD, TH {
     border-radius: 0% 0% 1.5% 1.5%; 
 }
 
+.l_bot_sub_button{
+	width:40vw;
+	height:0vh;
+	font-size:2.2vh;
+	transition:1s;
+	float:left;
+	margin-left:7vw;
+	background-color:#fff;
+	opacity:0.5;
+    border-radius: 0% 0% 1.5% 1.5%; 
+}
+
+.r_bot_sub_button{
+	width:40vw;
+	height:0vh;
+	font-size:2.2vh;
+	transition:1s;
+	float:right;
+	margin-right:7vw;
+	background-color:#fff;
+	opacity:0.5;
+    border-radius: 0% 0% 1.5% 1.5%; 
+}
+
+
 .a4{
 	transition:1.4s;
 	float:left;
@@ -123,6 +219,36 @@ TD, TH {
 	width:40%;
 	margin-right:0;
 	margin-top:3vh;
+	opacity:0;
+	height:30vh;
+}
+
+.scan_a4a3{
+	transition:1.7s;
+	float:left;
+	width:40%;
+	margin-left:4.5vw;
+	margin-top:6vh;
+	opacity:0;
+	height:30vh;
+}
+
+.scan_a4a3_bw{
+	transition:1.7s;
+	float:right;
+	width:40%;
+	margin-right:2.5vw;
+	margin-top:6vh;
+	opacity:0;
+	height:30vh;
+}
+
+.vis_card{
+	transition:1.7s;
+	float:right;
+	width:40%;
+	margin-right:12vw;
+	margin-top:6vh;
 	opacity:0;
 	height:30vh;
 }

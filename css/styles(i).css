@@ -1,12 +1,22 @@
 body{
-    background-image:url(fon6.jpg);
-    background-size: cover;
+	background: url(fon10.jpg) repeat-x 0 100% fixed;
 	height: 100%;
-	overflow:hidden;
+	background-size:cover;
 	transition: 1s;
+	overflow:hidden;
+	animation: fon10 50s linear infinite;
 	font-family: 'Roboto', sans-serif;
 }
 
+	@keyframes fon10 {
+    from { background-position: -1000px 100%, 0 0;}
+    to { background-position: 0 100%, 0 0; }
+   }
+	
+	@-webkit-keyframes fon10 {
+    from { background-position: -3000px 100%, 0 0;}
+    to { background-position: 0 100%, 0 0; }
+   }
 a{ 
     text-decoration: none;
 } 
@@ -317,7 +327,7 @@ a{
 .sub_char_parent{
 	width:7.85vw;
     height:56vh;
-	transition-property: margin-left;
+	transition-property: margin-left, opacity;
 	transition-duration: 1s;
 	margin-top: 24vh;
 	font-size:2.3vh;
@@ -330,11 +340,12 @@ a{
 	width:20vw;
 	margin-top: 24vh;
 	height: 56vh;
-	transition-property: margin-left;
+	transition-property: margin-left, opacity;
 	transition-duration: 1s;
 	color: rgba(1,1,1,0.5);
 	position: absolute;
-	background-color:rgba(255,255,255,0.4);
+	background-color:rgba(255,255,255,0.45);
+	box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
 	margin-left: 40%;
 	border:0px solid black;
 }
@@ -409,7 +420,7 @@ a{
 	background-image: url(logogray.png);
 	background-size: contain;
 	transition: 1s;
-	opacity:0.35;
+	opacity:0.32;
 	cursor: pointer;
 }
 
@@ -418,4 +429,16 @@ a{
 	transform-style: preserve-3d;
 	transition-delay: 0.2s;
 	background-image: url(logogray.png);
+}
+
+.info_parent{
+	border: 1px solid rgba(255,255,255,0.3);
+	position:absolute;
+	right:80vw;
+	width:10vw;
+	height:3vh;
+	transition:1s;
+	opacity:0;
+	background-color:rgba(255,255,255,0.45);
+	bottom:0vh;
 }

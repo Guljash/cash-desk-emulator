@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <head>
-<title>Калькулятор</title>
+<title>Таблица скидок</title>
 <link rel="stylesheet" href="css/disc.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
 <link rel="stylesheet" href="css/menu.css">
@@ -8,9 +8,11 @@
 </head>
 <body>
 
-<div id="left_main_button" class="left_main_button" ><div class="container"><div>Система предоставления скидок на форматы А4-А3</div></div></div>
+<!-- Левая секция START-->
 
-<div id="right_main_button" class="right_main_button"><div class="container"><div>Система предоставления скидок на большие форматы</div></div></div>
+<div style="width:50%; height:100vh; float:left;border:0px solid white;">
+<div id="left_main_button" class="left_main_button" ><div class="container">
+<div>Система предоставления скидок на форматы А4-А3</div></div></div>
 
 
 <div id="left_sub_button" class="left_sub_button" >
@@ -44,6 +46,44 @@
 </div>
 </div>
 
+<div id="l_bot_main_button" class="l_bot_main_button" ><div class="container">
+<div>Система предоставления скидок на сканирование форматов А4-А3</div></div></div>
+
+<div id="l_bot_sub_button" class="l_bot_sub_button" >
+<div id="scan_a4a3" class="scan_a4a3">
+	Цв. сканирование А4-А3
+	<table border="1px">
+	<tr><td>Количество</td><td>А4</td><td>A3</td><td>Скидка</td></tr>
+	<tr><td>1+</td><td>20р</td><td>40р</td><td> </td></tr>
+	<tr><td>50+</td><td>16р</td><td>32р</td><td> </td></tr>
+	<tr><td>100+</td><td>12р</td><td>24р</td><td> </td></tr>
+	<tr><td>500+</td><td>8р</td><td>16р</td><td> </td></tr>
+	<tr><td>1000+</td><td>4р</td><td>8р</td><td> </td></tr>
+	</table>
+</div>
+<div id="scan_a4a3_bw" class="scan_a4a3_bw">
+	Ч/б сканирование А4-А3
+	<table border="1px">
+	<tr><td>Количество</td><td>А4</td><td>A3</td><td>Скидка</td></tr>
+	<tr><td>1+</td><td>15р</td><td>20р</td><td> </td></tr>
+	<tr><td>50+</td><td>12р</td><td>16р</td><td> </td></tr>
+	<tr><td>100+</td><td>9р</td><td>12р</td><td> </td></tr>
+	<tr><td>500+</td><td>6р</td><td>8р</td><td> </td></tr>
+	<tr><td>1000+</td><td>3р</td><td>4р</td><td> </td></tr>
+	</table>
+</div>
+</div>
+
+</div>
+<!-- Левая секция END-->
+
+
+<!-- Правая секция START-->
+
+<div style="width:50%; height:100vh; float:right;border:0px solid white;">
+
+<div id="right_main_button" class="right_main_button"><div class="container"><div>Система предоставления скидок на большие форматы</div></div></div>
+
 <div id="right_sub_button" class="right_sub_button" >
 <div id="wfbw" class="wfbf">
 	Ч/б печать
@@ -72,6 +112,25 @@
 	</table>
 </div>
 </div>
+
+<div id="r_bot_main_button" class="r_bot_main_button" ><div class="container">
+<div>Визитки</div></div></div>
+<div id="r_bot_sub_button" class="r_bot_sub_button" >
+<div id="vis_card" class="vis_card">
+	<table border="1px">
+	<tr><td>Кол-во виз.</td><td>кол-во PLU</td><td>Ч/б</td><td>Цв.</td></tr>
+	<tr><td>96</td><td>4</td><td>100р</td><td>170р</td></tr>
+	<tr><td>192</td><td>8</td><td>100р</td><td>170р</td></tr>
+	<tr><td>504</td><td>21</td><td>70р(30%)</td><td>119р(30%)</td></tr>
+	<tr><td>1008</td><td>42</td><td>60р(40%)</td><td>102р(40%)</td></tr>
+	</table>
+</div>
+</div>
+</div>
+
+
+</div>
+<!-- Правая секция END-->
 
 <script src="js/disc.js"></script>
 </body>

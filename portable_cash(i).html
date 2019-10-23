@@ -9,6 +9,44 @@
 <body>
 
 
+<!-- ИНФОБЛОК START -->
+<div id="info_parent" class="info_parent">
+<div id="1_art" style="display:none; margin-left:2vw;margin-top:2vh;font-size:2vh;">
+
+<p style="font-size:4vh;"> Как оно работает?</p>
+<p> Помимо виртуальных кнопок можно использовать аппаратные на дополнительной клавиатуре</p>
+<p> Num "Enter" - артикул </p>
+<p> Num "+" - количество </p>
+<p> Очистить чек - кнопка F5 или виртуальная кнопка перезагрузки страницы </p>
+<p> Num "del/." - сторно (да-да, оно всегда было) </p>
+<p> Ввод чисел осуществляется также на Num-клавиатуре </p>
+<p> Кнопочка "%" открывает страницу со скидками, так что не нужно искать этот злополучный лист под столами :) </p>
+</div>
+
+<div id="2_art" style="display:none; margin-left:2vw;margin-top:2vh;font-size:2vh;">
+<p style="font-size:4vh;">Пару слов про скидки</p>
+<p>Скидки на чек работают на ТЕКУЩИЕ позиции, все дальнейшие артикулы будут считаться без скидки (думаю, как исправить) </p>
+<p>Если вы пробиваете сначала 50%, а потом еще раз 25%, то у вас НЕ БУДЕТ СКИДКИ 75%! Открываем математику за 7 класс и учим сложные проценты! ТУТ НЕТ ОШИБКИ!</p>
+<p>Нашел баг? Напиши мне об этом в <a href="https://vk.com/guljash">ВК</a>, буду очень признателен.
+</div>
+
+<div id="3_art" style="display:none; margin-left:1.9vw;margin-top:15vh;font-size:2vh;">
+<p style="font-size:3vh;">Что нового в версии 3.1</p>
+<p>Добавлен анимированный фон (кому оно нужно)</p>
+<p>Добавлена справка</p>
+<p>Добавлена таблица скидок</p>
+<p>Исправления вычислительных ошибок</p>
+<p>Исправления интерфейсных ошибок</p>
+</div>
+
+<div id="4_art" style="display:none; margin-left:50vw;margin-top:5vh;font-size:2vh;">
+<p>v3.1 by George Antonov for <a href="http://www.copymax.ru/">copymax.ru</a></p>
+</div>
+
+</div>
+  
+<!-- ИНФОБЛОК END -->  
+
 <div class="back_menu_pro" id="back_menu_pro"><img id="arrow" src="css/back2.png" style="opacity:0.8;filter: invert(100%);margin-left:0.4vw;height:5%;top:45vh;position:absolute;"></div>
 
 <div class="char_parent" id="char_parent">
@@ -61,9 +99,9 @@
   </div>
   <div class="icons">
     <div class="rotater">
-      <a href="plu.html"  target="_blank"><div title="Справка" class="btn btn-icon">
+      <div id="info" title="Справка" class="btn btn-icon">
 	  <div style="font-size:5vh;opacity:0.7;color:#fff;display:block;">i</div>
-      </div></a>
+      </div>
     </div>
     <div class="rotater">
       <a href="disc.html"  target="_blank"><div  title="Таблица скидок" class="btn btn-icon">
@@ -77,6 +115,8 @@
     </div>
     
 </div>
+</div>
+
   
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="js/menu.js"></script>
