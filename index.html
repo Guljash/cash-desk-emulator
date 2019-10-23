@@ -1,60 +1,62 @@
 <!DOCTYPE html>
+<html lang='ru'>
+    
 <head>
 <title>Калькулятор</title>
+    
 <link rel="stylesheet" href="css/styles.css">
 <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
 <link rel="icon" type="image/vnd.microsoft.icon" href="css/favicon.ico">
+    
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+    
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/jquery.easing.1.3.min.js"></script>
 <script type="text/javascript">
-window.onload = function()
-{
-window.scrollTo( 0,0 );
-}
+    window.onload = function(){
+        window.scrollTo( 0,0 );
+    }
 </script>
+    
 </head>
+
 <body>
-
 <section id="top">
+    
+<!-- MAIN WINDOW -->
+<div id="main-block">
 
-<div id="grand_parent">
-
-	<!-- СПЕЦИАЛЬНЫЙ БЛОК START-->
-	<div id="open_button"><img src="css/arrow.png" alt=""></div>
-	<ul id="spec_block">
-		<li id="dPos"><div class="under_char"><center><span>Скидка <br>по позиции</span></center></div></li>
-		<li id="dAll"><div class="under_char"><center><span>Скидка <br>на чек</span></center></div></li>	
-		<li id="cng"><div class="under_char"><center><span>Количество <br> <span style="color:#C4C4C4">+</span></span></center></div></li>	
-		<li id="VC"><div class="under_char"><center><span>Артикул <br> <span style="color:#C4C4C4">Enter</span></span></center></div></li>	
+	<!-- special block -->
+	<div id="spec-block__open-btn"><img src="css/arrow_black.png" alt=""></div>
+	<ul id="spec-block">
+		<li id="dPos"><div class="center-text"><span>Скидка</span> <br> <span>по позиции</span></div></li>
+		<li id="dAll"><div class="center-text"><span>Скидка</span> <br> <span>на чек</span></div></li>	
+		<li id="cng"><div class="center-text"><span>Количество</span> <br> <span style="color:#C4C4C4">+</span></div></li>	
+		<li id="VC"><div class="center-text"><span>Артикул</span> <br> <span style="color:#C4C4C4">Enter</span></div></li>	
 	</ul>
-	<!-- СПЕЦИАЛЬНЫЙ БЛОК END-->
+	<!-- /special block/ -->
 
-	<!--БЛОК ВЫВОДА START-->
-	<div id="output_parent">
-	<div id="under_output" style="display: block;">
-		<div id="output" style="padding-top:26px;float:left; display: inline-block; border: 0px solid black; width: 252px; height: 495px; overflow: hidden;" ></div>
-		<div id="output2" style="padding-top:26px;float:left; display: inline-block; border: 0px solid black; width: 56px; height: 495px; overflow: hidden; font-weight:bold;" ></div>
-		<div id="output3" style="padding-top:26px;float:right; display: inline-block; border: 0px solid black; width: 84px; height: 495px; overflow: hidden;" ></div>
-		<div id="output4" style="padding-top:26px;float:right; display: inline-block; border: 0px solid black; width: 84px; height: 495px; overflow: hidden;" ></div>
-	</div>
+	<!-- output window -->
+	<div id="main-window">
+		<div id="main-window__vc"></div>
+		<div id="main-window__discount"></div>
+		<div id="main-window__cost"></div>
 		<center><div style="font-size:26px;border-top:1px solid #C4C4C4;display: inline-block; width:469px; height: 42px;"><span id="total" style="padding-top:7px;float: right;"></span></div></center>
-	<div class="output_body">
-		<div style="width: 100%;"><input type="text" class="cheque_form" id="cheque_form" autofocus></div>
+		<input type="text" id="input-form" autofocus>
 	</div>
-	</div>
-	<!--БЛОК ВЫВОДА END-->
+	<!-- /output window/ -->
 	
-
 </div>
+<!-- /MAIN WINDOW/ -->
 
-<!-- БОКОВОЕ МЕНЮ START-->
-<div id="menu_parent">
-	<div id="menu_disc">Печать меню</div>
-	<div id="container_menu">
+<!-- RIGHT MENU -->
+<div id="right-menu">
+	<div id="menu-discount" class="right-menu__btn">Печать меню</div>
+	<div id="menu-discount__table">
 		<div id="A4"><p>A4</p></div>
 		<div id="A3"><p>A3</p></div>
-		<table class="disc" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
+		<table class="table-style" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
 			<tr>
 				<td style="width:33%;border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Цветная печать</span></td>
 				<td style="width:33%;border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Чёрно-белая печать 1+0</span></td>
@@ -66,7 +68,7 @@ window.scrollTo( 0,0 );
 				<td style="border-bottom:1px solid #C4C4C4"><span>115 арт.</span></td>
 			</tr>
 			<tr>
-				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>161+52%+</span></td>
+				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>165+52%</span></td>
 				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>123 арт.+40%</span></td>
 				<td style="border-bottom:1px solid #C4C4C4"><span>127 арт.+40%</span></td>
 			</tr>
@@ -76,9 +78,9 @@ window.scrollTo( 0,0 );
 		</table>
 	</div>
 
-	<div id="bw">Скидки на большие форматы</div>
-	<div id="container_bw">
-		<table class="disc" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
+	<div id="bw" class="right-menu__btn">Скидки на большие форматы</div>
+	<div id="bw__table">
+		<table class="table-style" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
 			<tr>
 				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>914/841</span></td>
 				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>594</span></td>
@@ -105,9 +107,9 @@ window.scrollTo( 0,0 );
 		</table>
 	</div>
 	
-	<div id="grayscale_scan">Черное-белое сканирование А4 и А3</div>
-	<div id="container_scan_grayscale">
-		<table class="disc" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
+	<div id="grayscale-scan" class="right-menu__btn">Черное-белое сканирование А4 и А3</div>
+	<div id="grayscale-scan__table">
+		<table class="table-style" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
 			<tr>
 				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Количество</span></td>
 				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>А4</span></td>
@@ -146,9 +148,9 @@ window.scrollTo( 0,0 );
 		</table>
 	</div>
 
-	<div id="color_scan">Цветное сканирование А4 и А3</div>
-	<div id="container_scan_color">
-	<table class="disc" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
+	<div id="color-scan" class="right-menu__btn">Цветное сканирование А4 и А3</div>
+	<div id="color-scan__table">
+	<table class="table-style" style="font-size:19px;" cellspacing="0px" width="100%" height="100%">
 			<tr>
 				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Количество</span></td>
 				<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>А4</span></td>
@@ -187,33 +189,44 @@ window.scrollTo( 0,0 );
 		</table>
 	</div>
 </div>
-<!-- БОКОВОЕ МЕНЮ END-->
+<!-- /RIGHT MENU/ -->
 
-<div id="left_menu_parent">
+<!-- LEFT MENU -->   
+<div id="left-menu">
 	<div id="closure"><span>Не закрывать</span></div>
+	<div id="night_shift" class="mini-btn"><img src="css/day.svg"></div>
+	<div id="this-is-menu">Это меню</div>
 </div>
+<!-- /LEFT MENU/ -->
 
+<!-- MESSAGES -->    
+<div class="message" id="js-cut-warning"><span>Не забудь проверить вылеты!</span></div>
+<div class="message" id="js-deposit-warning"><span>Возможно, нужен залог.</span></div>
+<div class="message" id="js-fill-warning"><span>Возможно, нужно посчитать заливку.</span></div>
+<div class="message" id="js-not-found"><span>Артикул не найден.</span></div>
+<div class="message" id="js-night-shift"><span>Включена автоматическая наценка!</span></div>
+<div id="frog"><span>Делать нечего?!</span></div>
+<!-- /MESSAGES/ -->   
 
-
-<div id="seven_one_one" class="message"><span>Не забудь проверить вылеты!</span></div>
-<div id="big_money" class="message"><span>Возможно, нужен залог.</span></div>
-
+<a href="info.html" target="_blank"><img id="info" src="css/info.png" alt="Справка" title="Справка"></a>
+    
 </section>
 
 <div id="arrow"></div>
 
-<div id="frogg"><span>Работай давай!</span></div>	
-	
 <section id="bot">
 
+<!-- CONTENT -->     
 <div id="content">
 <span id="cont">cont</span>
 <span id="ent" >ent</span>
 </div>
-
-<div id="table_parent">
-	<div class="table_block">
-	<table class="disc" cellspacing="0px" width="100%" height="100%">
+<!-- /CONTENT/--> 
+    
+<!-- EXTENSION BLOCKS -->     
+<div id="extension-wrapper">
+	<div class="extension-block">
+	<table class="table-style" cellspacing="0px" width="100%" height="100%">
 		<tr>
 			<td colspan="4" style="border-bottom: 1px solid #C4C4C4">Металлические пружинки</td>
 		</tr>
@@ -268,8 +281,8 @@ window.scrollTo( 0,0 );
 	</table>
 </div>
 	
-	<div class="table_block">
-	<table class="disc" cellspacing="0px" width="100%" height="100%">
+	<div class="extension-block">
+	<table class="table-style" cellspacing="0px" width="100%" height="100%">
 		<tr>
 			<td colspan="4" style="border-bottom: 1px solid #C4C4C4">Пластиковые пружинки</td>
 		</tr>
@@ -348,8 +361,8 @@ window.scrollTo( 0,0 );
 	</table>
 </div>	
 	
-	<div class="table_block">
-	<table class="disc" cellspacing="0px" width="100%" height="100%">
+	<div class="extension-block">
+	<table class="table-style" cellspacing="0px" width="100%" height="100%">
 		<tr>
 			<td colspan="4" style="border-bottom: 1px solid #C4C4C4">Металлические каналы</td>
 		</tr>
@@ -416,12 +429,12 @@ window.scrollTo( 0,0 );
 	</table>
 </div>	
 
-	<div class="table_block">
-	<table class="disc" cellspacing="0px" width="100%" height="100%">
+	<div class="extension-block">
+	<table class="table-style" cellspacing="0px" width="100%" height="100%">
 		<tr>
-			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Плотность бумаги</span></td>
-			<td style="border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Кол-во листов</span></td>
-			<td style="border-bottom:1px solid #C4C4C4"><span>Страниц</span></td>
+			<td style="border-top:1px solid #C4C4C4;border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Плотность бумаги</span></td>
+			<td style="border-top:1px solid #C4C4C4;border-right:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Кол-во листов</span></td>
+			<td style="border-top:1px solid #C4C4C4;border-bottom:1px solid #C4C4C4"><span>Страниц</span></td>
 		</tr>
 		<tr>
 			<td colspan="3" style="border-bottom: 1px solid #C4C4C4">650</td>
@@ -467,9 +480,13 @@ window.scrollTo( 0,0 );
 	</table>
 </div>	
 </div>
-
+<!-- EXTENSION BLOCKS -->
+    
 </section>
 
-<script src="js/portable_cash(i).js"></script>	
-	
+<script src="js/cmCalc.js"></script>	
+<script src="js/dataBase.js"></script>	
+
 </body>
+    
+</html>
