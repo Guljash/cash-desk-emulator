@@ -1,21 +1,37 @@
 ﻿var VC = 0;
-var cost_for_storno = 0;
 var d = 1;
+var d2 = 1;
 var t = 1;
-var nbsp = "";
 var for_discount = 0;
 var discount_percent = 0;
 var cost = 0;
+var for_newDiv_id = 0;
+var for_newDiv2_id = 0;
+var for_newDiv3_id = 0;
+var for_newDiv4_id = 0;
+var vc_active = 0;
 var count = 0;
+var vc_collection = document.getElementsByClassName("vc_change_active");
 var output = document.getElementById('output');
 var output2 = document.getElementById('output2');
 var output3 = document.getElementById('output3');
 var output4 = document.getElementById('output4');
 var multiplicator = 1;
 var text_fit = 0;
-var vc_flag = false;
-var vc_flag_memory = 0;
-var dict = {};
+
+
+function give_me_ID(){
+	'use strict';
+	var temp = this.id.slice(6, this.id.length);
+
+	for(var i = 0; i<vc_collection.length; i++){
+		vc_collection[i].className = "vc_change";
+	}
+	document.getElementById("newDiv" + temp).className = "vc_change_active";
+	
+}
+
+dict = {};
 	dict['101'] = 10;
 	dict[102] = 7;
 	dict[103] = 5;
@@ -164,24 +180,26 @@ dict['065'] = 48;
 	dict[538] = 36;
 	dict[539] = 72;
 	dict[521] = 2.5;
-	dict[522] = 4.5;
+	dict[522] = 5;
 	dict[523] = 8;
 	dict[524] = 12;
 	dict[525] = 14;
 	dict[526] = 16;
-	dict[527] = 18;
+	dict[527] = 24;
 	dict[508] = 5.5;
 	dict[509] = 10;
 	dict[528] = 12;
 	dict[529] = 16;
-	dict[510] = 20;
-	dict[511] = 2.5;
+	dict[510] = 25;
+	dict[511] = 3;
+	dict[512] = 7;
 	dict[513] = 16;
 	dict[514] = 100;
 	dict[533] = 32;
 	dict[535] = 7;
 	dict[536] = 18;
 	dict[537] = 20;
+	dict[540] = 200;
 dict[150] = 1680;
 dict[151] = 840;
 dict[152] = 420;
@@ -192,10 +210,10 @@ dict[153] = 210;
 	dict['045'] = 40;
 	dict['046'] = 10;
 	dict['047'] = 20;
-dict[580] = 25;
-dict[581] = 20;
+dict[580] = 30;
+dict[581] = 25;
 dict[582] = 40;
-dict[583] = 25;
+dict[583] = 30;
 dict[584] = 40;
 dict[585] = 25;
 	dict[401] = 30;
@@ -233,7 +251,7 @@ dict[466] = 30;
 dict[467] = 30;
 dict[469] = 25;
 dict[470] = 25;
-dict[480] = 3;
+dict[480] = 5;
 	dict['070'] = 0.85;
 	dict['071'] = 0.75;
 	dict['074'] = 1.50;
@@ -241,14 +259,18 @@ dict[480] = 3;
 	dict['081'] = 15;
 dict[170] = 0.85;
 dict[171] = 0.75;
-dict[174] = 1.50;
+dict[174] = 3;
 	dict[190] = 11;
 	dict[191] = 13;
 	dict[192] = 5.5;
 	dict[193] = 15;
-	dict[194] = 25;
+	dict[194] = 35;
 	dict[195] = 3;
 	dict[196] = 13;
+	dict[140] = 16.50;
+	dict[141] = 19.50;
+	dict[142] = 8.25;
+	dict[143] = 22.50;
 dict[181] = 100;
 dict[182] = 50;
 dict[183] = 35;
@@ -269,37 +291,37 @@ dict[497] = 200;
 dict[498] = 210;
 dict[499] = 220;
 dict[500] = 180;
-	dict[600] = 30;
-	dict[601] = 50;
-	dict[602] = 60;
-	dict[603] = 50;
-	dict[604] = 80;
-	dict[605] = 100;
+	dict[600] = 100;
+	dict[601] = 150;
+	dict[602] = 200;
 dict[700] = 10;
-dict[701] = 8;
+dict[701] = 10;
 dict[702] = 3;
 dict[703] = 6;
 dict[704] = 100;
-dict[705] = 8;
+dict[705] = 10;
 dict[706] = 50;
 dict[707] = 10;
 dict[717] = 2500;
 dict[720] = 100;
 dict[721] = 170;
 dict[740] = 0.5;
-dict[762] = 2.5;
-dict[770] = 1;
-dict[771] = 0.5;
-dict[772] = 0.5;
-dict[773] = 0.5;
+dict[762] = 3.50;
+dict[763] = 1;
+dict[764] = 2;
+dict[765] = 150;
+dict[770] = 5;
+dict[771] = 1;
+dict[772] = 1.5;
+dict[773] = 1;
 dict[774] = 5;
 dict[775] = 50;
 dict[776] = 15;
 dict[777] = 20;
 dict[779] = 500;
 dict[781] = 100;
-dict[782] = 20;
-dict[783] = 120;
+dict[782] = 30;
+dict[783] = 150;
 dict[784] = 40;
 dict[785] = 200;
 
@@ -424,130 +446,57 @@ dict_for_error[721] = 20;
 var currentDiv = 0; 
 var output_str = 0;
 
-//ЦИФРОВОЙ БЛОК START
-
-document.getElementById('0').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 0;
-};
 
 
-document.getElementById('1').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 1;
-};
-
-document.getElementById('2').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 2;
-};
-
-document.getElementById('3').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 3;
-};
-
-document.getElementById('4').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 4;
-};
-
-document.getElementById('5').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 5;
-};
-
-document.getElementById('6').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 6;
-};
-
-document.getElementById('7').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 7;
-};
-
-document.getElementById('8').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 8;
-};
-
-document.getElementById('9').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 9;
-};
-
-//ЦИФРОВОЙ БЛОК END
 
 //СПЕЦИАЛЬНЫЙ БЛОК START
 
-document.getElementById('rst').onclick = function(){
-	'use strict';
-	alert(count);
-};
-
-
-document.getElementById('ctrn').onclick = function(){
-	'use strict';
-	text_fit -= 1;
-	if (text_fit <= 10){
-			document.getElementById('output_parent').style = "font-size: 3.3vh;"
-	};
-	if (text_fit > 10){
-			document.getElementById('output_parent').style = "font-size: 2.5vh;"
-	};
-	if (text_fit > 15){
-			document.getElementById('output_parent').style = "font-size: 2vh;"
-	};
-	var currentDiv1 = document.getElementById('output').lastChild;
-	var output_str_for_s = currentDiv1.innerHTML;
-	var multiplicator_for_s = currentDiv1.innerHTML.substring(10,12);
-	output.removeChild(currentDiv1);
-	var currentDiv2 = document.getElementById('output2').lastChild;
-	document.getElementById('output2').removeChild(currentDiv2);
-	var currentDiv3 = document.getElementById('output3').lastChild;
-	if (currentDiv3.innerHTML.substring(1,3) === "nb" ){
-		document.getElementById('output3').removeChild(currentDiv3);
-		cost = dict[output_str_for_s.substring(6,9)];
-		count = count - (Math.ceil((cost*multiplicator_for_s)*2))/2;
-		document.getElementById('total').innerHTML = count + "р.";
-		return false;
-	}
-	else {
-		cost = dict[output_str_for_s.substring(6,9)];
-		count = count - (Math.ceil(((cost*multiplicator_for_s)*(1-(currentDiv3.innerHTML.substring(1,3))/100))*2)/2);
-		document.getElementById('total').innerHTML = count + "р.";
-		document.getElementById('output3').removeChild(currentDiv3);
-		return false;
-	}
-};
 
 document.getElementById('VC').onclick = function(){
-	'use strict';
+'use strict';
 	multiplicator = 1;
 	VC = document.getElementById('cheque_form').value;
 	cost = dict[document.getElementById('cheque_form').value];
 	if ((cost/1) === cost){
 		text_fit++;
 		if (text_fit <= 10){
-			document.getElementById('under_output').style = "font-size: 3.3vh;"
-		};
+			document.getElementById('under_output').style = "font-size: 2.7vh;";
+		}
 		if (text_fit > 10){
-			document.getElementById('under_output').style = "font-size: 2.5vh;"
-		};
+			document.getElementById('under_output').style = "font-size: 2.3vh;";
+		}
 		if (text_fit > 15){
-			document.getElementById('under_output').style = "font-size: 2vh;"
-		};
+			document.getElementById('under_output').style = "font-size: 2vh;";
+		}
+			
 		document.getElementById('cheque_form').value = "";
 		var newDiv = document.createElement('div');
+		newDiv.id = "newDiv" + for_newDiv_id;
+		for_newDiv_id++;
+		newDiv.addEventListener("click", give_me_ID);
 		var newDiv2 = document.createElement('div');
+		newDiv2.id = "newDiv2" + for_newDiv2_id;
+		for_newDiv2_id++;
 		var newDiv3 = document.createElement('div');
-		newDiv2.innerHTML = cost + "р.";
+		newDiv3.id = "newDiv3" + for_newDiv3_id;
+		for_newDiv3_id++;
+		var newDiv4 = document.createElement('div');
+		newDiv4.id = "newDiv4" + for_newDiv4_id;
+		for_newDiv4_id++;
+		newDiv.innerHTML = "&nbsp;" + VC + ":1";
+		output.appendChild(newDiv);
+		newDiv2.innerHTML = "&nbsp;";
 		output2.appendChild(newDiv2);
 		newDiv3.innerHTML = "&nbsp;";
 		output3.appendChild(newDiv3);
-		newDiv.innerHTML = "&nbsp;" + VC + ":1";
-		output.appendChild(newDiv);
+		newDiv4.innerHTML = cost + "р.";
+		output4.appendChild(newDiv4);
+			
+		for(var i = 0; i<(vc_collection.length); i++){
+			vc_collection[i].className = "vc_change";
+		}
+		newDiv.className = "vc_change_active";
+			
 		count += Math.ceil((cost*multiplicator)*2)/2;
 		document.getElementById('total').innerHTML = count + "р.";
 		return false;
@@ -558,50 +507,53 @@ document.getElementById('VC').onclick = function(){
 };
 
 document.getElementById('cng').onclick = function(){
-	'use strict';
-	t = multiplicator;
-	currentDiv = document.getElementById('output').lastChild; 
-	output_str = currentDiv.innerHTML;
-	multiplicator = document.getElementById('cheque_form').value;
-	document.getElementById('cheque_form').value = "";
-	currentDiv.innerHTML = "&nbsp;" + output_str.substring(6,10) + multiplicator; //заменяем значение
-	count += (cost*multiplicator) - (cost*t);
-	count = Math.ceil(count*2)/2;
-	document.getElementById('total').innerHTML = count + "р.";
-	
+	for (var i1 = 0; i1 < vc_collection.length; i1++){
+			vc_active = vc_collection[i1].id;
+		}
+		multiplicator = document.getElementById('cheque_form').value;
+		currentDiv = document.getElementById(vc_active); 
+		t = currentDiv.innerHTML.slice(10,currentDiv.length);
+		output_str = currentDiv.innerHTML;
+		document.getElementById('cheque_form').value = "";
+		cost = dict[output_str.substring(6,9)];
+		currentDiv.innerHTML = "&nbsp;" + output_str.substring(6,10) + multiplicator;
+		count += (cost*multiplicator) - Math.ceil((cost*t)*2)/2;
+		count = Math.ceil(count*2)/2;
+		document.getElementById('total').innerHTML = count + "р.";
+		for_discount = multiplicator*cost;
+		if (multiplicator > +dict_for_error[output_str.substring(6,9)]){
+			document.getElementById('output2').lastChild.innerHTML = "!";
+		}
+		else{
+			document.getElementById('output2').lastChild.innerHTML = "&nbsp;";
+		}
+	return false;
 };
 
 document.getElementById('dPos').onclick = function(){
 	'use strict';
 	discount_percent = prompt("Введите процент", 50);
-	var currentDiv = document.getElementById('output3').lastChild; 
-	var currentDiv2 = document.getElementById('output2').lastChild; 
-	var currentDiv3 = document.getElementById('output3').lastChild.innerHTML.slice(1,-7);
-	if (currentDiv3/1 === 0){
-		for_discount = document.getElementById('output2').lastChild.innerHTML.slice(0,-2);
-		currentDiv2.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + "р.";
-		currentDiv.innerHTML = "|" + discount_percent + "%";
-		count = (count - for_discount*multiplicator) + (for_discount*multiplicator*(1-(discount_percent/100))) ;  //OOOH MY GOOOOOOOOD!!! (c)Asking Alexandria
-		count = Math.ceil(count*2)/2;
-		document.getElementById('total').innerHTML = count + "р.";
+	for (var i1 = 0; i1 < vc_collection.length; i1++){
+			vc_active = vc_collection[i1].id;
 	}
-	else{
-		for_discount = document.getElementById('output2').lastChild.innerHTML.slice(0,-2);
-		var temp = document.getElementById('output').lastChild.innerHTML;
-		cost = dict[temp.substring(6,9)];
-		currentDiv2.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + "р.";
-		currentDiv.innerHTML = "|" + (1 - (for_discount*(1-(discount_percent/100))/cost))*100 + "%";
-		count = (count - for_discount*multiplicator) + (for_discount*multiplicator*(1-(discount_percent/100))) ;  //OOOH MY GOOOOOOOOD!!! (c)Asking Alexandria
-		count = Math.ceil(count*2)/2;
-		document.getElementById('total').innerHTML = count + "р.";
-	};
-	
+	var currentDiv3 = document.getElementById('newDiv3' + vc_active.slice(6, vc_active.length));
+	var currentDiv3_percent = currentDiv3.innerHTML.substring(1,currentDiv3.innerHTML.length-1);
+	var currentDiv4 = document.getElementById('newDiv4' + vc_active.slice(6, vc_active.length));
+	for_discount = currentDiv4.innerHTML.slice(0,-2);
+	var temp = document.getElementById('newDiv' + vc_active.slice(6, vc_active.length));
+	cost = dict[temp.innerHTML.substring(6,9)];
+	multiplicator = temp.innerHTML.substring(10,temp.length)
+	currentDiv4.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + "р.";
+	currentDiv3.innerHTML = "|" + Math.round((1 - (for_discount*(1-(discount_percent/100))/cost))*100) + "%";
+	count = (count - for_discount*multiplicator) + (for_discount*multiplicator*(1-(discount_percent/100))) ;  //OOOH MY GOOOOOOOOD!!! (c)Asking Alexandria
+	count = Math.ceil(count*2)/2;
+	document.getElementById('total').innerHTML = count + "р.";
 };
 
 document.getElementById('dAll').onclick = function(){
 	'use strict';
 	discount_percent = prompt("Введите процент", 20);
-	var childs = document.getElementById('output2').getElementsByTagName('div');
+	var childs = document.getElementById('output4').getElementsByTagName('div');
 	var childs2 = document.getElementById('output3').getElementsByTagName('div');
 	
 	for(var k=0; k<childs2.length; k++){
@@ -642,39 +594,43 @@ document.onkeydown = function(e){ //ENTER
 		if ((cost/1) === cost){
 			text_fit++;
 			if (text_fit <= 10){
-				document.getElementById('under_output').style = "font-size: 2.7vh;"
-			};
+				document.getElementById('under_output').style = "font-size: 2.7vh;";
+			}
 			if (text_fit > 10){
-				document.getElementById('under_output').style = "font-size: 2.3vh;"
-			};
+				document.getElementById('under_output').style = "font-size: 2.3vh;";
+			}
 			if (text_fit > 15){
-				document.getElementById('under_output').style = "font-size: 2vh;"
-			};
+				document.getElementById('under_output').style = "font-size: 2vh;";
+			}
+			
 			document.getElementById('cheque_form').value = "";
 			var newDiv = document.createElement('div');
-			newDiv.className = "vc_change";
+			newDiv.id = "newDiv" + for_newDiv_id;
+			for_newDiv_id++;
+			newDiv.addEventListener("click", give_me_ID);
 			var newDiv2 = document.createElement('div');
+			newDiv2.id = "newDiv2" + for_newDiv2_id;
+			for_newDiv2_id++;
 			var newDiv3 = document.createElement('div');
+			newDiv3.id = "newDiv3" + for_newDiv3_id;
+			for_newDiv3_id++;
 			var newDiv4 = document.createElement('div');
-			var newRadio = document.createElement('input');
-			newRadio.type = "radio";
-			newRadio.checked = "checked";
+			newDiv4.id = "newDiv4" + for_newDiv4_id;
+			for_newDiv4_id++;
 			newDiv.innerHTML = "&nbsp;" + VC + ":1";
 			output.appendChild(newDiv);
-			newDiv2.innerHTML = cost + "р.";
+			newDiv2.innerHTML = "&nbsp;";
 			output2.appendChild(newDiv2);
 			newDiv3.innerHTML = "&nbsp;";
 			output3.appendChild(newDiv3);
-			newDiv4.innerHTML = "&nbsp;";
-			output4.appendChild(newRadio);
-			var vc_change_collect = document.getElementsByClassName("vc_change");
-			for(var v = 0; v < vc_change_collect.length; v++ ){
-				vc_change_collect[v].onclick = function(){
-					this.style="background:rgba(0,0,0,0.3)";
-					alert(v);
-				}	
+			newDiv4.innerHTML = cost + "р.";
+			output4.appendChild(newDiv4);
+			
+			for(var i = 0; i<(vc_collection.length); i++){
+				vc_collection[i].className = "vc_change";
 			}
-					
+			newDiv.className = "vc_change_active";
+			
 			count += Math.ceil((cost*multiplicator)*2)/2;
 			document.getElementById('total').innerHTML = count + "р.";
 			return false;
@@ -684,9 +640,12 @@ document.onkeydown = function(e){ //ENTER
 		}
 	}
 	if (e.keyCode === 107){ //+
-		t = multiplicator;
+		for (var i1 = 0; i1 < vc_collection.length; i1++){
+			vc_active = vc_collection[i1].id;
+		}
 		multiplicator = document.getElementById('cheque_form').value;
-		currentDiv = document.getElementById('output').lastChild; 
+		currentDiv = document.getElementById(vc_active); 
+		t = currentDiv.innerHTML.slice(10,currentDiv.length);
 		output_str = currentDiv.innerHTML;
 		document.getElementById('cheque_form').value = "";
 		cost = dict[output_str.substring(6,9)];
@@ -696,49 +655,73 @@ document.onkeydown = function(e){ //ENTER
 		document.getElementById('total').innerHTML = count + "р.";
 		for_discount = multiplicator*cost;
 		if (multiplicator > +dict_for_error[output_str.substring(6,9)]){
-			document.getElementById('output4').lastChild.innerHTML = "!";
+			document.getElementById('output2').lastChild.innerHTML = "!";
 		}
 		else{
-			document.getElementById('output4').lastChild.innerHTML = "&nbsp;";
+			document.getElementById('output2').lastChild.innerHTML = "&nbsp;";
 		}
 		return false;
 	}
 	
-	if (e.keyCode === 110){
+	if (e.keyCode === 110){ //.del
 		text_fit -= 1;
 		if (text_fit <= 10){
-				document.getElementById('output_parent').style = "font-size: 3vh;"
-		};
+				document.getElementById('output_parent').style = "font-size: 3vh;";
+		}
 		if (text_fit > 10){
-				document.getElementById('output_parent').style = "font-size: 2.5vh;"
-		};
+				document.getElementById('output_parent').style = "font-size: 2.5vh;";
+		}
 		if (text_fit > 15){
-				document.getElementById('output_parent').style = "font-size: 2vh;"
-		};
-		var currentDiv1 = document.getElementById('output').lastChild;
-		var output_str_for_s = currentDiv1.innerHTML;
-		var multiplicator_for_s = currentDiv1.innerHTML.slice(10,length.output_str_for_s);
-		output.removeChild(currentDiv1);
-		var currentDiv2 = document.getElementById('output2').lastChild;
-		document.getElementById('output2').removeChild(currentDiv2);
-		var currentDiv3 = document.getElementById('output3').lastChild;
-		var currentDiv4 = document.getElementById('output4').lastChild;
-		document.getElementById('output4').removeChild(currentDiv4);
-		if (currentDiv3.innerHTML.substring(1,3) === "nb" ){
-			document.getElementById('output3').removeChild(currentDiv3);
-			cost = dict[output_str_for_s.substring(6,9)];
-			count = count - (Math.ceil((cost*multiplicator_for_s)*2))/2;
+				document.getElementById('output_parent').style = "font-size: 2vh;";
+		}
+		for (var i1 = 0; i1 < vc_collection.length; i1++){
+			vc_active = vc_collection[i1].id;
+		}
+		var removeDiv1 = document.getElementById(vc_active);
+		var removeDiv2 = document.getElementById('newDiv2' + vc_active.slice(6, vc_active.length));
+		var removeDiv3 = document.getElementById('newDiv3' + vc_active.slice(6, vc_active.length));
+		var removeDiv4 = document.getElementById('newDiv4' + vc_active.slice(6, vc_active.length));
+		output.removeChild(removeDiv1);
+		output2.removeChild(removeDiv2);
+		output3.removeChild(removeDiv3);
+		output4.removeChild(removeDiv4);
+		
+		var cost_for_del = dict[removeDiv1.innerHTML.slice(6,9)];
+		var multiplicator_for_del = removeDiv1.innerHTML.slice(10,removeDiv1.innerHTML.length);
+		
+		if (removeDiv3.innerHTML.substring(1,3) === "nb" ){
+			count = count - (Math.ceil((cost_for_del*multiplicator_for_del)*2))/2;
 			document.getElementById('total').innerHTML = count + "р.";
 			return false;
 		}
 		else {
-			cost = dict[output_str_for_s.substring(6,9)];
-			count = count - (Math.ceil(((cost*multiplicator_for_s)*(1-(currentDiv3.innerHTML.substring(1,3))/100))*2)/2);
+			count = count - (Math.ceil(((cost_for_del*multiplicator_for_del)*(1-(removeDiv3 .innerHTML.substring(1,3))/100))*2)/2);
 			document.getElementById('total').innerHTML = count + "р.";
-			document.getElementById('output3').removeChild(currentDiv3);
 			return false;
 		}
-	}	
+	}
+	
+	if (e.keyCode === 38){ // ArrowUp
+		for (var i1 = 0; i1 < vc_collection.length; i1++){
+			vc_active = vc_collection[i1].id;
+		}
+		var temp = document.getElementById('newDiv' + (vc_active.slice(6, vc_active.length) - 1)).className = 'vc_change_active';
+		currentDiv = document.getElementById(vc_active).className = 'vc_change';
+	}
+	if (e.keyCode === 40){ // ArrowDown
+	for (var i1 = 0; i1 < vc_collection.length; i1++){
+			vc_active = vc_collection[i1].id;
+		}
+	var output_elems_collection = document.getElementById('output').childNodes.length;
+	if ((+((vc_active.slice(6, vc_active.length)))+1) === output_elems_collection){
+		document.getElementById('newDiv0').className = 'vc_change_active';
+		currentDiv = document.getElementById(vc_active).className = 'vc_change';
+	}
+	else{
+		var temp = document.getElementById('newDiv' + (+(vc_active.slice(6, vc_active.length)) + 1)).className = 'vc_change_active';
+		currentDiv = document.getElementById(vc_active).className = 'vc_change';
+	}
+	}
 };
 
 //ГОРЯЧИЕ КЛАВИШИ END
@@ -748,47 +731,43 @@ document.onkeydown = function(e){ //ENTER
 document.getElementById('back_menu_pro').onclick = function(){
 	'use strict';
 	if (d === 1){
-		document.getElementById('char_parent').style = 'margin-left:20%;';
-		document.getElementById('sub_char_parent').style = 'margin-left:45%;';
+		document.getElementById('sub_char_parent').style = 'margin-left:50vw;';
 		document.getElementById('output_parent').style = 'margin-left:60%;';
 		document.getElementById('arrow').src = "css/back.png";
+		document.getElementById('back_menu_parent').style = 'margin-left:0vw;';
 		d = 0;
 	}
 	else {
-		document.getElementById('char_parent').style = 'margin-left:-30%;';
-		document.getElementById('sub_char_parent').style = 'margin-left:25%;';
+		document.getElementById('sub_char_parent').style = 'margin-left:30vw;';
 		document.getElementById('output_parent').style = 'margin-left:40%;';
 		document.getElementById('arrow').src = "css/back2.png";
+		document.getElementById('back_menu_parent').style = 'margin-left:-50vw;';
 		d = 1;
 	}
 };
 
 //БОКОВОЕ МЕНЮ END
 
-document.getElementById('info').onclick = function(){
-	'use strict'
-	if (d === 1){
-		document.getElementById('info_parent').style = 'width:70vw; height:80vh;bottom:10vh;right:20vw;opacity:1;';
-		document.getElementById('output_parent').style = 'opacity:0.2;';
-		document.getElementById('sub_char_parent').style = 'opacity:0.2;';
-		document.getElementById('1_art').style = 'display:block; margin-left:2vw;margin-top:2vh;font-size:2vh;';
-		document.getElementById('2_art').style = 'display:block; margin-left:2vw;margin-top:2vh;font-size:2vh;';
-		document.getElementById('3_art').style = 'display:block; margin-left:2vw;margin-top:15vh;font-size:2vh;';
-		document.getElementById('4_art').style = 'display:block; margin-left:50vw;margin-top:5vh;font-size:2vh;';
-		d = 0;
+document.getElementById('menu_button').onclick = function(){
+	'use strict';
+	if (d2 === 1){
+		document.getElementById('output_parent').style = "margin-top:110vh;"
+		document.getElementById('sub_char_parent').style = "margin-top:110vh;"
+		d2 = 0;
 	}
 	else {
-		document.getElementById('info_parent').style = 'width:10vw; height:3vh;opacity:0;';
-		document.getElementById('output_parent').style = 'opacity:1';
-		document.getElementById('sub_char_parent').style = 'opacity:1;';
-		document.getElementById('sub_char_parent').style = 'opacity:1;';
-		setTimeout(function toggle(){
-			document.getElementById('1_art').style = 'display:none; margin-left:2vw;margin-top:2vh;font-size:2vh;';
-			document.getElementById('2_art').style = 'display:none; margin-left:2vw;margin-top:2vh;font-size:2vh;';
-			document.getElementById('3_art').style = 'display:none; margin-left:2vw;margin-top:15vh;font-size:2vh;';
-			document.getElementById('4_art').style = 'display:none; margin-left:50vw;margin-top:5vh;font-size:2vh;'
-		}, 500)
-		d = 1;
+		document.getElementById('output_parent').style = "margin-top:20vh;"
+		document.getElementById('sub_char_parent').style = "margin-top:20vh;"
+		d2 = 1;
 	}
-}
+};
 
+document.getElementById('login').onclick = function(){
+	var pass = prompt('Тебя туда звали? Нужен пароль!');
+	if (pass === "7437"){
+		window.open("pro.html");
+	}
+	else{
+		alert ('Так вот и не надо туда лезть!');
+	}
+};

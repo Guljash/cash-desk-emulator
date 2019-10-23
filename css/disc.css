@@ -1,43 +1,30 @@
 body{
-	background: url(fon10.jpg) repeat-x 0 100% fixed;
+	background: url(fon-b.jpg) repeat-x 0 100% fixed;
 	height: 100%;
 	background-size:cover;
-	overflow:auto;
 	transition: 1s;
-	animation: fon10 30s linear infinite;
+	overflow:auto;
+	animation: fon10 140s linear infinite;
 	font-family: 'Roboto', sans-serif;
 }
-
-	@keyframes fon10 {
-    from { background-position: -1000px 100%, 0 0;}
-    to { background-position: 0 100%, 0 0; }
-   }
-	
-	@-webkit-keyframes fon10 {
-    from { background-position: -1000px 100%, 0 0;}
-    to { background-position: 0 100%, 0 0; }
-   }
- 
 ::-webkit-scrollbar{
     width:0.4vw;
 }
 
 ::-webkit-scrollbar-thumb{
-    border-width:1px 1px 1px 2px;
-    border-color: #777;
-    background-color: rgba(186,186,186,0.9);
+
+    background-color: rgba(186,186,186,0.7);
 }
 
 ::-webkit-scrollbar-thumb:hover{
-    border-width: 1px 1px 1px 2px;
-    border-color: #555;
     background-color: rgba(186,186,186,1);
 }
 
 ::-webkit-scrollbar-track{
-    border-width:1;
     background-color: rgba(186,186,186,0.1);
 }
+
+
 a{ 
     text-decoration: none;
 } 
@@ -59,8 +46,7 @@ TD, TH {
 	font-size:2.2vh;
 	float:left;
 	transition:1s;
-	background-color:#fff;
-	opacity:0.5;
+	background-color:rgba(255,255,255,0.8);
     border-radius: 1%; 
 	box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
 }
@@ -78,8 +64,7 @@ TD, TH {
 	font-size:2.2vh;
 	float:right;
 	transition:1s;
-	background-color:#fff;
-	opacity:0.5;
+	background-color:rgba(255,255,255,0.8);
     border-radius: 1%; 
 	box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
 }
@@ -97,8 +82,7 @@ TD, TH {
 	font-size:2.2vh;
 	float:left;
 	transition:1s;
-	background-color:#fff;
-	opacity:0.5;
+	background-color:rgba(255,255,255,0.8);
     border-radius: 1%;
 	box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
 }
@@ -116,8 +100,7 @@ TD, TH {
 	font-size:2.2vh;
 	float:right;
 	transition:1s;
-	background-color:#fff;
-	opacity:0.5;
+	background-color:rgba(255,255,255,0.8);
     border-radius: 1%;
 	box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
 }
@@ -143,8 +126,7 @@ TD, TH {
 	transition:1s;
 	float:left;
 	margin-left:7vw;
-	background-color:#fff;
-	opacity:0.5;
+	background-color:rgba(255,255,255,0.8);
     border-radius: 0% 0% 1.5% 1.5%; 
 }
 
@@ -155,8 +137,7 @@ TD, TH {
 	transition:1s;
 	float:right;
 	margin-right:7vw;
-	background-color:#fff;
-	opacity:0.5;
+	background-color:rgba(255,255,255,0.8);
     border-radius: 0% 0% 1.5% 1.5%; 
 }
 
@@ -167,8 +148,7 @@ TD, TH {
 	transition:1s;
 	float:left;
 	margin-left:7vw;
-	background-color:#fff;
-	opacity:0.5;
+	background-color:rgba(255,255,255,0.8);
     border-radius: 0% 0% 1.5% 1.5%; 
 }
 
@@ -179,8 +159,7 @@ TD, TH {
 	transition:1s;
 	float:right;
 	margin-right:7vw;
-	background-color:#fff;
-	opacity:0.5;
+	background-color:rgba(255,255,255,0.8);
     border-radius: 0% 0% 1.5% 1.5%; 
 }
 
