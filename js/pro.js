@@ -1,18 +1,36 @@
 ﻿var VC = 0;
-var cost_for_storno = 0;
 var d = 1;
+var d2 = 1;
 var t = 1;
-var nbsp = "";
 var for_discount = 0;
 var discount_percent = 0;
 var cost = 0;
+var for_newDiv_id = 0;
+var for_newDiv2_id = 0;
+var for_newDiv3_id = 0;
+var for_newDiv4_id = 0;
+var vc_active = 0;
 var count = 0;
+var vc_collection = document.getElementsByClassName("vc_change_active");
 var output = document.getElementById('output');
 var output2 = document.getElementById('output2');
 var output3 = document.getElementById('output3');
 var output4 = document.getElementById('output4');
 var multiplicator = 1;
 var text_fit = 0;
+
+
+function give_me_ID(){
+	'use strict';
+	var temp = this.id.slice(6, this.id.length);
+
+	for(var i = 0; i<vc_collection.length; i++){
+		vc_collection[i].className = "vc_change";
+	}
+	document.getElementById("newDiv" + temp).className = "vc_change_active";
+	
+}
+
 var dict = {};
 	dict['101'] = 10;
 	dict[102] = 7;
@@ -422,103 +440,11 @@ dict_for_error[721] = 20;
 var currentDiv = 0; 
 var output_str = 0;
 
-//ЦИФРОВОЙ БЛОК START
-
-document.getElementById('0').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 0;
-};
 
 
-document.getElementById('1').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 1;
-};
-
-document.getElementById('2').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 2;
-};
-
-document.getElementById('3').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 3;
-};
-
-document.getElementById('4').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 4;
-};
-
-document.getElementById('5').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 5;
-};
-
-document.getElementById('6').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 6;
-};
-
-document.getElementById('7').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 7;
-};
-
-document.getElementById('8').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 8;
-};
-
-document.getElementById('9').onclick = function(){
-	'use strict';
-	document.getElementById('cheque_form').value += 9;
-};
-
-//ЦИФРОВОЙ БЛОК END
 
 //СПЕЦИАЛЬНЫЙ БЛОК START
 
-document.getElementById('rst').onclick = function(){
-	'use strict';
-	alert(count);
-};
-
-
-document.getElementById('ctrn').onclick = function(){
-	'use strict';
-	text_fit -= 1;
-	if (text_fit <= 10){
-			document.getElementById('output_parent').style = "font-size: 3.3vh;"
-	};
-	if (text_fit > 10){
-			document.getElementById('output_parent').style = "font-size: 2.5vh;"
-	};
-	if (text_fit > 15){
-			document.getElementById('output_parent').style = "font-size: 2vh;"
-	};
-	var currentDiv1 = document.getElementById('output').lastChild;
-	var output_str_for_s = currentDiv1.innerHTML;
-	var multiplicator_for_s = currentDiv1.innerHTML.substring(10,12);
-	output.removeChild(currentDiv1);
-	var currentDiv2 = document.getElementById('output2').lastChild;
-	document.getElementById('output2').removeChild(currentDiv2);
-	var currentDiv3 = document.getElementById('output3').lastChild;
-	if (currentDiv3.innerHTML.substring(1,3) === "nb" ){
-		document.getElementById('output3').removeChild(currentDiv3);
-		cost = dict[output_str_for_s.substring(6,9)];
-		count = count - (Math.ceil((cost*multiplicator_for_s)*2))/2;
-		document.getElementById('total').innerHTML = count + "р.";
-		return false;
-	}
-	else {
-		cost = dict[output_str_for_s.substring(6,9)];
-		count = count - (Math.ceil(((cost*multiplicator_for_s)*(1-(currentDiv3.innerHTML.substring(1,3))/100))*2)/2);
-		document.getElementById('total').innerHTML = count + "р.";
-		document.getElementById('output3').removeChild(currentDiv3);
-		return false;
-	}
-};
 
 document.getElementById('VC').onclick = function(){
 	'use strict';
@@ -528,14 +454,14 @@ document.getElementById('VC').onclick = function(){
 	if ((cost/1) === cost){
 		text_fit++;
 		if (text_fit <= 10){
-			document.getElementById('under_output').style = "font-size: 3.3vh;"
-		};
+			document.getElementById('under_output').style = "font-size: 3.3vh;";
+		}
 		if (text_fit > 10){
-			document.getElementById('under_output').style = "font-size: 2.5vh;"
-		};
+			document.getElementById('under_output').style = "font-size: 2.5vh;";
+		}
 		if (text_fit > 15){
-			document.getElementById('under_output').style = "font-size: 2vh;"
-		};
+			document.getElementById('under_output').style = "font-size: 2vh;";
+		}
 		document.getElementById('cheque_form').value = "";
 		var newDiv = document.createElement('div');
 		var newDiv2 = document.createElement('div');
@@ -572,34 +498,36 @@ document.getElementById('cng').onclick = function(){
 document.getElementById('dPos').onclick = function(){
 	'use strict';
 	discount_percent = prompt("Введите процент", 50);
-	var currentDiv = document.getElementById('output3').lastChild; 
-	var currentDiv2 = document.getElementById('output2').lastChild; 
-	var currentDiv3 = document.getElementById('output3').lastChild.innerHTML.slice(1,-7);
+	for (var i1 = 0; i1 < vc_collection.length; i1++){
+			vc_active = vc_collection[i1].id;
+	}
+	var currentDiv3 = document.getElementById('newDiv3' + vc_active.slice(6, vc_active.length));
+	var currentDiv4 = document.getElementById('newDiv4' + vc_active.slice(6, vc_active.length));
 	if (currentDiv3/1 === 0){
-		for_discount = document.getElementById('output2').lastChild.innerHTML.slice(0,-2);
-		currentDiv2.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + "р.";
-		currentDiv.innerHTML = "|" + discount_percent + "%";
+		for_discount = currentDiv4.innerHTML.slice(0,-2);
+		currentDiv4.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + "р.";
+		currentDiv3.innerHTML = "|" + discount_percent + "%";
 		count = (count - for_discount*multiplicator) + (for_discount*multiplicator*(1-(discount_percent/100))) ;  //OOOH MY GOOOOOOOOD!!! (c)Asking Alexandria
 		count = Math.ceil(count*2)/2;
 		document.getElementById('total').innerHTML = count + "р.";
 	}
 	else{
-		for_discount = document.getElementById('output2').lastChild.innerHTML.slice(0,-2);
+		for_discount = currentDiv4.innerHTML.slice(0,-2);
 		var temp = document.getElementById('output').lastChild.innerHTML;
 		cost = dict[temp.substring(6,9)];
-		currentDiv2.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + "р.";
-		currentDiv.innerHTML = "|" + (1 - (for_discount*(1-(discount_percent/100))/cost))*100 + "%";
+		currentDiv4.innerHTML = Math.round(for_discount*(1-(discount_percent/100))*100)/100 + "р.";
+		currentDiv3.innerHTML = "|" + (1 - (for_discount*(1-(discount_percent/100))/cost))*100 + "%";
 		count = (count - for_discount*multiplicator) + (for_discount*multiplicator*(1-(discount_percent/100))) ;  //OOOH MY GOOOOOOOOD!!! (c)Asking Alexandria
 		count = Math.ceil(count*2)/2;
 		document.getElementById('total').innerHTML = count + "р.";
-	};
+	}
 	
 };
 
 document.getElementById('dAll').onclick = function(){
 	'use strict';
 	discount_percent = prompt("Введите процент", 20);
-	var childs = document.getElementById('output2').getElementsByTagName('div');
+	var childs = document.getElementById('output4').getElementsByTagName('div');
 	var childs2 = document.getElementById('output3').getElementsByTagName('div');
 	
 	for(var k=0; k<childs2.length; k++){
@@ -640,27 +568,43 @@ document.onkeydown = function(e){ //ENTER
 		if ((cost/1) === cost){
 			text_fit++;
 			if (text_fit <= 10){
-				document.getElementById('under_output').style = "font-size: 2.7vh;"
-			};
+				document.getElementById('under_output').style = "font-size: 2.7vh;";
+			}
 			if (text_fit > 10){
-				document.getElementById('under_output').style = "font-size: 2.3vh;"
-			};
+				document.getElementById('under_output').style = "font-size: 2.3vh;";
+			}
 			if (text_fit > 15){
-				document.getElementById('under_output').style = "font-size: 2vh;"
-			};
+				document.getElementById('under_output').style = "font-size: 2vh;";
+			}
+			
 			document.getElementById('cheque_form').value = "";
 			var newDiv = document.createElement('div');
+			newDiv.id = "newDiv" + for_newDiv_id;
+			for_newDiv_id++;
+			newDiv.addEventListener("click", give_me_ID);
 			var newDiv2 = document.createElement('div');
+			newDiv2.id = "newDiv2" + for_newDiv2_id;
+			for_newDiv2_id++;
 			var newDiv3 = document.createElement('div');
+			newDiv3.id = "newDiv3" + for_newDiv3_id;
+			for_newDiv3_id++;
 			var newDiv4 = document.createElement('div');
-			newDiv2.innerHTML = cost + "р.";
+			newDiv4.id = "newDiv4" + for_newDiv4_id;
+			for_newDiv4_id++;
+			newDiv.innerHTML = "&nbsp;" + VC + ":1";
+			output.appendChild(newDiv);
+			newDiv2.innerHTML = "&nbsp;";
 			output2.appendChild(newDiv2);
 			newDiv3.innerHTML = "&nbsp;";
 			output3.appendChild(newDiv3);
-			newDiv.innerHTML = "&nbsp;" + VC + ":1";
-			output.appendChild(newDiv);
-			newDiv4.innerHTML = "&nbsp;";
+			newDiv4.innerHTML = cost + "р.";
 			output4.appendChild(newDiv4);
+			
+			for(var i = 0; i<(vc_collection.length); i++){
+				vc_collection[i].className = "vc_change";
+			}
+			newDiv.className = "vc_change_active";
+			
 			count += Math.ceil((cost*multiplicator)*2)/2;
 			document.getElementById('total').innerHTML = count + "р.";
 			return false;
@@ -670,9 +614,12 @@ document.onkeydown = function(e){ //ENTER
 		}
 	}
 	if (e.keyCode === 107){ //+
-		t = multiplicator;
+		for (var i1 = 0; i1 < vc_collection.length; i1++){
+			vc_active = vc_collection[i1].id;
+		}
 		multiplicator = document.getElementById('cheque_form').value;
-		currentDiv = document.getElementById('output').lastChild; 
+		currentDiv = document.getElementById(vc_active); 
+		t = currentDiv.innerHTML.slice(10,currentDiv.length);
 		output_str = currentDiv.innerHTML;
 		document.getElementById('cheque_form').value = "";
 		cost = dict[output_str.substring(6,9)];
@@ -682,46 +629,48 @@ document.onkeydown = function(e){ //ENTER
 		document.getElementById('total').innerHTML = count + "р.";
 		for_discount = multiplicator*cost;
 		if (multiplicator > +dict_for_error[output_str.substring(6,9)]){
-			document.getElementById('output4').lastChild.innerHTML = "!";
+			document.getElementById('output2').lastChild.innerHTML = "!";
 		}
 		else{
-			document.getElementById('output4').lastChild.innerHTML = "&nbsp;";
+			document.getElementById('output2').lastChild.innerHTML = "&nbsp;";
 		}
 		return false;
 	}
 	
-	if (e.keyCode === 110){
+	if (e.keyCode === 110){ //.del
 		text_fit -= 1;
 		if (text_fit <= 10){
-				document.getElementById('output_parent').style = "font-size: 3vh;"
-		};
+				document.getElementById('output_parent').style = "font-size: 3vh;";
+		}
 		if (text_fit > 10){
-				document.getElementById('output_parent').style = "font-size: 2.5vh;"
-		};
+				document.getElementById('output_parent').style = "font-size: 2.5vh;";
+		}
 		if (text_fit > 15){
-				document.getElementById('output_parent').style = "font-size: 2vh;"
-		};
-		var currentDiv1 = document.getElementById('output').lastChild;
-		var output_str_for_s = currentDiv1.innerHTML;
-		var multiplicator_for_s = currentDiv1.innerHTML.slice(10,length.output_str_for_s);
-		output.removeChild(currentDiv1);
-		var currentDiv2 = document.getElementById('output2').lastChild;
-		document.getElementById('output2').removeChild(currentDiv2);
-		var currentDiv3 = document.getElementById('output3').lastChild;
-		var currentDiv4 = document.getElementById('output4').lastChild;
-		document.getElementById('output4').removeChild(currentDiv4);
-		if (currentDiv3.innerHTML.substring(1,3) === "nb" ){
-			document.getElementById('output3').removeChild(currentDiv3);
-			cost = dict[output_str_for_s.substring(6,9)];
-			count = count - (Math.ceil((cost*multiplicator_for_s)*2))/2;
+				document.getElementById('output_parent').style = "font-size: 2vh;";
+		}
+		for (var i1 = 0; i1 < vc_collection.length; i1++){
+			vc_active = vc_collection[i1].id;
+		}
+		var removeDiv1 = document.getElementById(vc_active);
+		var removeDiv2 = document.getElementById('newDiv2' + vc_active.slice(6, vc_active.length));
+		var removeDiv3 = document.getElementById('newDiv3' + vc_active.slice(6, vc_active.length));
+		var removeDiv4 = document.getElementById('newDiv4' + vc_active.slice(6, vc_active.length));
+		output.removeChild(removeDiv1);
+		output2.removeChild(removeDiv2);
+		output3.removeChild(removeDiv3);
+		output4.removeChild(removeDiv4);
+		
+		var cost_for_del = dict[removeDiv1.innerHTML.slice(6,9)];
+		var multiplicator_for_del = removeDiv1.innerHTML.slice(10,removeDiv1.innerHTML.length);
+		
+		if (removeDiv3.innerHTML.substring(1,3) === "nb" ){
+			count = count - (Math.ceil((cost_for_del*multiplicator_for_del)*2))/2;
 			document.getElementById('total').innerHTML = count + "р.";
 			return false;
 		}
 		else {
-			cost = dict[output_str_for_s.substring(6,9)];
-			count = count - (Math.ceil(((cost*multiplicator_for_s)*(1-(currentDiv3.innerHTML.substring(1,3))/100))*2)/2);
+			count = count - (Math.ceil(((cost_for_del*multiplicator_for_del)*(1-(removeDiv3 .innerHTML.substring(1,3))/100))*2)/2);
 			document.getElementById('total').innerHTML = count + "р.";
-			document.getElementById('output3').removeChild(currentDiv3);
 			return false;
 		}
 	}	
@@ -734,46 +683,34 @@ document.onkeydown = function(e){ //ENTER
 document.getElementById('back_menu_pro').onclick = function(){
 	'use strict';
 	if (d === 1){
-		document.getElementById('char_parent').style = 'margin-left:20%;';
-		document.getElementById('sub_char_parent').style = 'margin-left:45%;';
+		document.getElementById('sub_char_parent').style = 'margin-left:50vw;';
 		document.getElementById('output_parent').style = 'margin-left:60%;';
 		document.getElementById('arrow').src = "css/back.png";
+		document.getElementById('back_menu_parent').style = 'margin-left:0vw;';
 		d = 0;
 	}
 	else {
-		document.getElementById('char_parent').style = 'margin-left:-30%;';
-		document.getElementById('sub_char_parent').style = 'margin-left:25%;';
+		document.getElementById('sub_char_parent').style = 'margin-left:30vw;';
 		document.getElementById('output_parent').style = 'margin-left:40%;';
 		document.getElementById('arrow').src = "css/back2.png";
+		document.getElementById('back_menu_parent').style = 'margin-left:-50vw;';
 		d = 1;
 	}
 };
 
 //БОКОВОЕ МЕНЮ END
 
-document.getElementById('info').onclick = function(){
-	'use strict'
-	if (d === 1){
-		document.getElementById('info_parent').style = 'width:70vw; height:80vh;bottom:10vh;right:20vw;opacity:1;';
-		document.getElementById('output_parent').style = 'opacity:0.2;';
-		document.getElementById('sub_char_parent').style = 'opacity:0.2;';
-		document.getElementById('1_art').style = 'display:block; margin-left:2vw;margin-top:2vh;font-size:2vh;';
-		document.getElementById('2_art').style = 'display:block; margin-left:2vw;margin-top:2vh;font-size:2vh;';
-		document.getElementById('3_art').style = 'display:block; margin-left:2vw;margin-top:15vh;font-size:2vh;';
-		document.getElementById('4_art').style = 'display:block; margin-left:50vw;margin-top:5vh;font-size:2vh;';
-		d = 0;
+document.getElementById('menu_button').onclick = function(){
+	'use strict';
+	if (d2 === 1){
+		document.getElementById('output_parent').style = "margin-top:110vh;"
+		document.getElementById('sub_char_parent').style = "margin-top:110vh;"
+		d2 = 0;
 	}
 	else {
-		document.getElementById('info_parent').style = 'width:10vw; height:3vh;opacity:0;';
-		document.getElementById('output_parent').style = 'opacity:1';
-		document.getElementById('sub_char_parent').style = 'opacity:1;';
-		document.getElementById('sub_char_parent').style = 'opacity:1;';
-		setTimeout(function toggle(){
-			document.getElementById('1_art').style = 'display:none; margin-left:2vw;margin-top:2vh;font-size:2vh;';
-			document.getElementById('2_art').style = 'display:none; margin-left:2vw;margin-top:2vh;font-size:2vh;';
-			document.getElementById('3_art').style = 'display:none; margin-left:2vw;margin-top:15vh;font-size:2vh;';
-			document.getElementById('4_art').style = 'display:none; margin-left:50vw;margin-top:5vh;font-size:2vh;'
-		}, 500)
-		d = 1;
+		document.getElementById('output_parent').style = "margin-top:20vh;"
+		document.getElementById('sub_char_parent').style = "margin-top:20vh;"
+		d2 = 1;
 	}
 }
+	

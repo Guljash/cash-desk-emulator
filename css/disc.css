@@ -45,6 +45,7 @@ a{
 table{
 	border-collapse: collapse;
 }
+
 TD, TH {
     padding:0.3vh; 
 	text-align: center;

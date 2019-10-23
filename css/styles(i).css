@@ -4,12 +4,12 @@ body{
 	background-size:cover;
 	transition: 1s;
 	overflow:hidden;
-	animation: fon10 50s linear infinite;
+	animation: fon10 140s linear infinite;
 	font-family: 'Roboto', sans-serif;
 }
 
 	@keyframes fon10 {
-    from { background-position: -1000px 100%, 0 0;}
+    from { background-position: 3775px 100%, 0 0;}
     to { background-position: 0 100%, 0 0; }
    }
 	
@@ -20,217 +20,15 @@ body{
 a{ 
     text-decoration: none;
 } 
+table{
+	border-collapse: collapse;
+	font-size: 2.3vh;
+}
+TD, TH {
+    padding:0.3vh; 
+	text-align: center;
+   }
    
-.parent {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    overflow: auto;   
-}
-.A {
-    width:60%;
-    height:85%;
-
-
-}
-.A01{
-    background-image:url(A0.jpg);
-    height:100%;	
-    width:49.5%;  
-    background-size: cover; 
-    float:left;
-    display: flex;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-    border-radius: 0.8%; 
-}
-.A01text{
-    font-size:13vw;
-    color:Gainsboro;
-    margin: auto;
-    opacity:0.8;
-	transition:1s;
-}
-
-.A01:hover {
-    opacity:0.9;
-    width:49%;
-    height:99%;
-    transition:0.5s;
-    cursor:pointer;
-}
-
-.A02{
-    height:100%;	
-    width:49.5%;  
-    background-size: cover;
-    float:right;
-    background:none; 
-    opacity:1; 
-}
-
-
-.A1 {
-    float:right;
-    background-image:url(A1.jpg);
-    height:49.5%;
-    margin-top:1.3%;
-    background-size: cover;
-    width:100%; 
-    display: flex; 
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-    border-radius: 0.8%; 
-}
-
-.A1:hover {
-    opacity:0.9;
-    width:99%;
-    height:49%;
-    transition:0.5s;
-    cursor:pointer;
-}
-
-.A1text{
-    font-size:10vw;
-    color:Gainsboro;
-    margin: auto;
-    opacity:0.8;
-	transition:1s;
-}
-
-
-.A21 {
-    background-image:url(A2.jpg);
-    height:49.5%; 
-    background-size: cover;
-    width:49.5%; 
-    float:left;
-    display: flex;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-    border-radius: 0.8%;  
-      
-}
-
-.A2text{
-    font-size:7vw;
-    color:Gainsboro;
-    margin: auto;
-    opacity:0.8;
-	transition:1s;
-}
-
-
-.A22 {
-    background-image:url(A2.jpg);
-    height:49.5%; 
-    background-size: cover;
-    width:49.5%; 
-    float:right;
-    background:none;
-    opacity:1; 
-}
-
-.A21:hover {
-    opacity:0.9;
-    width:49%;
-    height:49%;
-    transition:0.5s;
-    cursor:pointer;
-}
-
-
-.A31 {
-    background-image:url(A3.jpg);
-    height:49.5%;
-    background-size: cover;
-    width:100%;
-	display: flex;
-    background:none;
-    opacity:1;
-  
-}
-
-.A32 {
-    background-image:url(A3.jpg);
-    height:50%;
-    background-size: cover;
-    width:100%; 
-    display: flex;
-	padding-top: 1%;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-    border-radius: 0.8%; 
-
-
-}
-
-.A3text{
-    font-size:5vw;
-    color:Gainsboro;
-    margin: auto;
-    opacity:0.8;
-	transition:1s;
-}
-
-
-.A32:hover {
-    opacity:0.9;
-    width:99%;
-    height:49%;
-    transition:0.5s;
-    cursor:pointer;
-}
-
-.A4 {
-    background-image:url(A4.jpg);
-    height:98%; 
-    background-size: cover;
-    width:50%; 
-    display: flex;
-	float: left;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-    border-radius: 0.8%;   
-}
-
-.custom {
-    background-image:url(Custom3.png);
-    height:98%; 
-	opacity:1;
-    background-size: cover;
-    width:48%;
-	float: right;
-    margin-left:1.5%;	
-    display: flex;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-    border-radius: 0.8%;   
-}
-
-
-.A4:hover {
-    opacity:0.9;
-    height:95%;
-    transition:0.5s;
-    cursor:pointer;
-}
-
-.custom:hover {
-	opacity:0.9;
-    height:95%;
-	width: 47%;
-    transition:0.5s;
-    cursor:pointer;
-}
-
-.A4text{
-    font-size:3vw;
-    color:Gainsboro;
-    margin: auto;
-    opacity:0.8;
-	transition:1s;
-}
 
 .count_body {
     height:5%;
@@ -327,28 +125,29 @@ a{
 .sub_char_parent{
 	width:7.85vw;
     height:56vh;
-	transition-property: margin-left, opacity;
+	transition-property: margin-left,margin-top, opacity;
 	transition-duration: 1s;
-	margin-top: 24vh;
+	margin-top: 20vh;
 	font-size:2.3vh;
 	position: absolute;
-	margin-left: 25%;
+	margin-left: 30vw;
 	border:0px solid black;
 }
 
 .output_parent{
-	width:20vw;
-	margin-top: 24vh;
-	height: 56vh;
-	transition-property: margin-left, opacity;
+	width:23vw;
+	margin-top: 20vh;
+	height: 65vh;
+	transition-property: margin-left,margin-top,opacity;
 	transition-duration: 1s;
 	color: rgba(1,1,1,0.5);
 	position: absolute;
-	background-color:rgba(255,255,255,0.45);
-	box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+	background-color:rgba(255,255,255,0.55);
+	box-shadow: 2px 2px 20px rgba(0,0,0,0.2); 
 	margin-left: 40%;
 	border:0px solid black;
 }
+
 
 .under_output{
 	width:100%;
@@ -356,10 +155,10 @@ a{
 	font-size: 3vh;
 }
 .char{
-	width:12.9vh;
-    height:12.9vh;
+	width:15vh;
+    height:15vh;
 	float: left;
-	background-color:rgba(255,255,255,0.4);
+	background-color:rgba(255,255,255,0.55);
 	box-shadow: 2px 2px 20px rgba(0,0,0,0.2); 
 	border-radius: 1%;  
 	display: inline-block;
@@ -387,7 +186,7 @@ a{
 .cheque_form{
     width:100%;
 	height: 5.5vh;
-	margin-top:0.5vh;
+	margin-top:0vh;
     background-color:rgba(255,255,255,0.4);
     border: none;
 	color: rgba(1,1,1,0.5);
@@ -413,14 +212,14 @@ a{
 	perspective-origin: center bottom;
 	float:right;
 	display:inline-block;
-	margin-right:2vw;margin-top:5.7vh;
-	height:12vh;
-	width: 12vh;
+	margin-right:2vw; margin-top:5.7vh;
+	height:15vh;
+	width: 15vh;
 	background-repeat: no-repeat;
 	background-image: url(logogray.png);
 	background-size: contain;
 	transition: 1s;
-	opacity:0.32;
+	opacity:0.7;
 	cursor: pointer;
 }
 
@@ -428,7 +227,7 @@ a{
 	transform: rotateX(360deg);
 	transform-style: preserve-3d;
 	transition-delay: 0.2s;
-	background-image: url(logogray.png);
+	background-image: url(logoblack.png);
 }
 
 .info_parent{
@@ -441,4 +240,105 @@ a{
 	opacity:0;
 	background-color:rgba(255,255,255,0.45);
 	bottom:0vh;
+}
+
+.right_menu_parent{
+	float:right;
+	background-color:#424242;
+	width:6vw;
+	top:0;
+	right:0;
+	height:100vh;
+	position:absolute;
+	opacity:0.85;
+	overflow: hidden;
+}
+
+.vc_change{
+	border: 0px dotted black;
+	border-radius: 3%;
+}
+.vc_change:hover{
+	border: 0px dotted black;
+	background: rgba(0,0,0,0.15);
+	cursor:pointer;
+}
+.vc_change_active{
+	border: 0px dotted black;
+	background: rgba(0,0,0,0.15);
+	cursor:pointer;
+	border-radius: 3%;
+}
+
+.a4{
+	transition:1.4s;
+	float:left;
+	width:18vw;
+	margin-left:4.5vw;
+	margin-top:20vh;
+	display:inline-block;
+	opacity:1;
+	border-radius:0.7%;
+	background-color:rgba(255,255,255,0.6);
+	height:37vh;
+}
+.a3{
+	transition:1.4s;
+	float:left;
+	margin-left:0.5vw;
+	width:18vw;
+	margin-top:20vh;
+	display:inline-block;
+	opacity:1;
+	border-radius:0.7%;
+	background-color:rgba(255,255,255,0.6);
+	height:37vh;
+}
+.scan_a4a3{
+	transition:1.4s;
+	float:left;
+	width:18vw;
+	margin-left:4.5vw;
+	margin-top:2.8vh;
+	display:inline-block;
+	opacity:1;
+	border-radius:0.7%;
+	background-color:rgba(255,255,255,0.6);
+	height:27vh;
+}
+
+.scan_a4a3_bw{
+	transition:1.4s;
+	float:left;
+	width:18vw;
+	margin-left:0.5vw;
+	margin-top:2.8vh;
+	display:inline-block;
+	opacity:1;
+	border-radius:0.7%;
+	background-color:rgba(255,255,255,0.6);
+	height:27vh;
+}
+.back_menu_parent{
+	width:50vw;
+	position:absolute;
+    display: flex;
+    flex-direction: column;
+	border: 0px dotted black;
+	height:100vh;
+	margin-left:-50vw;
+	opacity:1;
+	transition:1.2s;
+}
+
+.back_menu_parent_top{
+	width:50vw;
+	border: 0px dotted black;
+	height:55vh;
+}
+
+.back_menu_parent_bot{
+	width:50vw;
+	border: 0px dotted black;
+	height:45vh;
 }

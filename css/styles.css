@@ -418,3 +418,14 @@ body{
 	transform-style: preserve-3d;
 	background-image: url(logoblue.png);
 }
+
+.vc_change{
+	border: 1px dotted black;
+}
+.vc_change:hover{
+	border: 1px dotted black;
+	background: rgba(0,0,0,0.3);
+	cursor:pointer;
+}
+
+
