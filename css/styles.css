@@ -1,0 +1,406 @@
+body{
+    background-image:url(fon4.jpg);
+    background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+   
+.parent {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    overflow: auto;   
+}
+.A {
+    width:60%;
+    height:85%;
+
+
+}
+.A01{
+    background-image:url(A0.jpg);
+    height:100%;	
+    width:49.5%;  
+    background-size: cover; 
+    float:left;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    border-radius: 0.8%; 
+}
+.A01text{
+    font-size:13vw;
+    color:Gainsboro;
+    margin: auto;
+    opacity:0.8;
+	transition:1s;
+}
+
+.A01:hover {
+    opacity:0.9;
+    width:49%;
+    height:99%;
+    transition:0.5s;
+    cursor:pointer;
+}
+
+.A02{
+    height:100%;	
+    width:49.5%;  
+    background-size: cover;
+    float:right;
+    background:none; 
+    opacity:1; 
+}
+
+
+.A1 {
+    float:right;
+    background-image:url(A1.jpg);
+    height:49.5%;
+    margin-top:1.3%;
+    background-size: cover;
+    width:100%; 
+    display: flex; 
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    border-radius: 0.8%; 
+}
+
+.A1:hover {
+    opacity:0.9;
+    width:99%;
+    height:49%;
+    transition:0.5s;
+    cursor:pointer;
+}
+
+.A1text{
+    font-size:10vw;
+    color:Gainsboro;
+    margin: auto;
+    opacity:0.8;
+	transition:1s;
+}
+
+
+.A21 {
+    background-image:url(A2.jpg);
+    height:49.5%; 
+    background-size: cover;
+    width:49.5%; 
+    float:left;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    border-radius: 0.8%;  
+      
+}
+
+.A2text{
+    font-size:7vw;
+    color:Gainsboro;
+    margin: auto;
+    opacity:0.8;
+	transition:1s;
+}
+
+
+.A22 {
+    background-image:url(A2.jpg);
+    height:49.5%; 
+    background-size: cover;
+    width:49.5%; 
+    float:right;
+    background:none;
+    opacity:1; 
+}
+
+.A21:hover {
+    opacity:0.9;
+    width:49%;
+    height:49%;
+    transition:0.5s;
+    cursor:pointer;
+}
+
+
+.A31 {
+    background-image:url(A3.jpg);
+    height:49.5%;
+    background-size: cover;
+    width:100%;
+	display: flex;
+    background:none;
+    opacity:1;
+  
+}
+
+.A32 {
+    background-image:url(A3.jpg);
+    height:50%;
+    background-size: cover;
+    width:100%; 
+    display: flex;
+	padding-top: 1%;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    border-radius: 0.8%; 
+
+
+}
+
+.A3text{
+    font-size:5vw;
+    color:Gainsboro;
+    margin: auto;
+    opacity:0.8;
+	transition:1s;
+}
+
+
+.A32:hover {
+    opacity:0.9;
+    width:99%;
+    height:49%;
+    transition:0.5s;
+    cursor:pointer;
+}
+
+.A4 {
+    background-image:url(A4.jpg);
+    height:98%; 
+    background-size: cover;
+    width:50%; 
+    display: flex;
+	float: left;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    border-radius: 0.8%;   
+}
+
+.custom {
+    background-image:url(Custom3.png);
+    height:98%; 
+	opacity:1;
+    background-size: cover;
+    width:48%;
+	float: right;
+    margin-left:1.5%;	
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    border-radius: 0.8%;   
+}
+
+
+.A4:hover {
+    opacity:0.9;
+    height:95%;
+    transition:0.5s;
+    cursor:pointer;
+}
+
+.custom:hover {
+	opacity:0.9;
+    height:95%;
+	width: 47%;
+    transition:0.5s;
+    cursor:pointer;
+}
+
+.A4text{
+    font-size:3vw;
+    color:Gainsboro;
+    margin: auto;
+    opacity:0.8;
+	transition:1s;
+}
+
+.count_body {
+    height:5%;
+    width:5%;
+    margin-right:50%;
+    margin-top:43%;
+    cursor:pointer;
+    opacity:0.9;
+    position:absolute;
+    background-color:Gray;
+    transition:0.9s;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);  
+}
+
+.water_text{
+    font-size:40vw;
+    color:Gainsboro;
+    margin: 0% 0 0 35%; 
+    padding-right:3%;
+    opacity:0.1;
+    position:absolute;
+    cursor:default;
+	transition:1s;
+}
+.text_count{
+    font-size:1.5vw;
+    color:Gainsboro;
+    margin: auto; 
+    position:absolute;
+
+}
+
+.count_form{
+    position:absolute;
+    height:2vw;
+    width:4vw;
+    background-color:Gainsboro;
+    border: none;
+    font-size:1.5vw;
+    margin-top:13%; 
+    margin-left:4%;
+    transition: width 0.4s ease-in-out;
+}
+
+.count_form:focus{
+    height:2vw;
+    width:17vw;
+}
+
+.back_menu{
+    float:right;
+	font-size:3vw;
+	color:Gainsboro;
+	width:3%;
+	position:absolute;
+	margin-left:48.5%;
+	transition:1s;
+	overflow:hidden;
+	height: 100%;
+	opacity:0.8;
+
+}
+.color_form{
+    height:2vw;
+    width:10vw;
+    background-color:Gainsboro;
+    border: none;
+    font-size:3vw;
+	margin-left:9%;
+	display:none;
+    transition: width 0.4s ease-in-out;
+}
+.mat_form{
+    height:2vw;
+    width:10vw;
+    background-color:Gainsboro;
+    border: none;
+    font-size:1.15vw;
+	margin-left:9%;
+	display:none;
+    transition: width 0.4s ease-in-out;
+}
+.char_parent{
+	width:23vw;
+    height:26vw;
+	transition: 1s;
+	margin-top: 12%;
+	margin-left: -30%;
+	position: absolute;
+	border:0px solid black;
+}
+
+.sub_char_parent{
+	width:7.85vw;
+    height:26vw;
+	transition: 1s;
+	margin-top: 12%;
+	position: absolute;
+	margin-left: 25%;
+	border:0px solid black;
+}
+
+.output_parent{
+	width:20vw;
+    height:26vw;
+	margin-top: 11.8vw;
+	transition: 1s;
+	font-size: 2vw;
+	color: rgba(110,110,110,1);
+	position: absolute;
+	background-color:rgba(110,110,110,0.2);
+	margin-left: 40%;
+	border:0px solid black;
+}
+.char{
+	width:5.85vw;
+    height:5.9vw;
+	float: left;
+	background-color:rgba(110,110,110,0.5);
+	box-shadow: 2px 2px 20px rgba(0,0,0,0.2); 
+	border-radius: 1%;  
+	display: inline-block;
+	cursor: pointer;
+
+}
+
+.char :hover{
+	background-color: rgba(110,110,110,1.00);
+	transition: 0.06s;
+}
+.under_char{
+	width: 100%;
+	height: 100%;	
+	top: 0;
+	font-size: 2vw;color: gainsboro;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    overflow: auto;   
+}
+
+.cheque_form{
+    width:100%;
+	height: 100%;
+    background-color:rgba(110,110,110,0.6);
+    border: none;
+	color:aliceblue;
+	font-size: 2vw;
+}
+
+.back_menu_pro{
+    float:left;
+	overflow: hidden;
+	height: 100vh;
+	top: 0;
+    left: 0;
+	width:5vw;
+	background-color: rgba(0,0,0,0.00);
+	position:absolute;
+	transition:1s;
+}
+.back_menu_pro:hover{
+	background-color: rgba(0,0,0,0.3);  
+	border-top-right-radius: 100%;  
+}
+
+.logo{
+	perspective-origin: center bottom;
+	float:right;
+	display:inline-block;
+	margin-right:2vw;
+	margin-top:5.7vh;
+	height:12vh;
+	width: 12vh;
+	background-repeat: no-repeat;
+	background-image: url(logogray.png);
+	background-size: contain;
+	transition: 1s;
+	opacity:0.7;
+	cursor: pointer;
+}
+
+.logo:hover{
+	transform: rotateX(360deg);
+	transform-style: preserve-3d;
+	background-image: url(logoblue.png);
+}

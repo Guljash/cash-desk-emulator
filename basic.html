@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- START ОСНОВНОЙ БЛОК -->
+
+<div id="parent" class="parent">
+
+    <div class="A">
+        <div class="A01" id="A01"><div class="A01text" id="A01text">A0</div></div>
+        <div class="A02">
+            <div class="A21" id="A2"><div class="A2text" id="A2text">A2</div></div>
+            <div class="A22">
+               <div class="A31">
+                    <div class="A4" id="A4"><div class="A4text" id="A4text">A4</div></div>
+				    <div class="custom"></div>
+				</div>
+                <div class="A32" id="A3"><div class="A3text" id="A3text">A3</div></div>
+            </div>
+            <div class="A1" id="A1"><div class="A1text" id="A1text">A1</div></div>
+        </div>
+    </div>
+
+<!-- END ОСНОВНОЙ БЛОК -->
+
+<!-- START БОКОВОЕ МЕНЮ -->
+	
+<div class="back_menu" id="back_menu">
+    <img src="css/back.png" style="height:5%;padding-top:45vh;position:absolute;">
+	<p style="opacity:0;font-size:65%;margin-left:8%;white-space:nowrap;" id="cs_color">Выбор цвета</p>
+	<select class="color_form" id="color_form">
+        <option>CMYK</option>
+        <option>Grayscale</option>
+    </select>
+	<p style="opacity:0;font-size:65%;margin-left:8%;white-space:nowrap;" id="cs_mat">Выбор бумаги</p>
+	<select class="mat_form" id="mat_form" >
+        <option>Матовая бумага</option>
+        <option>Глянцевая бумага</option>
+        <option>Инженерная бумага</option>
+        <option>Холст</option>
+    </select>
+</div>	
+	
+</div>
+
+<!-- END БОКОВОЕ МЕНЮ -->
+
+<!-- START БЛОК ВЫЧИСЛЕНИЯ СТОИМОСТИ -->
+
+<div class="count_body" id="count_body">
+ <div id="sub" style="width=100%;display:none;">
+  <div class="text_count" style="padding-top:10%; padding-left:4%;">Количество экземпляров</div>
+
+  <div class="text_count" style="padding-top:25%; padding-left:4%;">Артикул</div>
+  <span class="text_count" id="text_count" style="padding-top:27%; padding-left:4%;">170:</span>
+  <span id="PLU" style="padding-top:27%; padding-left:7.3%;position:absolute;color:Gainsboro;font-size:1.5vw;"></span>
+  
+  <div class="text_count" style="padding-top:32%; padding-left:4%;">Итог</div>
+  <span id="result" style="padding-top:34%; padding-left:4%;position:absolute;color:Gainsboro;font-size:1.5vw;"></span>
+  
+  <span class="water_text" id="water_text">A#</span>
+  <input type="number" class="count_form" id="count_f" >
+ </div>
+ </div>
+
+ <div id="close" style="margin-top:0.3%; margin-left:86%;position:absolute;color:Gainsboro;font-size:3vw;cursor:pointer;display:none;" title="Свернуть">_</div>
+ 
+ <!-- END БЛОК ВЫЧИСЛЕНИЯ СТОИМОСТИ -->
+ 
+<script src="js/script.js">
+</script>
+</body>
