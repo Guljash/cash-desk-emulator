@@ -291,7 +291,7 @@ const dataBase = {
     },
     '536': {
         key: '536',
-        cost: 20,
+        cost: 19,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },

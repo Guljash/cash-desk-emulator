@@ -376,6 +376,29 @@ h2{
 	overflow:hidden;
 }
 
+#save{
+	position: absolute;
+	width: 71px;
+	height: 71px;
+	top:192px;
+	background: #E5E5E5;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-size:19px;
+	font-weight:600;
+	cursor: pointer;
+	overflow:hidden;
+}
+
+#save img{
+	width:30px;
+	transition: 0.3s;
+	opacity: 0.7;
+}
+
 #generate-letter img{
 	width:32px;
 	transition: 0.3s;
@@ -755,3 +778,14 @@ h2{
 @media screen and (width:1366px){
 	#arrow {opacity:0.8;}
 }
+/* 
+#hat{
+	position: absolute;
+	width: 90px;
+	height: auto;
+	z-index: 100000;
+	left:820px;
+	top:50px;
+	transform: rotate(25deg);
+	cursor: pointer;
+} */
