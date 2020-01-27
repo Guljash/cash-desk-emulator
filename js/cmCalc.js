@@ -10,6 +10,7 @@ let currentDomVc = 0; //Div with class 'vcStatusActive'
 let dAllPercent = 0;
 let textFit = 0;
 let menuToggle = false;
+let thisIsMenuToggle = false;
 let openSpecBlockToggle = true;
 let closureToggle = false;
 let nightShiftToggle = false;
@@ -68,7 +69,7 @@ function dAll(discountPercent){//Return and count discount for all positions (ha
     for(let i of listOfRenderedVc){
         let vc = dataBase[i];
         let previousCost = (vc.cost * (1-(vc.dPos+previousDiscount)/100));
-        dAllPercent = discountPercent;
+		dAllPercent = discountPercent;
         document.getElementById(vc.key + 'cost').innerHTML = Math.round(vc.costAfterDiscount()*100)/100 + " ₽";
         document.getElementById(vc.key + 'discount').innerHTML = ((vc.dPos+dAllPercent) === 0) ? " " : '|' + (vc.dPos + dAllPercent) + "%";
         count = (count-previousCost*vc.multiplicator) + vc.costAfterDiscount()*vc.multiplicator; 
@@ -101,7 +102,7 @@ function addVcHandler(){  //Return new div in VCParent
             var isFastInput = true; //It will be used in the end of function 
         }
         else{
-            vc = dataBase[dataFromInput]; //Get subObject with name from input form
+            var vc = dataBase[dataFromInput]; //Get subObject with name from input form
         }
 
         if (listOfRenderedVc.includes(vc.key)){ //If new vc in input is already exist in VCParent
@@ -117,11 +118,11 @@ function addVcHandler(){  //Return new div in VCParent
             let discountForDom = document.createElement('div');
             discountForDom.id = vc.key + 'discount';
 
+			nightShiftToggle ? dAllPercent = -10 : "";
             vcForDom.innerHTML = " " + vc.key + ":" + vc.multiplicator;
-            vcParent.appendChild(vcForDom);
-            costForDom.innerHTML = vc.costAfterDiscount() + " ₽";
+			vcParent.appendChild(vcForDom);
+            costForDom.innerHTML = Math.round(vc.costAfterDiscount()*100)/100 + " ₽";
             costParent.appendChild(costForDom);
-            nightShiftToggle ? dAllPercent = -10 : "";
             discountForDom.innerHTML = ((vc.dPos+dAllPercent) === 0) ? " " : '|' + (vc.dPos + dAllPercent) + "%";
             discountParent.appendChild(discountForDom);
 
@@ -158,14 +159,14 @@ function addVcHandler(){  //Return new div in VCParent
 function addCountHandler(fastMultiplicator){ //Return multiplicator for current vc in VCParent
     'use strict';
     currentDomVc = vcStatusActiveArray[0];
-    let vc = dataBase[currentDomVc.id];
+	let vc = dataBase[currentDomVc.id];
 	let oldCost = vc.multiplicator*vc.costAfterDiscount();
     if (fastMultiplicator != undefined){
         vc.multiplicator = fastMultiplicator;
     }
     else{
         vc.multiplicator = document.getElementById('input-form').value;
-    }
+	}
 	document.getElementById('input-form').value = "";
 
     
@@ -260,7 +261,7 @@ function addCountHandler(fastMultiplicator){ //Return multiplicator for current 
 			vc.cost = 14;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
-		if (vc.multiplicator > 49 && vc.multiplicatorr <= 99){
+		if (vc.multiplicator > 49 && vc.multiplicator <= 99){
 			vc.cost = 10;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
@@ -571,7 +572,7 @@ function thisIsMenu(){ //Set discount and change vc's for menu
             currentDomCost.id = prop + 'cost';
             currentDomDiscount.id = prop + 'discount';
             document.getElementById(prop + 'discount').innerHTML = "";//Delete discount in DOM
-            listOfRenderedVc.splice(listOfRenderedVc.indexOf(i), 1, prop);//Delete old vc and add new in listOfRenderedVc
+            listOfRenderedVc.splice(listOfRenderedVc.indexOf(i), 1, String(prop));//Delete old vc and add new in listOfRenderedVc
             
 			count = count - (Math.ceil((+currentVc.costAfterDiscount()*currentVc.multiplicator)*2))/2;//delete old cost
 			document.getElementById('total').innerHTML = count + " ₽";
@@ -588,7 +589,7 @@ function thisIsMenu(){ //Set discount and change vc's for menu
 			count += newVc.costAfterDiscount() * newVc.multiplicator;//Set new count
 			document.getElementById('total').innerHTML = Math.round(count*2)/2 + " ₽";
 		}
-        if (arrForMenu.includes(i)){
+   		if (arrForMenu.includes(i)){
 			if (i === '058' || i === '158' || i === '258' || i === '358'){
 				let prop = 161;
 				addNewVc(prop);
@@ -691,26 +692,23 @@ function dayShift(){
 	});
 }
 
+function generateLetter(){
+	let letter = `Стоимость составит${nightShiftToggle ? ' (с учетом ночной наценки)' : ''}: \n`;
+	for (let i of listOfRenderedVc){
+		let vc = dataBase[i]
+		letter += `${vc.name} - ${Math.round(vc.costAfterDiscount()*vc.multiplicator*100)/100} ₽\n`;
+	}
+	letter += `\nИтого: ${total.innerText}`
+	// alert(letter);
+
+	new ClipboardJS('#generate-letter', {
+		text: function() {
+			return letter;
+		}
+	});
+}
+
 //CONTROLS
-
-document.getElementById('closure').onclick = function(){ //Handles status of closure button
-	if (closureToggle === false){
-		document.getElementById('closure').style = 'background-color:#D92231;';
-		document.getElementById('closure').querySelector('span').style = 'color:#fff;';
-		closureToggle = true;
-	}
-	else{
-		document.getElementById('closure').style = 'background-color:#E5E5E5;';
-		document.getElementById('closure').querySelector('span').style = 'color:rgba(1,1,1,0.6);';
-		closureToggle = false;
-	}
-}
-
-window.onbeforeunload = function() { //Set a warning when a user try to leave the window
-	if (closureToggle === true){
-		return true;
-	}
-}
 
 //special block
 
@@ -719,7 +717,7 @@ $(document).ready(function(){
         countFrog += 1;
         if (countFrog === 5){
             frogAnimation();
-        }
+        };
 		if (openSpecBlockToggle === true){
 			setTimeout(function(){
 				$('#spec-block').css({"box-shadow":"0px 0px 10px rgba(0, 0, 0, 0.0)"});
@@ -735,7 +733,7 @@ $(document).ready(function(){
 			$('#spec-block').animate({left: "35px"}, 500, "easeInBack");
 			$('#spec-block__open-btn img').css({"transform":"rotate(180deg)"});
 			openSpecBlockToggle = true;
-		}
+		};
 	});
 });
 
@@ -803,8 +801,52 @@ document.onkeydown = function(e){
 	}
 }
 
+//left menu
 document.getElementById('this-is-menu').onclick = function(){
 	thisIsMenu();
+	// if (thisIsMenuToggle) {
+	// 	document.querySelector('#this-is-menu img').style = "transform: scale(1)";
+	// 	thisIsMenuToggle = !thisIsMenuToggle;
+	// }
+	// else{
+	// 	document.querySelector('#this-is-menu img').style = "transform: scale(1.4)";
+	// 	thisIsMenuToggle = !thisIsMenuToggle;
+	// }
+
+	//i'll delete function below when i'll finish new logic
+
+	document.querySelector('#this-is-menu img').style = "transform: scale(1.25)";
+	setTimeout(function(){
+		document.querySelector('#this-is-menu img').style = "transform: scale(1)";
+	}, 350);
+}
+
+document.getElementById('closure').onclick = function(){ //Handles status of closure button
+	if (closureToggle === false){
+		document.getElementById('closure').style = 'background-color:#D92231;';
+		document.getElementById('closure').querySelector('span').style = 'color:#fff;';
+		closureToggle = true;
+	}
+	else{
+		document.getElementById('closure').style = 'background-color:#E5E5E5;';
+		document.getElementById('closure').querySelector('span').style = 'color:rgba(1,1,1,0.6);';
+		closureToggle = false;
+	}
+}
+
+window.onbeforeunload = function() { //Set a warning when a user try to leave the window
+	if (closureToggle === true){
+		return true;
+	}
+}
+
+document.getElementById('generate-letter').onclick = function(){
+	generateLetter();
+	copyWarning();
+	document.querySelector("#generate-letter img").style = "transform: scale(1.25)";
+	setTimeout(function(){
+		document.querySelector('#generate-letter img').style = "transform: scale(1)";
+	}, 350);
 }
 
 //right menu
@@ -926,7 +968,7 @@ function shake(){
         setTimeout(function(){
             $('#info').removeClass('hvr-buzz-out')},1000)
     });
-}
+};
 
 setInterval(shake, 6000);
 
@@ -970,6 +1012,21 @@ function nightShiftWarning(){
 		}, 2600);
 		setTimeout(function(){
 			$('#js-night-shift').css({"display":"none"});
+		}, 3200);
+	});
+}
+
+function copyWarning(){
+	$(document).ready(function(){
+		$('#js-copied').animate({top: "2vh"}, 900, "easeOutElastic").css({"transition": "opacity 0s","display":"flex","opacity":"1"});
+		setTimeout(function(){
+			$('#js-copied').css({"transition": "opacity 0.5s", "opacity":"0"});
+		}, 2000);
+		setTimeout(function(){
+			$('#js-copied').animate({top: "-10vh"}, 900, "easeOutElastic");
+		}, 2600);
+		setTimeout(function(){
+			$('#js-copied').css({"display":"none"});
 		}, 3200);
 	});
 }
