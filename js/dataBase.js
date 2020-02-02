@@ -2980,7 +2980,7 @@ const dataBase = {
         },
         multiplicator: 1,
         dPos: 0,
-        name: 'Резка (за 10 минут)'
+        name: 'Cложная резка'
     },
     '766': {
         key: '766',
