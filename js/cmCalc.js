@@ -412,51 +412,73 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
-		if (vc.multiplicator >= 50 && vc.multiplicator < 100) {
+		if (vc.multiplicator >= 10 && vc.multiplicator < 50) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 			let discountPercent = 20;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
-		if (vc.multiplicator >= 100 && vc.multiplicator < 500) {
+		if (vc.multiplicator >= 50 && vc.multiplicator < 100) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 			let discountPercent = 40;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
-		if (vc.multiplicator >= 500 && vc.multiplicator < 1000) {
+		if (vc.multiplicator >= 100 && vc.multiplicator < 500) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 			let discountPercent = 60;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
+		if (vc.multiplicator >= 500 && vc.multiplicator < 1000) {
+			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+			let discountPercent = 76;
+			dPos(discountPercent)
+			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+		}
 		if (vc.multiplicator >= 1000) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 80;
+			let discountPercent = 84;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 	}
 	if (vc.key === '131') {
 		if (vc.multiplicator < 50) {
-			vc.cost = 20;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+			let discountPercent = 0;
+			dPos(discountPercent)
+			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+		}
+		if (vc.multiplicator >= 10 && vc.multiplicator < 50) {
+			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+			let discountPercent = 20;
+			dPos(discountPercent)
+			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 50 && vc.multiplicator < 100) {
-			vc.cost = 16;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+			let discountPercent = 40;
+			dPos(discountPercent)
+			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 100 && vc.multiplicator < 500) {
-			vc.cost = 12;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+			let discountPercent = 60;
+			dPos(discountPercent)
+			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 500 && vc.multiplicator < 1000) {
-			vc.cost = 8;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+			let discountPercent = 76;
+			dPos(discountPercent)
+			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 1000) {
-			vc.cost = 4;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+			let discountPercent = 84;
+			dPos(discountPercent)
+			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 	}
 	if (vc.key === '167') {
@@ -468,25 +490,25 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 		}
 		if (vc.multiplicator >= 50 && vc.multiplicator < 100) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 20;
+			let discountPercent = 10;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 100 && vc.multiplicator < 500) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 40;
+			let discountPercent = 20;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 500 && vc.multiplicator < 1000) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 60;
+			let discountPercent = 30;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 1000) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 80;
+			let discountPercent = 40;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
@@ -500,25 +522,25 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 		}
 		if (vc.multiplicator >= 50 && vc.multiplicator < 100) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 20;
+			let discountPercent = 10;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 100 && vc.multiplicator < 500) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 40;
+			let discountPercent = 20;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 500 && vc.multiplicator < 1000) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 60;
+			let discountPercent = 30;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 1000) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 80;
+			let discountPercent = 40;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
@@ -630,23 +652,23 @@ function thisIsMenu() { //Set discount and change vc's for menu
 				dPos(discountPercent);
 			}
 			if (i === '001' || i === '101' || i === '201' || i === '301') {
-				let prop = 106;
+				let prop = 107;
 				addNewVc(prop);
 			}
 			if (i === '011' || i === '111' || i === '211' || i === '311') {
-				let prop = 115;
+				let prop = 117;
 				addNewVc(prop);
 			}
 			if (i === '024' || i === '124' || i === '224' || i === '324') {
-				let prop = 127;
+				let prop = 126;
 				addNewVc(prop);
-				let discountPercent = 40;
+				let discountPercent = 60;
 				dPos(discountPercent);
 			}
 			if (i === '020' || i === '120' || i === '220' || i === '320') {
 				let prop = 123;
 				addNewVc(prop);
-				let discountPercent = 40;
+				let discountPercent = 50;
 				dPos(discountPercent);
 			}
 		}
