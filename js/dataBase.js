@@ -269,6 +269,16 @@ const dataBase = {
         dPos: 0,
         name: "Глянцевая бумага А3 плотностью 200-250г/м2"
     },
+    '532': {
+        key: '532',
+        cost: 12,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: "Цветная бумага А3 плот."
+    },
     '533': {
         key: '533',
         cost: 34,
@@ -291,7 +301,7 @@ const dataBase = {
     },
     '536': {
         key: '536',
-        cost: 19,
+        cost: 20,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -338,6 +348,16 @@ const dataBase = {
         multiplicator: 1,
         dPos: 0,
         name: "Бумага 'Touche cover' А3/A3SR плотностью 300гр/м2"
+    },
+    '541': {
+        key: '541',
+        cost: 300,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: "Бумага для временных татуировок"
     },
 
     //Черно-белое копирование А4, А3
@@ -1460,13 +1480,13 @@ const dataBase = {
     },
     '168': {
         key: '168',
-        cost: 40,
+        cost: 30,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
         multiplicator: 1,
         dPos: 0,
-        name: "Сканирование А4 ручное"
+        name: "Сканирование А3 ручное"
     },
 
     //Цветное копирование А4, А3 + доп. мат.
@@ -2691,7 +2711,7 @@ const dataBase = {
 
     '600': {
         key: '600',
-        cost: 100,
+        cost: 150,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2701,7 +2721,7 @@ const dataBase = {
     },
     '601': {
         key: '601',
-        cost: 150,
+        cost: 200,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2711,7 +2731,7 @@ const dataBase = {
     },
     '602': {
         key: '602',
-        cost: 200,
+        cost: 250,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2813,7 +2833,7 @@ const dataBase = {
         name: 'Изготовление транспаранта с лам.'
     },
     '711': {
-        key: '771',
+        key: '711',
         cost: 490,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
@@ -2941,6 +2961,66 @@ const dataBase = {
         multiplicator: 1,
         dPos: 0,
         name: 'Печать листовок/флаеров А4 с полями 1стр. 100 шт.'
+    },
+    '756': {
+        key: '756',
+        cost: 25,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать фото 10*15 глянцевая бумага'
+    },
+    '757': {
+        key: '757',
+        cost: 25,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать фото 10*15 матовая бумага'
+    },
+    '758': {
+        key: '758',
+        cost: 30,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать фото 10*15 люстер '
+    },
+    '759': {
+        key: '759',
+        cost: 35,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать фото 15*20 глянцевая бумага'
+    },
+    '760': {
+        key: '760',
+        cost: 35,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать фото 15*20 матовая бумага'
+    },
+    '761': {
+        key: '761',
+        cost: 40,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать фото 15*20 люстер'
     },
     '762': {
         key: '762',
