@@ -598,6 +598,27 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 		}
 	}
 
+	if (vc.key === '740') {
+		if (vc.multiplicator < 100) {
+			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+			let discountPercent = 0;
+			dPos(discountPercent)
+			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+		}
+		if (vc.multiplicator >= 100) {
+			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+			let discountPercent = 20;
+			dPos(discountPercent)
+			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+		}
+		if (vc.multiplicator >= 200) {
+			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+			let discountPercent = 40;
+			dPos(discountPercent)
+			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+		}
+	}
+
 
 	currentDomVc.innerHTML = " " + currentDomVc.id + ":" + vc.multiplicator;
 	count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost;
