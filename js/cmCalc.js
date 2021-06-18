@@ -58,10 +58,10 @@ function dPos(discountPercent) { //Return and count discount for single active p
 	let vc = dataBase[currentDomVc.id];
 	let previousCost = vc.costAfterDiscount();
 	vc.dPos = discountPercent;
-	document.getElementById(vc.key + 'cost').innerHTML = Math.round(vc.costAfterDiscount() * 100) / 100 + " ₽";
-	document.getElementById(vc.key + 'discount').innerHTML = ((vc.dPos + dAllPercent) === 0) ? " " : '|' + (vc.dPos + dAllPercent) + "%";
+	document.getElementById(vc.key + 'cost').innerHTML = Math.round(vc.costAfterDiscount() * 100) / 100 + " ₽";
+	document.getElementById(vc.key + 'discount').innerHTML = ((vc.dPos + dAllPercent) === 0) ? " " : '|' + (vc.dPos + dAllPercent) + "%";
 	count = count - (previousCost * vc.multiplicator) + (vc.costAfterDiscount() * vc.multiplicator);
-	document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
+	document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
 }
 
 function dAll(discountPercent) {//Return and count discount for all positions (has own property)
@@ -71,10 +71,10 @@ function dAll(discountPercent) {//Return and count discount for all positions (h
 		let vc = dataBase[i];
 		let previousCost = (vc.cost * (1 - (vc.dPos + previousDiscount) / 100));
 		dAllPercent = discountPercent;
-		document.getElementById(vc.key + 'cost').innerHTML = Math.round(vc.costAfterDiscount() * 100) / 100 + " ₽";
-		document.getElementById(vc.key + 'discount').innerHTML = ((vc.dPos + dAllPercent) === 0) ? " " : '|' + (vc.dPos + dAllPercent) + "%";
+		document.getElementById(vc.key + 'cost').innerHTML = Math.round(vc.costAfterDiscount() * 100) / 100 + " ₽";
+		document.getElementById(vc.key + 'discount').innerHTML = ((vc.dPos + dAllPercent) === 0) ? " " : '|' + (vc.dPos + dAllPercent) + "%";
 		count = (count - previousCost * vc.multiplicator) + vc.costAfterDiscount() * vc.multiplicator;
-		document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
+		document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
 	}
 	dAllPercent = discountPercent; //Set discount for all keys in dataBase 
 }
@@ -114,7 +114,7 @@ function addVcHandler(loadedVc, loadedMultiplicator) {  //Return new div in VCPa
 
 		if (listOfRenderedVc.includes(vc.key)) { //If new vc in input is already exist in VCParent
 			count += vc.costAfterDiscount();
-			document.getElementById(vc.key).innerHTML = " " + vc.key + ":" + ++vc.multiplicator;
+			document.getElementById(vc.key).innerHTML = " " + vc.key + ":" + ++vc.multiplicator;
 		}
 		else {
 			let vcForDom = document.createElement('div');
@@ -126,11 +126,11 @@ function addVcHandler(loadedVc, loadedMultiplicator) {  //Return new div in VCPa
 			discountForDom.id = vc.key + 'discount';
 
 			nightShiftToggle ? dAllPercent = -10 : "";
-			vcForDom.innerHTML = " " + vc.key + ":" + vc.multiplicator;
+			vcForDom.innerHTML = " " + vc.key + ":" + vc.multiplicator;
 			vcParent.appendChild(vcForDom);
-			costForDom.innerHTML = Math.round(vc.costAfterDiscount() * 100) / 100 + " ₽";
+			costForDom.innerHTML = Math.round(vc.costAfterDiscount() * 100) / 100 + " ₽";
 			costParent.appendChild(costForDom);
-			discountForDom.innerHTML = ((vc.dPos + dAllPercent) === 0) ? " " : '|' + (vc.dPos + dAllPercent) + "%";
+			discountForDom.innerHTML = ((vc.dPos + dAllPercent) === 0) ? " " : '|' + (vc.dPos + dAllPercent) + "%";
 			discountParent.appendChild(discountForDom);
 
 			for (let i of vcStatusActiveArray) { //Set for rendered div class vcStatusNone
@@ -155,7 +155,7 @@ function addVcHandler(loadedVc, loadedMultiplicator) {  //Return new div in VCPa
 			fillWarning()
 		}
 
-		document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
+		document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
 	}
 	catch (e) {
 		notFound();
@@ -177,236 +177,230 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 
 	if (vc.key === '001' || vc.key === '101' || vc.key === '201' || vc.key === '301') {
 		if (vc.multiplicator <= 9) {
-			vc.cost = 14;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 15;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 9 && vc.multiplicator <= 49) {
-			vc.cost = 12;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 14;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
-			vc.cost = 8;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 10;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 99 && vc.multiplicator <= 499) {
-			vc.cost = 5;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 6;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
-			vc.cost = 4;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 5;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 999 && vc.multiplicator <= 4999) {
-			vc.cost = 3;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 4;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 4999) {
-			vc.cost = 2.5;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 3;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '058' || vc.key === '158' || vc.key === '258' || vc.key === '358') {
 		if (vc.multiplicator <= 19) {
-			vc.cost = 36;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 40;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 19 && vc.multiplicator <= 49) {
-			vc.cost = 28;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 30;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
 			vc.cost = 25;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 99 && vc.multiplicator <= 199) {
 			vc.cost = 20;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 199 && vc.multiplicator <= 499) {
 			vc.cost = 15;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
 			vc.cost = 12;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 999) {
 			vc.cost = 10;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '062' || vc.key === '162' || vc.key === '262' || vc.key === '362') {
 		if (vc.multiplicator <= 19) {
-			vc.cost = 72;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 80;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 19 && vc.multiplicator <= 49) {
-			vc.cost = 56;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 60;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
 			vc.cost = 50;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 99 && vc.multiplicator <= 199) {
 			vc.cost = 40;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 199 && vc.multiplicator <= 499) {
 			vc.cost = 30;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
 			vc.cost = 24;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 999) {
 			vc.cost = 20;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '011' || vc.key === '111' || vc.key === '211' || vc.key === '311') {
 		if (vc.multiplicator <= 9) {
-			vc.cost = 20;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 22;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 9 && vc.multiplicator <= 49) {
-			vc.cost = 16;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 18;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
-			vc.cost = 12;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 15;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 99 && vc.multiplicator <= 499) {
-			vc.cost = 8;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 10;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
-			vc.cost = 6;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 8;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 999 && vc.multiplicator <= 4999) {
-			vc.cost = 5;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 6;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 4999) {
-			vc.cost = 4;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 5;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '020' || vc.key === '120' || vc.key === '220' || vc.key === '320') {
 		if (vc.multiplicator <= 9) {
-			vc.cost = 24;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 26;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 9 && vc.multiplicator <= 49) {
-			vc.cost = 20;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 22;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
-			vc.cost = 14;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 16;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 99 && vc.multiplicator <= 499) {
-			vc.cost = 10;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 12;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
-			alert('Возможно, цена неправильная')
-			vc.cost = 7;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 9;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 999 && vc.multiplicator <= 4999) {
-			alert('Возможно, цена неправильная')
-			vc.cost = 6;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 8;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 4999) {
-			alert('Возможно, цена неправильная')
-			vc.cost = 5;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 6;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '024' || vc.key === '124' || vc.key === '224' || vc.key === '324') {
 		if (vc.multiplicator <= 9) {
-			vc.cost = 32;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 35;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 9 && vc.multiplicator <= 49) {
-			vc.cost = 28;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 30;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
-			vc.cost = 20;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 24;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 99 && vc.multiplicator <= 499) {
-			vc.cost = 16;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 18;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
-			alert('Возможно, цена неправильная')
-			vc.cost = 12;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 15;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 999 && vc.multiplicator <= 4999) {
-			alert('Возможно, цена неправильная')
-			vc.cost = 9.9;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 12;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 4999) {
-			alert('Возможно, цена неправильная')
-			vc.cost = 7.95;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 9;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '720') {
 		if (vc.multiplicator < 10) {
-			vc.cost = 50;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 100;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 10 && vc.multiplicator < 20) {
 			vc.cost = 45;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 20 && vc.multiplicator < 30) {
 			vc.cost = 40;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 30 && vc.multiplicator < 40) {
 			vc.cost = 35;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 40) {
 			vc.cost = 30;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '721') {
 		if (vc.multiplicator < 10) {
-			vc.cost = 85;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 100;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 10 && vc.multiplicator < 20) {
-			vc.cost = 76.50;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 77;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 20 && vc.multiplicator < 30) {
 			vc.cost = 68;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 30 && vc.multiplicator < 40) {
-			vc.cost = 59.50;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 60;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 40) {
 			vc.cost = 51;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '130') {
-		if (vc.multiplicator < 50) {
+		if (vc.multiplicator < 10) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 			let discountPercent = 0;
 			dPos(discountPercent)
@@ -450,33 +444,27 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
-		if (vc.multiplicator >= 10 && vc.multiplicator < 50) {
-			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 20;
-			dPos(discountPercent)
-			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-		}
 		if (vc.multiplicator >= 50 && vc.multiplicator < 100) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 40;
+			let discountPercent = 10;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 100 && vc.multiplicator < 500) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 60;
+			let discountPercent = 20;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 500 && vc.multiplicator < 1000) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 76;
+			let discountPercent = 30;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
 		if (vc.multiplicator >= 1000) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 84;
+			let discountPercent = 40;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
@@ -620,12 +608,12 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 	// }
 
 
-	currentDomVc.innerHTML = " " + currentDomVc.id + ":" + vc.multiplicator;
+	currentDomVc.innerHTML = " " + currentDomVc.id + ":" + vc.multiplicator;
 	count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost;
 	if (count >= 10000) {
 		depositWarning()
 	}
-	document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
+	document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
 }
 
 function thisIsMenu() { //Set discount and change vc's for menu
@@ -645,10 +633,10 @@ function thisIsMenu() { //Set discount and change vc's for menu
 			listOfRenderedVc.splice(listOfRenderedVc.indexOf(i), 1, String(prop));//Delete old vc and add new in listOfRenderedVc
 
 			count = count - (Math.ceil((+currentVc.costAfterDiscount() * currentVc.multiplicator) * 2)) / 2;//delete old cost
-			document.getElementById('total').innerHTML = count + " ₽";
+			document.getElementById('total').innerHTML = count + " ₽";
 
-			currentDomVc.innerHTML = " " + newVc.key + ":" + newVc.multiplicator;//Add new vc and cost to DOM
-			currentDomCost.innerHTML = newVc.costAfterDiscount() + " ₽";
+			currentDomVc.innerHTML = " " + newVc.key + ":" + newVc.multiplicator;//Add new vc and cost to DOM
+			currentDomCost.innerHTML = newVc.costAfterDiscount() + " ₽";
 			currentDomDiscount.innerHTML = "&nbsp;";
 
 			for (let i of vcStatusActiveArray) { //Set for rendered div class vcStatusNone
@@ -657,7 +645,7 @@ function thisIsMenu() { //Set discount and change vc's for menu
 			currentDomVc.className = "vcStatusActive"
 
 			count += newVc.costAfterDiscount() * newVc.multiplicator;//Set new count
-			document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
+			document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
 		}
 		if (arrForMenu.includes(i)) {
 			if (i === '058' || i === '158' || i === '258' || i === '358') {
@@ -720,7 +708,7 @@ function deleteVc() { //Delete current VC
 	let vc = dataBase[currentDomVc.id];
 
 	count -= vc.costAfterDiscount() * vc.multiplicator;
-	document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
+	document.getElementById('total').innerHTML = Math.round(count * 2) / 2 + " ₽";
 
 	vcParent.removeChild(document.getElementById(vc.key));
 	costParent.removeChild(document.getElementById(vc.key + 'cost'));
