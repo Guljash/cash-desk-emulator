@@ -31,7 +31,7 @@ const dataBase = {
     },
     '503': {
         key: '503',
-        cost: 5,
+        cost: 6,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -41,7 +41,7 @@ const dataBase = {
     },
     '504': {
         key: '504',
-        cost: 7,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -51,7 +51,7 @@ const dataBase = {
     },
     '505': {
         key: '505',
-        cost: 8.5,
+        cost: 10,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -61,7 +61,7 @@ const dataBase = {
     },
     '506': {
         key: '506',
-        cost: 12,
+        cost: 13,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -71,7 +71,7 @@ const dataBase = {
     },
     '507': {
         key: '507',
-        cost: 15,
+        cost: 16,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -81,7 +81,7 @@ const dataBase = {
     },
     '508': {
         key: '508',
-        cost: 7,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -91,7 +91,7 @@ const dataBase = {
     },
     '509': {
         key: '509',
-        cost: 12,
+        cost: 13,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -131,7 +131,7 @@ const dataBase = {
     },
     '513': {
         key: '513',
-        cost: 20,
+        cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -148,6 +148,16 @@ const dataBase = {
         multiplicator: 1,
         dPos: 0,
         name: "Пленка А4"
+    },
+    '515': {
+        key: '515',
+        cost: 500,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: "Печать/копия на бумаге для временных татуировок"
     },
     '518': {
         key: '518',
@@ -171,7 +181,7 @@ const dataBase = {
     },
     '520': {
         key: '520',
-        cost: 55,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -201,7 +211,7 @@ const dataBase = {
     },
     '523': {
         key: '523',
-        cost: 9.5,
+        cost: 12,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -211,7 +221,7 @@ const dataBase = {
     },
     '524': {
         key: '524',
-        cost: 15,
+        cost: 16,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -221,7 +231,7 @@ const dataBase = {
     },
     '525': {
         key: '525',
-        cost: 17,
+        cost: 20,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -231,7 +241,7 @@ const dataBase = {
     },
     '526': {
         key: '526',
-        cost: 19,
+        cost: 26,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -241,7 +251,7 @@ const dataBase = {
     },
     '527': {
         key: '527',
-        cost: 28,
+        cost: 32,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -251,7 +261,7 @@ const dataBase = {
     },
     '528': {
         key: '528',
-        cost: 15,
+        cost: 16,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -261,7 +271,7 @@ const dataBase = {
     },
     '529': {
         key: '529',
-        cost: 19,
+        cost: 26,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -281,7 +291,7 @@ const dataBase = {
     },
     '532': {
         key: '532',
-        cost: 14,
+        cost: 20,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -291,7 +301,7 @@ const dataBase = {
     },
     '533': {
         key: '533',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -299,39 +309,69 @@ const dataBase = {
         dPos: 0,
         name: "Калька А3"
     },
-    '535': {
-        key: '535',
-        cost: 10,
+    '542': {
+        key: '542',
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
         multiplicator: 1,
         dPos: 0,
-        name: "Бумага А3SR плотностью 80-90г/м2"
+        name: "Бумага А3SR плотностью 90г/м2"
     },
-    '536': {
-        key: '536',
+    '543': {
+        key: '543',
+        cost: 15,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: "Бумага А3SR плотностью 120г/м2"
+    },
+    '544': {
+        key: '544',
+        cost: 20,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: "Бумага А3SR плотностью 160г/м2"
+    },
+    '545': {
+        key: '545',
         cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
         multiplicator: 1,
         dPos: 0,
-        name: "Бумага А3SR плотностью 120-160г/м2"
+        name: "Бумага А3SR плотностью 200г/м2"
     },
-    '537': {
-        key: '537',
-        cost: 30,
+    '546': {
+        key: '546',
+        cost: 33,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
         multiplicator: 1,
         dPos: 0,
-        name: "Бумага А3SR плотностью 200-350г/м2"
+        name: "Бумага А3SR плотностью 250г/м2"
+    },
+    '547': {
+        key: '547',
+        cost: 40,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: "Бумага А3SR плотностью 300г/м2"
     },
     '538': {
         key: '538',
-        cost: 42,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -341,7 +381,7 @@ const dataBase = {
     },
     '539': {
         key: '539',
-        cost: 80,
+        cost: 100,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -358,16 +398,6 @@ const dataBase = {
         multiplicator: 1,
         dPos: 0,
         name: "Бумага 'Touche cover' А3/A3SR плотностью 300гр/м2"
-    },
-    '541': {
-        key: '541',
-        cost: 500,
-        costAfterDiscount() {
-            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
-        },
-        multiplicator: 1,
-        dPos: 0,
-        name: "Бумага для временных татуировок"
     },
 
     //Черно-белое копирование А4, А3
@@ -1629,7 +1659,7 @@ const dataBase = {
 
     '040': {
         key: '040',
-        cost: 8,
+        cost: 10,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1649,7 +1679,7 @@ const dataBase = {
     },
     '045': {
         key: '045',
-        cost: 40,
+        cost: 20,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1692,23 +1722,23 @@ const dataBase = {
 
     '150': {
         key: '150',
-        cost: 1800,
+        cost: 2300,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
         multiplicator: 1,
         dPos: 0,
-        name: "Накатка на пенокартон А0 (до 100х140)"
+        name: "Накатка на пенокартон А0 (до 90х120)"
     },
     '151': {
         key: '151',
-        cost: 1000,
+        cost: 1100,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
         multiplicator: 1,
         dPos: 0,
-        name: "Накатка на пенокартон А1 (до 70х100)"
+        name: "Накатка на пенокартон А1 (до 60х90)"
     },
     '152': {
         key: '152',
@@ -1718,7 +1748,7 @@ const dataBase = {
         },
         multiplicator: 1,
         dPos: 0,
-        name: "Накатка на пенокартон А2 (до 50х70)"
+        name: "Накатка на пенокартон А2 (до 45х60)"
     },
     '153': {
         key: '153',
@@ -1728,14 +1758,24 @@ const dataBase = {
         },
         multiplicator: 1,
         dPos: 0,
-        name: "Накатка на пенокартон А3 (до 35х50)"
+        name: "Накатка на пенокартон А3 (до 30х45)"
+    },
+    '154': {
+        key: '154',
+        cost: 2500,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: "Накатка на пенокартон А3 (до 100х140)"
     },
 
     //Обложки
 
     '580': {
         key: '580',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1745,7 +1785,7 @@ const dataBase = {
     },
     '581': {
         key: '581',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1755,7 +1795,7 @@ const dataBase = {
     },
     '582': {
         key: '582',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1765,7 +1805,7 @@ const dataBase = {
     },
     '583': {
         key: '583',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1775,7 +1815,7 @@ const dataBase = {
     },
     '584': {
         key: '584',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1785,7 +1825,7 @@ const dataBase = {
     },
     '585': {
         key: '585',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1795,7 +1835,7 @@ const dataBase = {
     },
     '588': {
         key: '588',
-        cost: 80,
+        cost: 100,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1805,7 +1845,7 @@ const dataBase = {
     },
     '589': {
         key: '589',
-        cost: 70,
+        cost: 100,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1898,7 +1938,7 @@ const dataBase = {
     },
     '410': {
         key: '410',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1908,7 +1948,7 @@ const dataBase = {
     },
     '411': {
         key: '411',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1918,7 +1958,7 @@ const dataBase = {
     },
     '412': {
         key: '412',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1938,7 +1978,7 @@ const dataBase = {
     },
     '414': {
         key: '414',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1948,7 +1988,7 @@ const dataBase = {
     },
     '416': {
         key: '416',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1988,7 +2028,7 @@ const dataBase = {
     },
     '420': {
         key: '420',
-        cost: 60,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1998,7 +2038,7 @@ const dataBase = {
     },
     '421': {
         key: '421',
-        cost: 65,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2028,17 +2068,7 @@ const dataBase = {
     },
     '430': {
         key: '430',
-        cost: null,
-        costAfterDiscount() {
-            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
-        },
-        multiplicator: 1,
-        dPos: 0,
-        name: 'Навивная пружина 6 мм'
-    },
-    '431': {
-        key: '431',
-        cost: 60,
+        cost: 80,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2046,9 +2076,9 @@ const dataBase = {
         dPos: 0,
         name: 'Навивная пружина 8 мм'
     },
-    '432': {
-        key: '432',
-        cost: 70,
+    '431': {
+        key: '431',
+        cost: 80,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2056,19 +2086,9 @@ const dataBase = {
         dPos: 0,
         name: 'Навивная пружина 10 мм'
     },
-    '433': {
-        key: '433',
-        cost: null,
-        costAfterDiscount() {
-            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
-        },
-        multiplicator: 1,
-        dPos: 0,
-        name: 'Навивная пружина 12 мм'
-    },
-    '434': {
-        key: '434',
-        cost: 80,
+    '432': {
+        key: '432',
+        cost: 100,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2076,9 +2096,9 @@ const dataBase = {
         dPos: 0,
         name: 'Навивная пружина 14 мм'
     },
-    '435': {
-        key: '435',
-        cost: 90,
+    '433': {
+        key: '433',
+        cost: 120,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2086,22 +2106,42 @@ const dataBase = {
         dPos: 0,
         name: 'Навивная пружина 20 мм'
     },
-    '436': {
-        key: '436',
-        cost: null,
+    '434': {
+        key: '434',
+        cost: 120,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
         multiplicator: 1,
         dPos: 0,
-        name: 'Навивная пружина 23 мм'
+        name: 'Навивная пружина 24 мм'
+    },
+    '435': {
+        key: '435',
+        cost: 140,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Навивная пружина 28 мм'
+    },
+    '436': {
+        key: '436',
+        cost: 140,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Навивная пружина 32 мм'
     },
 
     //Ламинирование 
 
     '460': {
         key: '460',
-        cost: 140,
+        cost: 150,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2111,7 +2151,7 @@ const dataBase = {
     },
     '461': {
         key: '461',
-        cost: 140,
+        cost: 150,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2121,7 +2161,7 @@ const dataBase = {
     },
     '462': {
         key: '462',
-        cost: 180,
+        cost: 200,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2151,7 +2191,7 @@ const dataBase = {
     },
     '465': {
         key: '465',
-        cost: 120,
+        cost: 150,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2181,7 +2221,7 @@ const dataBase = {
     },
     '469': {
         key: '469',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2191,7 +2231,7 @@ const dataBase = {
     },
     '470': {
         key: '470',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2201,7 +2241,7 @@ const dataBase = {
     },
     '480': {
         key: '480',
-        cost: 7,
+        cost: 7.5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2244,7 +2284,7 @@ const dataBase = {
     },
     '080': {
         key: '080',
-        cost: 20,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2254,13 +2294,13 @@ const dataBase = {
     },
     '081': {
         key: '081',
-        cost: 20,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
         multiplicator: 1,
         dPos: 0,
-        name: 'Доплата за экстра тонер (заливку)'
+        name: 'Доплата за лекала XL (более 300 см) за лист'
     },
 
     //Печать больших форматов ч/б
@@ -2294,6 +2334,16 @@ const dataBase = {
         multiplicator: 1,
         dPos: 0,
         name: 'Печать ч/б 914мм пог. см калька'
+    },
+    '187': {
+        key: '187',
+        cost: 50,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Использование защ. конверта для сканирования'
     },
 
     //Печать/копия БФ цвет
@@ -2595,7 +2645,7 @@ const dataBase = {
     },
     '804': {
         key: '804',
-        cost: 200,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2618,7 +2668,7 @@ const dataBase = {
 
     '491': {
         key: '491',
-        cost: 180,
+        cost: 250,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2628,7 +2678,7 @@ const dataBase = {
     },
     '492': {
         key: '492',
-        cost: 180,
+        cost: 250,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2638,7 +2688,7 @@ const dataBase = {
     },
     '493': {
         key: '493',
-        cost: 200,
+        cost: 250,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2648,7 +2698,7 @@ const dataBase = {
     },
     '494': {
         key: '494',
-        cost: 200,
+        cost: 250,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2658,7 +2708,7 @@ const dataBase = {
     },
     '495': {
         key: '495',
-        cost: 220,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2668,7 +2718,7 @@ const dataBase = {
     },
     '496': {
         key: '496',
-        cost: 220,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2678,7 +2728,7 @@ const dataBase = {
     },
     '497': {
         key: '497',
-        cost: 240,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2688,7 +2738,7 @@ const dataBase = {
     },
     '498': {
         key: '498',
-        cost: 240,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2698,7 +2748,7 @@ const dataBase = {
     },
     '499': {
         key: '499',
-        cost: 250,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2721,34 +2771,34 @@ const dataBase = {
 
     '600': {
         key: '600',
-        cost: 200,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
         multiplicator: 1,
         dPos: 0,
-        name: 'КБС <50 страниц'
+        name: 'КБС'
     },
-    '601': {
-        key: '601',
-        cost: 250,
-        costAfterDiscount() {
-            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
-        },
-        multiplicator: 1,
-        dPos: 0,
-        name: 'КБС <100 страниц'
-    },
-    '602': {
-        key: '602',
-        cost: 300,
-        costAfterDiscount() {
-            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
-        },
-        multiplicator: 1,
-        dPos: 0,
-        name: 'КБС >100 страниц'
-    },
+    // '601': {
+    //     key: '601',
+    //     cost: 250,
+    //     costAfterDiscount() {
+    //         return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+    //     },
+    //     multiplicator: 1,
+    //     dPos: 0,
+    //     name: 'КБС <100 страниц'
+    // },
+    // '602': {
+    //     key: '602',
+    //     cost: 300,
+    //     costAfterDiscount() {
+    //         return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+    //     },
+    //     multiplicator: 1,
+    //     dPos: 0,
+    //     name: 'КБС >100 страниц'
+    // },
 
     //Разное
 
@@ -2832,6 +2882,16 @@ const dataBase = {
         dPos: 0,
         name: 'Складка чертежей под формат А4 (за лист)'
     },
+    '708': {
+        key: '708',
+        cost: 20,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Складка чертежей для переплета (за лист)'
+    },
     '710': {
         key: '710',
         cost: 700,
@@ -2854,7 +2914,7 @@ const dataBase = {
     },
     '717': {
         key: '717',
-        cost: 2800,
+        cost: 3000,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -3214,7 +3274,7 @@ const dataBase = {
     },
     '783': {
         key: '783',
-        cost: 220,
+        cost: 250,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -3234,7 +3294,7 @@ const dataBase = {
     },
     '785': {
         key: '785',
-        cost: 275,
+        cost: 300,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
