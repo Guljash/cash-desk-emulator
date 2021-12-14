@@ -1762,13 +1762,13 @@ const dataBase = {
     },
     '154': {
         key: '154',
-        cost: 2500,
+        cost: 3000,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
         multiplicator: 1,
         dPos: 0,
-        name: "Накатка на пенокартон А3 (до 100х140)"
+        name: "Накатка на пенокартон А0+ (до 100х140)"
     },
 
     //Обложки
@@ -2874,7 +2874,7 @@ const dataBase = {
     },
     '707': {
         key: '707',
-        cost: 10,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },

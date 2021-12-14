@@ -651,13 +651,13 @@ function thisIsMenu() { //Set discount and change vc's for menu
 			if (i === '058' || i === '158' || i === '258' || i === '358') {
 				let prop = 161;
 				addNewVc(prop);
-				let discountPercent = 52;
+				let discountPercent = 40;
 				dPos(discountPercent);
 			}
 			if (i === '062' || i === '162' || i === '262' || i === '362') {
 				let prop = 165;
 				addNewVc(prop);
-				let discountPercent = 52;
+				let discountPercent = 40;
 				dPos(discountPercent);
 			}
 			if (i === '001' || i === '101' || i === '201' || i === '301') {
