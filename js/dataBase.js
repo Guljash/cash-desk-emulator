@@ -11,7 +11,7 @@ const arrForMenu = ['001', '101', '201', '301',
 const dataBase = {
     '501': {
         key: '501',
-        cost: 1.5,
+        cost: 2,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -21,7 +21,7 @@ const dataBase = {
     },
     '502': {
         key: '502',
-        cost: 3,
+        cost: 4,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -31,7 +31,7 @@ const dataBase = {
     },
     '503': {
         key: '503',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -41,7 +41,7 @@ const dataBase = {
     },
     '504': {
         key: '504',
-        cost: 8,
+        cost: 10,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -51,7 +51,7 @@ const dataBase = {
     },
     '505': {
         key: '505',
-        cost: 10,
+        cost: 13,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -61,7 +61,7 @@ const dataBase = {
     },
     '506': {
         key: '506',
-        cost: 13,
+        cost: 16,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -71,7 +71,7 @@ const dataBase = {
     },
     '507': {
         key: '507',
-        cost: 16,
+        cost: 20,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -81,7 +81,7 @@ const dataBase = {
     },
     '508': {
         key: '508',
-        cost: 8,
+        cost: 10,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -91,7 +91,7 @@ const dataBase = {
     },
     '509': {
         key: '509',
-        cost: 13,
+        cost: 16,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -101,7 +101,7 @@ const dataBase = {
     },
     '510': {
         key: '510',
-        cost: 30,
+        cost: 38,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -111,7 +111,7 @@ const dataBase = {
     },
     '511': {
         key: '511',
-        cost: 4,
+        cost: 5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -121,7 +121,7 @@ const dataBase = {
     },
     '512': {
         key: '512',
-        cost: 10,
+        cost: 13,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -131,7 +131,7 @@ const dataBase = {
     },
     '513': {
         key: '513',
-        cost: 25,
+        cost: 30,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -141,7 +141,7 @@ const dataBase = {
     },
     '514': {
         key: '514',
-        cost: 120,
+        cost: 150,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -151,7 +151,7 @@ const dataBase = {
     },
     '515': {
         key: '515',
-        cost: 500,
+        cost: 600,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -161,7 +161,7 @@ const dataBase = {
     },
     '518': {
         key: '518',
-        cost: 25,
+        cost: 30,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -171,7 +171,7 @@ const dataBase = {
     },
     '519': {
         key: '519',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -181,7 +181,7 @@ const dataBase = {
     },
     '520': {
         key: '520',
-        cost: 60,
+        cost: 75,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -191,7 +191,7 @@ const dataBase = {
     },
     '521': {
         key: '521',
-        cost: 3,
+        cost: 4,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -201,7 +201,7 @@ const dataBase = {
     },
     '522': {
         key: '522',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -211,7 +211,7 @@ const dataBase = {
     },
     '523': {
         key: '523',
-        cost: 12,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -221,7 +221,7 @@ const dataBase = {
     },
     '524': {
         key: '524',
-        cost: 16,
+        cost: 20,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -231,7 +231,7 @@ const dataBase = {
     },
     '525': {
         key: '525',
-        cost: 20,
+        cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -241,7 +241,7 @@ const dataBase = {
     },
     '526': {
         key: '526',
-        cost: 26,
+        cost: 30,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -251,7 +251,7 @@ const dataBase = {
     },
     '527': {
         key: '527',
-        cost: 32,
+        cost: 40,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -261,7 +261,7 @@ const dataBase = {
     },
     '528': {
         key: '528',
-        cost: 16,
+        cost: 20,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -271,7 +271,7 @@ const dataBase = {
     },
     '529': {
         key: '529',
-        cost: 26,
+        cost: 30,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -281,7 +281,7 @@ const dataBase = {
     },
     '530': {
         key: '530',
-        cost: 60,
+        cost: 75,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -291,7 +291,7 @@ const dataBase = {
     },
     '532': {
         key: '532',
-        cost: 20,
+        cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -301,7 +301,7 @@ const dataBase = {
     },
     '533': {
         key: '533',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -311,7 +311,7 @@ const dataBase = {
     },
     '542': {
         key: '542',
-        cost: 8,
+        cost: 10,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -321,7 +321,7 @@ const dataBase = {
     },
     '543': {
         key: '543',
-        cost: 15,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -331,7 +331,7 @@ const dataBase = {
     },
     '544': {
         key: '544',
-        cost: 20,
+        cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -341,7 +341,7 @@ const dataBase = {
     },
     '545': {
         key: '545',
-        cost: 25,
+        cost: 30,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -351,7 +351,7 @@ const dataBase = {
     },
     '546': {
         key: '546',
-        cost: 33,
+        cost: 40,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -361,7 +361,7 @@ const dataBase = {
     },
     '547': {
         key: '547',
-        cost: 40,
+        cost: 50,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -371,7 +371,7 @@ const dataBase = {
     },
     '538': {
         key: '538',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -381,7 +381,7 @@ const dataBase = {
     },
     '539': {
         key: '539',
-        cost: 100,
+        cost: 125,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -391,7 +391,7 @@ const dataBase = {
     },
     '540': {
         key: '540',
-        cost: 250,
+        cost: 300,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -404,7 +404,7 @@ const dataBase = {
 
     '001': {
         key: '001',
-        cost: 15,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -414,7 +414,7 @@ const dataBase = {
     },
     '002': {
         key: '002',
-        cost: 14,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -424,7 +424,7 @@ const dataBase = {
     },
     '003': {
         key: '003',
-        cost: 10,
+        cost: 12,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -434,7 +434,7 @@ const dataBase = {
     },
     '004': {
         key: '004',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -444,7 +444,7 @@ const dataBase = {
     },
     '005': {
         key: '005',
-        cost: 5,
+        cost: 6,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -454,7 +454,7 @@ const dataBase = {
     },
     '006': {
         key: '006',
-        cost: 4,
+        cost: 5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -464,7 +464,7 @@ const dataBase = {
     },
     '007': {
         key: '007',
-        cost: 3,
+        cost: 4,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -474,7 +474,7 @@ const dataBase = {
     },
     '008': {
         key: '008',
-        cost: 20,
+        cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -484,7 +484,7 @@ const dataBase = {
     },
     '011': {
         key: '011',
-        cost: 22,
+        cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -494,7 +494,7 @@ const dataBase = {
     },
     '012': {
         key: '012',
-        cost: 18,
+        cost: 22,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -504,7 +504,7 @@ const dataBase = {
     },
     '013': {
         key: '013',
-        cost: 15,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -514,7 +514,7 @@ const dataBase = {
     },
     '014': {
         key: '014',
-        cost: 10,
+        cost: 14,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -524,7 +524,7 @@ const dataBase = {
     },
     '015': {
         key: '015',
-        cost: 8,
+        cost: 10,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -534,7 +534,7 @@ const dataBase = {
     },
     '016': {
         key: '016',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -544,7 +544,7 @@ const dataBase = {
     },
     '017': {
         key: '017',
-        cost: 5,
+        cost: 6,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -554,7 +554,7 @@ const dataBase = {
     },
     '020': {
         key: '020',
-        cost: 26,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -564,7 +564,7 @@ const dataBase = {
     },
     '021': {
         key: '021',
-        cost: 22,
+        cost: 24,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -574,7 +574,7 @@ const dataBase = {
     },
     '022': {
         key: '022',
-        cost: 16,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -584,7 +584,7 @@ const dataBase = {
     },
     '023': {
         key: '023',
-        cost: 12,
+        cost: 14,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -594,7 +594,7 @@ const dataBase = {
     },
     '024': {
         key: '024',
-        cost: 35,
+        cost: 38,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -604,7 +604,7 @@ const dataBase = {
     },
     '025': {
         key: '025',
-        cost: 30,
+        cost: 36,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -614,7 +614,7 @@ const dataBase = {
     },
     '026': {
         key: '026',
-        cost: 24,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -624,7 +624,7 @@ const dataBase = {
     },
     '027': {
         key: '027',
-        cost: 18,
+        cost: 24,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -634,7 +634,7 @@ const dataBase = {
     },
     '029': {
         key: '029',
-        cost: 30,
+        cost: 36,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -648,7 +648,7 @@ const dataBase = {
 
     '101': {
         key: '101',
-        cost: 15,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -658,7 +658,7 @@ const dataBase = {
     },
     '102': {
         key: '102',
-        cost: 14,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -668,7 +668,7 @@ const dataBase = {
     },
     '103': {
         key: '103',
-        cost: 10,
+        cost: 12,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -678,7 +678,7 @@ const dataBase = {
     },
     '104': {
         key: '104',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -688,7 +688,7 @@ const dataBase = {
     },
     '105': {
         key: '105',
-        cost: 5,
+        cost: 6,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -698,7 +698,7 @@ const dataBase = {
     },
     '106': {
         key: '106',
-        cost: 4,
+        cost: 5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -708,7 +708,7 @@ const dataBase = {
     },
     '107': {
         key: '107',
-        cost: 3,
+        cost: 4,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -718,7 +718,7 @@ const dataBase = {
     },
     '111': {
         key: '111',
-        cost: 22,
+        cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -728,7 +728,7 @@ const dataBase = {
     },
     '112': {
         key: '112',
-        cost: 18,
+        cost: 22,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -738,7 +738,7 @@ const dataBase = {
     },
     '113': {
         key: '113',
-        cost: 15,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -748,7 +748,7 @@ const dataBase = {
     },
     '114': {
         key: '114',
-        cost: 10,
+        cost: 14,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -758,7 +758,7 @@ const dataBase = {
     },
     '115': {
         key: '115',
-        cost: 8,
+        cost: 10,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -768,7 +768,7 @@ const dataBase = {
     },
     '116': {
         key: '116',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -778,7 +778,7 @@ const dataBase = {
     },
     '117': {
         key: '117',
-        cost: 5,
+        cost: 6,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -788,7 +788,7 @@ const dataBase = {
     },
     '120': {
         key: '120',
-        cost: 26,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -798,7 +798,7 @@ const dataBase = {
     },
     '121': {
         key: '121',
-        cost: 22,
+        cost: 24,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -808,7 +808,7 @@ const dataBase = {
     },
     '122': {
         key: '122',
-        cost: 16,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -818,7 +818,7 @@ const dataBase = {
     },
     '123': {
         key: '123',
-        cost: 12,
+        cost: 14,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -828,7 +828,7 @@ const dataBase = {
     },
     '124': {
         key: '124',
-        cost: 35,
+        cost: 38,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -838,7 +838,7 @@ const dataBase = {
     },
     '125': {
         key: '125',
-        cost: 30,
+        cost: 36,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -848,7 +848,7 @@ const dataBase = {
     },
     '126': {
         key: '126',
-        cost: 24,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -858,7 +858,7 @@ const dataBase = {
     },
     '127': {
         key: '127',
-        cost: 18,
+        cost: 24,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -868,7 +868,7 @@ const dataBase = {
     },
     '128': {
         key: '128',
-        cost: 100,
+        cost: 125,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -898,7 +898,7 @@ const dataBase = {
     },
     '132': {
         key: '132',
-        cost: 15,
+        cost: 20,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -917,11 +917,11 @@ const dataBase = {
         name: "Флеш-накопитель"
     },
 
-    //Черно-белое копирование А4, А3 + доп. мат. 
+    //Черно-белое копирование А4, А3 + доп. мат.
 
     '201': {
         key: '201',
-        cost: 15,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -931,7 +931,7 @@ const dataBase = {
     },
     '202': {
         key: '202',
-        cost: 14,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -941,7 +941,7 @@ const dataBase = {
     },
     '203': {
         key: '203',
-        cost: 10,
+        cost: 12,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -951,7 +951,7 @@ const dataBase = {
     },
     '204': {
         key: '204',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -961,7 +961,7 @@ const dataBase = {
     },
     '205': {
         key: '205',
-        cost: 5,
+        cost: 6,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -971,7 +971,7 @@ const dataBase = {
     },
     '206': {
         key: '206',
-        cost: 4,
+        cost: 5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -981,7 +981,7 @@ const dataBase = {
     },
     '207': {
         key: '207',
-        cost: 3,
+        cost: 4,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -991,7 +991,7 @@ const dataBase = {
     },
     '208': {
         key: '208',
-        cost: 20,
+        cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1001,7 +1001,7 @@ const dataBase = {
     },
     '211': {
         key: '211',
-        cost: 22,
+        cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1011,7 +1011,7 @@ const dataBase = {
     },
     '212': {
         key: '212',
-        cost: 18,
+        cost: 22,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1021,7 +1021,7 @@ const dataBase = {
     },
     '213': {
         key: '213',
-        cost: 15,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1031,7 +1031,7 @@ const dataBase = {
     },
     '214': {
         key: '214',
-        cost: 10,
+        cost: 14,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1041,7 +1041,7 @@ const dataBase = {
     },
     '215': {
         key: '215',
-        cost: 8,
+        cost: 10,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1051,7 +1051,7 @@ const dataBase = {
     },
     '216': {
         key: '216',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1061,7 +1061,7 @@ const dataBase = {
     },
     '217': {
         key: '217',
-        cost: 5,
+        cost: 6,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1071,7 +1071,7 @@ const dataBase = {
     },
     '220': {
         key: '220',
-        cost: 26,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1081,7 +1081,7 @@ const dataBase = {
     },
     '221': {
         key: '221',
-        cost: 22,
+        cost: 24,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1091,7 +1091,7 @@ const dataBase = {
     },
     '222': {
         key: '222',
-        cost: 16,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1101,7 +1101,7 @@ const dataBase = {
     },
     '223': {
         key: '223',
-        cost: 12,
+        cost: 14,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1111,7 +1111,7 @@ const dataBase = {
     },
     '224': {
         key: '224',
-        cost: 35,
+        cost: 38,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1121,7 +1121,7 @@ const dataBase = {
     },
     '225': {
         key: '225',
-        cost: 30,
+        cost: 36,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1131,7 +1131,7 @@ const dataBase = {
     },
     '226': {
         key: '226',
-        cost: 24,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1141,7 +1141,7 @@ const dataBase = {
     },
     '227': {
         key: '227',
-        cost: 18,
+        cost: 24,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1151,7 +1151,7 @@ const dataBase = {
     },
     '229': {
         key: '229',
-        cost: 30,
+        cost: 36,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1164,7 +1164,7 @@ const dataBase = {
 
     '301': {
         key: '301',
-        cost: 15,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1174,7 +1174,7 @@ const dataBase = {
     },
     '302': {
         key: '302',
-        cost: 14,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1184,7 +1184,7 @@ const dataBase = {
     },
     '303': {
         key: '303',
-        cost: 10,
+        cost: 12,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1194,7 +1194,7 @@ const dataBase = {
     },
     '304': {
         key: '304',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1204,7 +1204,7 @@ const dataBase = {
     },
     '305': {
         key: '305',
-        cost: 5,
+        cost: 6,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1214,7 +1214,7 @@ const dataBase = {
     },
     '306': {
         key: '306',
-        cost: 4,
+        cost: 5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1224,7 +1224,7 @@ const dataBase = {
     },
     '307': {
         key: '307',
-        cost: 3,
+        cost: 4,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1234,7 +1234,7 @@ const dataBase = {
     },
     '311': {
         key: '311',
-        cost: 22,
+        cost: 25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1244,7 +1244,7 @@ const dataBase = {
     },
     '312': {
         key: '312',
-        cost: 18,
+        cost: 22,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1254,7 +1254,7 @@ const dataBase = {
     },
     '313': {
         key: '313',
-        cost: 15,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1264,7 +1264,7 @@ const dataBase = {
     },
     '314': {
         key: '314',
-        cost: 10,
+        cost: 14,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1274,7 +1274,7 @@ const dataBase = {
     },
     '315': {
         key: '315',
-        cost: 8,
+        cost: 10,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1284,7 +1284,7 @@ const dataBase = {
     },
     '316': {
         key: '316',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1294,7 +1294,7 @@ const dataBase = {
     },
     '317': {
         key: '317',
-        cost: 5,
+        cost: 6,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1304,7 +1304,7 @@ const dataBase = {
     },
     '320': {
         key: '320',
-        cost: 26,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1314,7 +1314,7 @@ const dataBase = {
     },
     '321': {
         key: '321',
-        cost: 22,
+        cost: 24,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1324,7 +1324,7 @@ const dataBase = {
     },
     '322': {
         key: '322',
-        cost: 16,
+        cost: 18,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1334,7 +1334,7 @@ const dataBase = {
     },
     '323': {
         key: '323',
-        cost: 12,
+        cost: 14,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1344,7 +1344,7 @@ const dataBase = {
     },
     '324': {
         key: '324',
-        cost: 35,
+        cost: 38,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1354,7 +1354,7 @@ const dataBase = {
     },
     '325': {
         key: '325',
-        cost: 30,
+        cost: 36,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1364,7 +1364,7 @@ const dataBase = {
     },
     '326': {
         key: '326',
-        cost: 24,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1374,7 +1374,7 @@ const dataBase = {
     },
     '327': {
         key: '327',
-        cost: 18,
+        cost: 24,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1397,7 +1397,7 @@ const dataBase = {
     },
     '060': {
         key: '060',
-        cost: 30,
+        cost: 35,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1407,7 +1407,7 @@ const dataBase = {
     },
     '061': {
         key: '061',
-        cost: 25,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1427,7 +1427,7 @@ const dataBase = {
     },
     '064': {
         key: '064',
-        cost: 60,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1437,7 +1437,7 @@ const dataBase = {
     },
     '065': {
         key: '065',
-        cost: 50,
+        cost: 56,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1460,7 +1460,7 @@ const dataBase = {
     },
     '160': {
         key: '160',
-        cost: 30,
+        cost: 35,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1470,7 +1470,7 @@ const dataBase = {
     },
     '161': {
         key: '161',
-        cost: 25,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1490,7 +1490,7 @@ const dataBase = {
     },
     '164': {
         key: '164',
-        cost: 60,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1500,7 +1500,7 @@ const dataBase = {
     },
     '165': {
         key: '165',
-        cost: 50,
+        cost: 56,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1508,26 +1508,26 @@ const dataBase = {
         dPos: 0,
         name: "Печать А3 цветная"
     },
-    '167': {
-        key: '167',
-        cost: 20,
-        costAfterDiscount() {
-            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
-        },
-        multiplicator: 1,
-        dPos: 0,
-        name: "Сканирование А4 ручное"
-    },
-    '168': {
-        key: '168',
-        cost: 30,
-        costAfterDiscount() {
-            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
-        },
-        multiplicator: 1,
-        dPos: 0,
-        name: "Сканирование А3 ручное"
-    },
+    // '167': {
+    //     key: '167',
+    //     cost: 20,
+    //     costAfterDiscount() {
+    //         return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+    //     },
+    //     multiplicator: 1,
+    //     dPos: 0,
+    //     name: "Сканирование А4 ручное"
+    // },
+    // '168': {
+    //     key: '168',
+    //     cost: 30,
+    //     costAfterDiscount() {
+    //         return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+    //     },
+    //     multiplicator: 1,
+    //     dPos: 0,
+    //     name: "Сканирование А3 ручное"
+    // },
 
     //Цветное копирование А4, А3 + доп. мат.
 
@@ -1543,7 +1543,7 @@ const dataBase = {
     },
     '260': {
         key: '260',
-        cost: 30,
+        cost: 35,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1553,7 +1553,7 @@ const dataBase = {
     },
     '261': {
         key: '261',
-        cost: 25,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1573,7 +1573,7 @@ const dataBase = {
     },
     '264': {
         key: '264',
-        cost: 60,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1583,7 +1583,7 @@ const dataBase = {
     },
     '265': {
         key: '265',
-        cost: 50,
+        cost: 56,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1606,7 +1606,7 @@ const dataBase = {
     },
     '360': {
         key: '360',
-        cost: 30,
+        cost: 35,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1616,7 +1616,7 @@ const dataBase = {
     },
     '361': {
         key: '361',
-        cost: 25,
+        cost: 28,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1636,7 +1636,7 @@ const dataBase = {
     },
     '364': {
         key: '364',
-        cost: 60,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1646,7 +1646,7 @@ const dataBase = {
     },
     '365': {
         key: '365',
-        cost: 50,
+        cost: 56,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1659,7 +1659,7 @@ const dataBase = {
 
     '040': {
         key: '040',
-        cost: 10,
+        cost: 12,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1679,7 +1679,7 @@ const dataBase = {
     },
     '045': {
         key: '045',
-        cost: 20,
+        cost: 24,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1722,7 +1722,7 @@ const dataBase = {
 
     '150': {
         key: '150',
-        cost: 2300,
+        cost: 2800,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1732,7 +1732,7 @@ const dataBase = {
     },
     '151': {
         key: '151',
-        cost: 1100,
+        cost: 1500,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1742,7 +1742,7 @@ const dataBase = {
     },
     '152': {
         key: '152',
-        cost: 600,
+        cost: 750,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1752,7 +1752,7 @@ const dataBase = {
     },
     '153': {
         key: '153',
-        cost: 400,
+        cost: 500,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1769,6 +1769,16 @@ const dataBase = {
         multiplicator: 1,
         dPos: 0,
         name: "Накатка на пенокартон А0+ (до 100х140)"
+    },
+    '155': {
+        key: '155',
+        cost: 30,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: "Крепление подвеса для пенакартона"
     },
 
     //Обложки
@@ -1858,7 +1868,7 @@ const dataBase = {
 
     '401': {
         key: '401',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1868,7 +1878,7 @@ const dataBase = {
     },
     '402': {
         key: '402',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1878,7 +1888,7 @@ const dataBase = {
     },
     '403': {
         key: '403',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1888,7 +1898,7 @@ const dataBase = {
     },
     '404': {
         key: '404',
-        cost: 60,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1898,7 +1908,7 @@ const dataBase = {
     },
     '405': {
         key: '405',
-        cost: 60,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1908,7 +1918,7 @@ const dataBase = {
     },
     '406': {
         key: '406',
-        cost: 70,
+        cost: 80,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1918,7 +1928,7 @@ const dataBase = {
     },
     '407': {
         key: '407',
-        cost: 70,
+        cost: 80,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1938,7 +1948,7 @@ const dataBase = {
     },
     '410': {
         key: '410',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1948,7 +1958,7 @@ const dataBase = {
     },
     '411': {
         key: '411',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1958,7 +1968,7 @@ const dataBase = {
     },
     '412': {
         key: '412',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1968,7 +1978,7 @@ const dataBase = {
     },
     '413': {
         key: '413',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1978,7 +1988,7 @@ const dataBase = {
     },
     '414': {
         key: '414',
-        cost: 60,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -1988,7 +1998,7 @@ const dataBase = {
     },
     '416': {
         key: '416',
-        cost: 60,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2008,7 +2018,7 @@ const dataBase = {
     },
     '418': {
         key: '418',
-        cost: 60,
+        cost: 70,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2028,7 +2038,7 @@ const dataBase = {
     },
     '420': {
         key: '420',
-        cost: 70,
+        cost: 80,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2038,7 +2048,7 @@ const dataBase = {
     },
     '421': {
         key: '421',
-        cost: 70,
+        cost: 80,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2048,7 +2058,7 @@ const dataBase = {
     },
     '422': {
         key: '422',
-        cost: 70,
+        cost: 80,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2058,7 +2068,7 @@ const dataBase = {
     },
     '424': {
         key: '424',
-        cost: 80,
+        cost: 90,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2137,11 +2147,11 @@ const dataBase = {
         name: 'Навивная пружина 32 мм'
     },
 
-    //Ламинирование 
+    //Ламинирование
 
     '460': {
         key: '460',
-        cost: 150,
+        cost: 200,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2151,7 +2161,7 @@ const dataBase = {
     },
     '461': {
         key: '461',
-        cost: 150,
+        cost: 200,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2161,7 +2171,7 @@ const dataBase = {
     },
     '462': {
         key: '462',
-        cost: 200,
+        cost: 250,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2171,7 +2181,7 @@ const dataBase = {
     },
     '463': {
         key: '463',
-        cost: 100,
+        cost: 150,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2181,7 +2191,7 @@ const dataBase = {
     },
     '464': {
         key: '464',
-        cost: 100,
+        cost: 150,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2191,7 +2201,7 @@ const dataBase = {
     },
     '465': {
         key: '465',
-        cost: 150,
+        cost: 200,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2201,7 +2211,7 @@ const dataBase = {
     },
     '466': {
         key: '466',
-        cost: 50,
+        cost: 100,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2211,7 +2221,7 @@ const dataBase = {
     },
     '467': {
         key: '467',
-        cost: 50,
+        cost: 100,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2221,7 +2231,7 @@ const dataBase = {
     },
     '469': {
         key: '469',
-        cost: 50,
+        cost: 100,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2231,7 +2241,7 @@ const dataBase = {
     },
     '470': {
         key: '470',
-        cost: 50,
+        cost: 100,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2241,7 +2251,7 @@ const dataBase = {
     },
     '480': {
         key: '480',
-        cost: 7.5,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2254,7 +2264,7 @@ const dataBase = {
 
     '070': {
         key: '070',
-        cost: 1,
+        cost: 1.25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2264,7 +2274,7 @@ const dataBase = {
     },
     '071': {
         key: '071',
-        cost: 1,
+        cost: 1.25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2274,7 +2284,7 @@ const dataBase = {
     },
     '074': {
         key: '074',
-        cost: 4,
+        cost: 5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2307,7 +2317,7 @@ const dataBase = {
 
     '170': {
         key: '170',
-        cost: 1,
+        cost: 1.25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2317,7 +2327,7 @@ const dataBase = {
     },
     '171': {
         key: '171',
-        cost: 1,
+        cost: 1.25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2327,7 +2337,7 @@ const dataBase = {
     },
     '174': {
         key: '174',
-        cost: 4,
+        cost: 5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2350,7 +2360,7 @@ const dataBase = {
 
     '190': {
         key: '190',
-        cost: 8,
+        cost: 10,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2360,7 +2370,7 @@ const dataBase = {
     },
     '191': {
         key: '191',
-        cost: 12,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2370,7 +2380,7 @@ const dataBase = {
     },
     '192': {
         key: '192',
-        cost: 6,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2380,7 +2390,7 @@ const dataBase = {
     },
     '193': {
         key: '193',
-        cost: 12,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2390,7 +2400,7 @@ const dataBase = {
     },
     '194': {
         key: '194',
-        cost: 30,
+        cost: 35,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2400,7 +2410,7 @@ const dataBase = {
     },
     '195': {
         key: '195',
-        cost: 2,
+        cost: 2.5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2410,7 +2420,7 @@ const dataBase = {
     },
     '196': {
         key: '196',
-        cost: 12,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2420,7 +2430,7 @@ const dataBase = {
     },
     '197': {
         key: '197',
-        cost: 15,
+        cost: 22,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2482,11 +2492,11 @@ const dataBase = {
         name: 'Печать цв. самокл. бумага пог. см'
     },
 
-    //Печать/копия Б/Ф HP2300 & HP4000 
+    //Печать/копия Б/Ф HP2300 & HP4000
 
     '145': {
         key: '145',
-        cost: 2,
+        cost: 2.5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2496,7 +2506,7 @@ const dataBase = {
     },
     '146': {
         key: '146',
-        cost: 2,
+        cost: 2.5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2506,7 +2516,7 @@ const dataBase = {
     },
     '144': {
         key: '144',
-        cost: 4,
+        cost: 5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2519,7 +2529,7 @@ const dataBase = {
 
     '147': {
         key: '147',
-        cost: 1,
+        cost: 1.25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2529,7 +2539,7 @@ const dataBase = {
     },
     '148': {
         key: '148',
-        cost: 1,
+        cost: 1.25,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2539,7 +2549,7 @@ const dataBase = {
     },
     '149': {
         key: '149',
-        cost: 2,
+        cost: 2.5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2548,7 +2558,7 @@ const dataBase = {
         name: 'Печать док. БФ 914мм пог. см калька'
     },
 
-    //Сканирование больших форматов 
+    //Сканирование больших форматов
 
     '181': {
         key: '181',
@@ -2668,7 +2678,7 @@ const dataBase = {
 
     '491': {
         key: '491',
-        cost: 250,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2678,7 +2688,7 @@ const dataBase = {
     },
     '492': {
         key: '492',
-        cost: 250,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2688,7 +2698,7 @@ const dataBase = {
     },
     '493': {
         key: '493',
-        cost: 250,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2698,7 +2708,7 @@ const dataBase = {
     },
     '494': {
         key: '494',
-        cost: 250,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2758,7 +2768,7 @@ const dataBase = {
     },
     '500': {
         key: '500',
-        cost: 250,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2804,7 +2814,7 @@ const dataBase = {
 
     '700': {
         key: '700',
-        cost: 10,
+        cost: 13,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2814,7 +2824,7 @@ const dataBase = {
     },
     '701': {
         key: '701',
-        cost: 15,
+        cost: 20,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2824,7 +2834,7 @@ const dataBase = {
     },
     '702': {
         key: '702',
-        cost: 5,
+        cost: 6,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2834,7 +2844,7 @@ const dataBase = {
     },
     '703': {
         key: '703',
-        cost: 10,
+        cost: 13,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2854,7 +2864,7 @@ const dataBase = {
     },
     '705': {
         key: '705',
-        cost: 10,
+        cost: 13,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2894,7 +2904,7 @@ const dataBase = {
     },
     '710': {
         key: '710',
-        cost: 700,
+        cost: 900,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2904,7 +2914,7 @@ const dataBase = {
     },
     '711': {
         key: '711',
-        cost: 490,
+        cost: 700,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2914,7 +2924,7 @@ const dataBase = {
     },
     '717': {
         key: '717',
-        cost: 3000,
+        cost: 3500,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2944,7 +2954,7 @@ const dataBase = {
     },
     '728': {
         key: '728',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2954,7 +2964,7 @@ const dataBase = {
     },
     '730': {
         key: '730',
-        cost: 50,
+        cost: 60,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
