@@ -46,6 +46,7 @@
       <updated>1638817609037</updated>
       <workItem from="1638817612067" duration="2259000" />
       <workItem from="1648578002834" duration="102000" />
+      <workItem from="1650194970741" duration="2193000" />
     </task>
     <task id="LOCAL-00001" summary="price change 061221">
       <created>1638819771096</created>
@@ -54,7 +55,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638819771096</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="price change 290322&#10;&#10;(cherry picked from commit 5c753a2a47cf6ca8c870ec0e4c2c34c7ba3fd2a5)">
+      <created>1648578169643</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648578169643</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,6 +82,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="price change 061221" />
-    <option name="LAST_COMMIT_MESSAGE" value="price change 061221" />
+    <MESSAGE value="price change 290322&#10;&#10;(cherry picked from commit 5c753a2a47cf6ca8c870ec0e4c2c34c7ba3fd2a5)" />
+    <option name="LAST_COMMIT_MESSAGE" value="price change 290322&#10;&#10;(cherry picked from commit 5c753a2a47cf6ca8c870ec0e4c2c34c7ba3fd2a5)" />
   </component>
 </project>
