@@ -2168,7 +2168,7 @@ const dataBase = {
     },
     '430': {
         key: '430',
-        cost: 80,
+        cost: 90,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2178,7 +2178,7 @@ const dataBase = {
     },
     '431': {
         key: '431',
-        cost: 80,
+        cost: 90,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2543,7 +2543,7 @@ const dataBase = {
 
     '140': {
         key: '140',
-        cost: 12,
+        cost: 15,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2553,7 +2553,7 @@ const dataBase = {
     },
     '141': {
         key: '141',
-        cost: 18,
+        cost: 22.5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2563,7 +2563,7 @@ const dataBase = {
     },
     '142': {
         key: '142',
-        cost: 10,
+        cost: 12.5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2573,7 +2573,7 @@ const dataBase = {
     },
     '143': {
         key: '143',
-        cost: 22,
+        cost: 27.5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -2755,7 +2755,7 @@ const dataBase = {
     },
     '805': {
         key: '805',
-        cost: 300,
+        cost: 350,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -3234,7 +3234,7 @@ const dataBase = {
     },
     '766': {
         key: '766',
-        cost: 2,
+        cost: 4,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -3244,7 +3244,7 @@ const dataBase = {
     },
     '767': {
         key: '767',
-        cost: 4,
+        cost: 8,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
