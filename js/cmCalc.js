@@ -177,183 +177,185 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 
 	if (vc.key === '001' || vc.key === '101' || vc.key === '201' || vc.key === '301') {
 		if (vc.multiplicator <= 9) {
-			vc.cost = 18;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 25;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 9 && vc.multiplicator <= 49) {
-			vc.cost = 15;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 18;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
-			vc.cost = 12;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 15;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 99 && vc.multiplicator <= 499) {
-			vc.cost = 8;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 12;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
-			vc.cost = 6;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 8;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 999 && vc.multiplicator <= 4999) {
-			vc.cost = 5;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 6;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 4999) {
-			vc.cost = 4;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 5;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '058' || vc.key === '158' || vc.key === '258' || vc.key === '358') {
-		if (vc.multiplicator <= 19) {
+		if (vc.multiplicator <= 25) {
+			vc.cost = 50;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		}
+		if (vc.multiplicator > 25 && vc.multiplicator <= 99) {
 			vc.cost = 40;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
-		if (vc.multiplicator > 19 && vc.multiplicator <= 49) {
-			vc.cost = 35;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		if (vc.multiplicator > 99) {
+			vc.cost = 30;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
-		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
-			vc.cost = 28;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 99 && vc.multiplicator <= 199) {
-			vc.cost = 21;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 199 && vc.multiplicator <= 499) {
-			vc.cost = 16;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
-			vc.cost = 14;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 999) {
-			vc.cost = 12;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
+		// if (vc.multiplicator > 99 && vc.multiplicator <= 199) {
+		// 	vc.cost = 20;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
+		// if (vc.multiplicator > 199 && vc.multiplicator <= 499) {
+		// 	vc.cost = 15;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
+		// if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
+		// 	vc.cost = 12;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
+		// if (vc.multiplicator > 999) {
+		// 	vc.cost = 10;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
 	}
 	if (vc.key === '062' || vc.key === '162' || vc.key === '262' || vc.key === '362') {
-		if (vc.multiplicator <= 19) {
+		if (vc.multiplicator <= 25) {
+			vc.cost = 100;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		}
+		if (vc.multiplicator > 25 && vc.multiplicator <= 99) {
 			vc.cost = 80;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
-		if (vc.multiplicator > 19 && vc.multiplicator <= 49) {
-			vc.cost = 70;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		if (vc.multiplicator > 99) {
+			vc.cost = 60;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
-		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
-			vc.cost = 56;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 99 && vc.multiplicator <= 199) {
-			vc.cost = 42;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 199 && vc.multiplicator <= 499) {
-			vc.cost = 32;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
-			vc.cost = 28;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 999) {
-			vc.cost = 24;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
+		// if (vc.multiplicator > 99 && vc.multiplicator <= 199) {
+		// 	vc.cost = 40;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
+		// if (vc.multiplicator > 199 && vc.multiplicator <= 499) {
+		// 	vc.cost = 30;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
+		// if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
+		// 	vc.cost = 24;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
+		// if (vc.multiplicator > 999) {
+		// 	vc.cost = 20;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
 	}
 	if (vc.key === '011' || vc.key === '111' || vc.key === '211' || vc.key === '311') {
 		if (vc.multiplicator <= 9) {
-			vc.cost = 25;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 32;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 9 && vc.multiplicator <= 49) {
-			vc.cost = 22;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 25;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
-			vc.cost = 18;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 22;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 99 && vc.multiplicator <= 499) {
-			vc.cost = 14;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 18;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
-			vc.cost = 10;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 14;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 999 && vc.multiplicator <= 4999) {
-			vc.cost = 8;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 10;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 4999) {
-			vc.cost = 6;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 8;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '020' || vc.key === '120' || vc.key === '220' || vc.key === '320') {
 		if (vc.multiplicator <= 9) {
-			vc.cost = 28;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 35;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 9 && vc.multiplicator <= 49) {
-			vc.cost = 24;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 28;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
+			vc.cost = 24;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		}
+		//&& vc.multiplicator <= 499
+		if (vc.multiplicator > 99) {
 			vc.cost = 18;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
-		if (vc.multiplicator > 99 && vc.multiplicator <= 499) {
-			vc.cost = 14;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
-			vc.cost = 12;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 999 && vc.multiplicator <= 4999) {
-			vc.cost = 9;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 4999) {
-			vc.cost = 8;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
+		// if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
+		// 	vc.cost = 9;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
+		// if (vc.multiplicator > 999 && vc.multiplicator <= 4999) {
+		// 	vc.cost = 8;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
+		// if (vc.multiplicator > 4999) {
+		// 	vc.cost = 6;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
 	}
 	if (vc.key === '024' || vc.key === '124' || vc.key === '224' || vc.key === '324') {
 		if (vc.multiplicator <= 9) {
-			vc.cost = 38;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 45;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 9 && vc.multiplicator <= 49) {
-			vc.cost = 36;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			vc.cost = 38;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator > 49 && vc.multiplicator <= 99) {
+			vc.cost = 36;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		}
+		// && vc.multiplicator <= 499
+		if (vc.multiplicator > 99) {
 			vc.cost = 28;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
-		if (vc.multiplicator > 99 && vc.multiplicator <= 499) {
-			vc.cost = 24;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
-			vc.cost = 19;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 999 && vc.multiplicator <= 4999) {
-			vc.cost = 14;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator > 4999) {
-			vc.cost = 10;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
+		// if (vc.multiplicator > 499 && vc.multiplicator <= 999) {
+		// 	vc.cost = 15;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
+		// if (vc.multiplicator > 999 && vc.multiplicator <= 4999) {
+		// 	vc.cost = 12;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
+		// if (vc.multiplicator > 4999) {
+		// 	vc.cost = 9;
+		// 	document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		// }
 	}
 	if (vc.key === '720') {
 		if (vc.multiplicator < 10) {
