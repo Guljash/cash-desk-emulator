@@ -3044,7 +3044,7 @@ const dataBase = {
     },
     '721': {
         key: '721',
-        cost: 100,
+        cost: 120,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
