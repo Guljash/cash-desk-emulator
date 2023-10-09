@@ -1093,21 +1093,21 @@ document.getElementById('save').onclick = function () {
 	}, 350);
 }
 
-document.getElementById('stack').onclick = function () {
-	toggleStackMode();
-	let ivertion = 'filter: invert(0);'
-	if (isStackMode) {
-		$("#stack").css({ "background-color": "rgb(46, 158, 246)" })
-		ivertion = "filter: invert(100%);";
-	} else {
-		$("#stack").css({ "background-color": "#E5E5E5" })
-		ivertion = "filter: invert(0);";
-	}
-	document.querySelector("#stack img").style = ivertion + "transform: scale(1.25);";
-	setTimeout(function () {
-		document.querySelector('#stack img').style = ivertion + "transform: scale(1);";
-	}, 350);
-}
+// document.getElementById('stack').onclick = function () {
+// 	toggleStackMode();
+// 	let ivertion = 'filter: invert(0);'
+// 	if (isStackMode) {
+// 		$("#stack").css({ "background-color": "rgb(46, 158, 246)" })
+// 		ivertion = "filter: invert(100%);";
+// 	} else {
+// 		$("#stack").css({ "background-color": "#E5E5E5" })
+// 		ivertion = "filter: invert(0);";
+// 	}
+// 	document.querySelector("#stack img").style = ivertion + "transform: scale(1.25);";
+// 	setTimeout(function () {
+// 		document.querySelector('#stack img').style = ivertion + "transform: scale(1);";
+// 	}, 350);
+// }
 
 //right menu
 $(function () {
