@@ -477,28 +477,6 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 10 && vc.multiplicator < 20) {
-			vc.cost = 50;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator >= 20 && vc.multiplicator < 30) {
-			vc.cost = 45;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator >= 30 && vc.multiplicator < 40) {
-			vc.cost = 40;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator >= 40) {
-			vc.cost = 35;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-	}
-	if (vc.key === '721') {
-		if (vc.multiplicator < 10) {
-			vc.cost = 100;
-			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
-		}
-		if (vc.multiplicator >= 10 && vc.multiplicator < 20) {
 			vc.cost = 80;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
@@ -507,11 +485,33 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 30 && vc.multiplicator < 40) {
-			vc.cost = 65;
+			vc.cost = 60;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 40) {
-			vc.cost = 60;
+			vc.cost = 55;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		}
+	}
+	if (vc.key === '721') {
+		if (vc.multiplicator < 10) {
+			vc.cost = 120;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		}
+		if (vc.multiplicator >= 10 && vc.multiplicator < 20) {
+			vc.cost = 96;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		}
+		if (vc.multiplicator >= 20 && vc.multiplicator < 30) {
+			vc.cost = 90;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		}
+		if (vc.multiplicator >= 30 && vc.multiplicator < 40) {
+			vc.cost = 84;
+			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
+		}
+		if (vc.multiplicator >= 40) {
+			vc.cost = 78;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
