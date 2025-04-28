@@ -26,15 +26,15 @@ h2{
     width: 7px;
 	height: 7px;
 }
- 
+
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 7px;
     border-radius: 7px;
-	background: rgba(46,158,246,0.8); 
+	background: rgba(46,158,246,0.8);
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(46,158,246,0.4); 
+	background: rgba(46,158,246,0.4);
 }
 
 .table-style{
@@ -179,17 +179,17 @@ h2{
 
 #main-window__discount{
     padding-top:26px;
-    float:right; 
+    float:right;
     display: inline-block;
     border: 0px solid black;
     width: 84px;
-    height: 491px; 
+    height: 491px;
     overflow: hidden;
 }
 
 #main-window__cost{
     padding-top:26px;
-    float:right; 
+    float:right;
     display: inline-block;
     border: 0px solid black;
     width: 84px;
@@ -246,7 +246,7 @@ h2{
     height: 142px;
 	width: 220px;
     text-align: center;
-    display: table-cell; 
+    display: table-cell;
     vertical-align: middle;
 }
 
@@ -399,6 +399,30 @@ h2{
 	opacity: 0.7;
 }
 
+#stack{
+	position: absolute;
+	width: 71px;
+	height: 71px;
+	top:192px;
+	left:79.5px;
+	background: #E5E5E5;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-size:19px;
+	font-weight:600;
+	cursor: pointer;
+	overflow:hidden;
+}
+
+#stack img{
+	width:35px;
+	transition: 0.3s;
+	opacity: 1;
+}
+
 #generate-letter img{
 	width:32px;
 	transition: 0.3s;
@@ -437,7 +461,7 @@ h2{
 	border-radius: 14px;
 	display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 	font-size:19px;
 	cursor:pointer;
 	z-index:1000;
@@ -457,7 +481,7 @@ h2{
 	border-radius: 14px;
 	display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 	font-size:19px;
 	cursor:pointer;
 	z-index:1000;
@@ -632,7 +656,7 @@ h2{
 	width:450px;
 	height:450px;
 	background-image: url(frog.png);
-	background-size: contain; 
+	background-size: contain;
     cursor: pointer;
 	display:none;
 }
@@ -646,7 +670,7 @@ h2{
 
 #arrow{
 	position:absolute;
-	transform:rotate(270deg); 
+	transform:rotate(270deg);
 	width:40px;
 	height:40px;
 	background-image: url(arrow.png);
@@ -778,7 +802,7 @@ h2{
 @media screen and (width:1366px){
 	#arrow {opacity:0.8;}
 }
-/* 
+/*
 #hat{
 	position: absolute;
 	width: 90px;
