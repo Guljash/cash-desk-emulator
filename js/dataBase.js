@@ -2818,7 +2818,7 @@ const dataBase = {
     },
     '805': {
         key: '805',
-        cost: 350,
+        cost: 370,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -3307,7 +3307,7 @@ const dataBase = {
     },
     '766': {
         key: '766',
-        cost: 4,
+        cost: 5,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
@@ -3317,7 +3317,7 @@ const dataBase = {
     },
     '767': {
         key: '767',
-        cost: 8,
+        cost: 9,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },

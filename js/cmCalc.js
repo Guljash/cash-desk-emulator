@@ -475,41 +475,41 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 	}
 	if (vc.key === '720') {
 		if (vc.multiplicator < 10) {
-			vc.cost = 100;
+			vc.cost = 110;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 10 && vc.multiplicator < 20) {
-			vc.cost = 80;
+			vc.cost = 99;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 20 && vc.multiplicator < 30) {
-			vc.cost = 70;
+			vc.cost = 88;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 30 && vc.multiplicator < 40) {
-			vc.cost = 60;
+			vc.cost = 77;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 40) {
-			vc.cost = 55;
+			vc.cost = 66;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 	}
 	if (vc.key === '721') {
 		if (vc.multiplicator < 10) {
-			vc.cost = 120;
+			vc.cost = 130;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 10 && vc.multiplicator < 20) {
-			vc.cost = 96;
+			vc.cost = 117;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 20 && vc.multiplicator < 30) {
-			vc.cost = 90;
+			vc.cost = 104;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 30 && vc.multiplicator < 40) {
-			vc.cost = 84;
+			vc.cost = 91;
 			document.getElementById(vc.key + 'cost').innerHTML = vc.costAfterDiscount() + " ₽";
 		}
 		if (vc.multiplicator >= 40) {
@@ -524,33 +524,33 @@ function addCountHandler(fastMultiplicator) { //Return multiplicator for current
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
-		if (vc.multiplicator >= 10 && vc.multiplicator < 50) {
-			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 20;
-			dPos(discountPercent)
-			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-		}
-		if (vc.multiplicator >= 50 && vc.multiplicator < 100) {
+		// if (vc.multiplicator >= 10 && vc.multiplicator < 50) {
+		// 	count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+		// 	let discountPercent = 20;
+		// 	dPos(discountPercent)
+		// 	count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+		// }
+		// if (vc.multiplicator >= 50 && vc.multiplicator < 100) {
+		// 	count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+		// 	let discountPercent = 40;
+		// 	dPos(discountPercent)
+		// 	count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
+		// }
+		if (vc.multiplicator >= 100 && vc.multiplicator < 500) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 			let discountPercent = 40;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
-		if (vc.multiplicator >= 100 && vc.multiplicator < 500) {
+		if (vc.multiplicator >= 500 && vc.multiplicator < 1000) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 			let discountPercent = 60;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
-		if (vc.multiplicator >= 500 && vc.multiplicator < 1000) {
-			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 76;
-			dPos(discountPercent)
-			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-		}
 		if (vc.multiplicator >= 1000) {
 			count += (vc.costAfterDiscount() * vc.multiplicator) - oldCost
-			let discountPercent = 84;
+			let discountPercent = 80;
 			dPos(discountPercent)
 			count -= (vc.costAfterDiscount() * vc.multiplicator) - oldCost
 		}
