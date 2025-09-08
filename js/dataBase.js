@@ -2601,6 +2601,16 @@ const dataBase = {
         dPos: 0,
         name: 'Печать цв. самокл. винил пог. см'
     },
+    '199': {
+        key: '199',
+        cost: 4.5,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать электрокартон'
+    },
 
     //Печать/копия Б/Ф цвет Сухаревская
 
@@ -3105,6 +3115,26 @@ const dataBase = {
         dPos: 0,
         name: 'Печать визиток 2ст. 10 шт.'
     },
+    '722': {
+        key: '722',
+        cost: 190,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать визиток на диз. бумаге 1ст. 10 шт.'
+    },
+    '723': {
+        key: '723',
+        cost: 210,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать визиток на диз. бумаге 2ст. 10 шт.'
+    },
     '728': {
         key: '728',
         cost: 63,
@@ -3334,6 +3364,16 @@ const dataBase = {
         multiplicator: 1,
         dPos: 0,
         name: 'Изготовление печати'
+    },
+    '769': {
+        key: '769',
+        cost: 70,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать фото'
     },
     '770': {
         key: '770',
