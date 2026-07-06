@@ -2412,6 +2412,16 @@ const dataBase = {
         dPos: 0,
         name: 'Ламинация рулонная'
     },
+    '481': {
+        key: '481',
+        cost: 9,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Ламинация рулонная софт-тач (пог. см)'
+    },
 
     //Копирование больших форматов ч/б
 
@@ -2611,6 +2621,27 @@ const dataBase = {
         dPos: 0,
         name: 'Печать электрокартон'
     },
+    '294': {
+        key: '294',
+        cost: 29,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать цв. холст натуральный пог. См'
+    },
+    '394': {
+        key: '394',
+        cost: 27,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать цв. холст синтетический пог. См\n'
+    },
+
 
     //Печать/копия Б/Ф цвет Сухаревская
 
@@ -3155,6 +3186,16 @@ const dataBase = {
         dPos: 0,
         name: 'Открытка'
     },
+    '735': {
+        key: '735',
+        cost: 20000,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Изготовление материалов для выставки'
+    },
     '740': {
         key: '740',
         cost: 0.6,
@@ -3534,5 +3575,15 @@ const dataBase = {
         multiplicator: 1,
         dPos: 0,
         name: 'Печать на футболке'
+    },
+    '789': {
+        key: '789',
+        cost: 400,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Оформление в рамку'
     },
 }
