@@ -3003,6 +3003,16 @@ const dataBase = {
     //     dPos: 0,
     //     name: 'КБС >100 страниц'
     // },
+    '630': {
+        key: '630',
+        cost: 158,
+        costAfterDiscount() {
+            return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
+        },
+        multiplicator: 1,
+        dPos: 0,
+        name: 'Печать/копия на самокл. бумаге А3SR'
+    },
 
     //Разное
 
@@ -3408,7 +3418,7 @@ const dataBase = {
     },
     '769': {
         key: '769',
-        cost: 70,
+        cost: 79,
         costAfterDiscount() {
             return (this.cost * (1 - (this.dPos + dAllPercent) / 100))
         },
